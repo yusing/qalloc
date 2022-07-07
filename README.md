@@ -127,7 +127,7 @@ _See [benchmark.cpp](https://github.com/yusing/qalloc/blob/main/src/benchmark/be
 ### Running Platform:
 - Windows 11 21H1
 - Intel i7-10700K CPU @ 5.00GHz 16GB RAM
-- Clang 14.0.6 c++17 x86 build
+- Clang 14.0.6 c++17 x64 build
 
 #### String vector emplace and reset
 | Benchmark                              | Time    | CPU     | Iterations | Speed         |
