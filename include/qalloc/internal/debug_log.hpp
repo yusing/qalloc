@@ -38,7 +38,6 @@ inline void debug_log(const char* format, Args&&... args) {
     if (log_file == nullptr) {
         return;
     }
-    QALLOC_PRINTF(format, std::forward<Args>(args)...);
     QALLOC_FPRINTF(log_file, format, std::forward<Args>(args)...);
 }
 
