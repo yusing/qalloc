@@ -1,0 +1,63 @@
+\hypertarget{global__pool_8hpp}{}\doxysection{F\+:/\+Documents/\+Projects/qalloc/include/qalloc/internal/global\+\_\+pool.hpp File Reference}
+\label{global__pool_8hpp}\index{F:/Documents/Projects/qalloc/include/qalloc/internal/global\_pool.hpp@{F:/Documents/Projects/qalloc/include/qalloc/internal/global\_pool.hpp}}
+
+
+qalloc global pool implementation header file.  
+
+
+{\ttfamily \#include $<$list$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include $<$type\+\_\+traits$>$}\newline
+{\ttfamily \#include $<$mutex$>$}\newline
+{\ttfamily \#include $<$atomic$>$}\newline
+{\ttfamily \#include $<$qalloc/internal/allocator.\+hpp$>$}\newline
+{\ttfamily \#include $<$qalloc/internal/defs.\+hpp$>$}\newline
+{\ttfamily \#include $<$qalloc/internal/memory.\+hpp$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$size\+\_\+type POOL\+\_\+\+SIZE$>$ }\\\mbox{\hyperlink{defs_8hpp_a738f4b2ae3a9746873a20b9ee0f57d83}{QALLOC\+\_\+\+INTERNAL\+\_\+\+BEGIN}} pool\+\_\+pointer \mbox{\hyperlink{global__pool_8hpp_ae1beec7d96cb41d619c87f4d0be47c6d}{initialize\+\_\+pool\+\_\+if\+\_\+needed}} (std\+::atomic$<$ pool\+\_\+pointer $>$ \&pool\+\_\+atomic)
+\item 
+{\footnotesize template$<$typename $>$ }\\pool\+\_\+pointer \mbox{\hyperlink{global__pool_8hpp_a171db12deae0a47a852d56207708d4bb}{get\+\_\+pool}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+qalloc global pool implementation header file. 
+
+\begin{DoxyAuthor}{Author}
+yusing 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2022-\/07-\/04 
+\end{DoxyDate}
+
+
+Definition in file \mbox{\hyperlink{global__pool_8hpp_source}{global\+\_\+pool.\+hpp}}.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{global__pool_8hpp_a171db12deae0a47a852d56207708d4bb}\label{global__pool_8hpp_a171db12deae0a47a852d56207708d4bb}} 
+\index{global\_pool.hpp@{global\_pool.hpp}!get\_pool@{get\_pool}}
+\index{get\_pool@{get\_pool}!global\_pool.hpp@{global\_pool.hpp}}
+\doxysubsubsection{\texorpdfstring{get\_pool()}{get\_pool()}}
+{\footnotesize\ttfamily template$<$typename $>$ \\
+pool\+\_\+pointer get\+\_\+pool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{global__pool_8hpp_source_l00074}{74}} of file \mbox{\hyperlink{global__pool_8hpp_source}{global\+\_\+pool.\+hpp}}.
+
+\mbox{\Hypertarget{global__pool_8hpp_ae1beec7d96cb41d619c87f4d0be47c6d}\label{global__pool_8hpp_ae1beec7d96cb41d619c87f4d0be47c6d}} 
+\index{global\_pool.hpp@{global\_pool.hpp}!initialize\_pool\_if\_needed@{initialize\_pool\_if\_needed}}
+\index{initialize\_pool\_if\_needed@{initialize\_pool\_if\_needed}!global\_pool.hpp@{global\_pool.hpp}}
+\doxysubsubsection{\texorpdfstring{initialize\_pool\_if\_needed()}{initialize\_pool\_if\_needed()}}
+{\footnotesize\ttfamily template$<$size\+\_\+type POOL\+\_\+\+SIZE$>$ \\
+\mbox{\hyperlink{defs_8hpp_a738f4b2ae3a9746873a20b9ee0f57d83}{QALLOC\+\_\+\+INTERNAL\+\_\+\+BEGIN}} pool\+\_\+pointer initialize\+\_\+pool\+\_\+if\+\_\+needed (\begin{DoxyParamCaption}\item[{std\+::atomic$<$ pool\+\_\+pointer $>$ \&}]{pool\+\_\+atomic }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{global__pool_8hpp_source_l00036}{36}} of file \mbox{\hyperlink{global__pool_8hpp_source}{global\+\_\+pool.\+hpp}}.
+

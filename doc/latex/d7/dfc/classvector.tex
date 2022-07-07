@@ -1,0 +1,502 @@
+\hypertarget{classvector}{}\doxysection{vector\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\label{classvector}\index{vector$<$ T $>$@{vector$<$ T $>$}}
+
+
+{\ttfamily \#include $<$vector.\+hpp$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{classvector_a734f2f7bdca203914356632292c0c596}{value\+\_\+type}} = T
+\item 
+using \mbox{\hyperlink{classvector_afa0cbc44237c4e0dddf9d2cf46378e51}{pointer}} = T $\ast$
+\item 
+using \mbox{\hyperlink{classvector_a2fa410f761330484985cbf9c8cf7b20e}{const\+\_\+pointer}} = const T $\ast$
+\item 
+using \mbox{\hyperlink{classvector_acf11cd96194104a6efa11a6529e7e451}{reference}} = T \&
+\item 
+using \mbox{\hyperlink{classvector_a8209c5ca49c4b767d180f5fad9149711}{iterator}} = vector\+\_\+iterator \+:public qalloc\+::internal\+::iterator$<$ T $>$ \{ public\+:using iterator\+\_\+category \mbox{\hyperlink{classvector_a6598a25c26f08389f34fb4fc7e4b567d}{QALLOC\+\_\+\+MAYBE\+\_\+\+UNUSED}}=std\+::forward\+\_\+iterator\+\_\+tag
+\item 
+using \mbox{\hyperlink{classvector_a6598a25c26f08389f34fb4fc7e4b567d}{QALLOC\+\_\+\+MAYBE\+\_\+\+UNUSED}} = std\+::ptrdiff\+\_\+t
+\item 
+using \mbox{\hyperlink{classvector_a7ecbcc7adca5ad855e5c922b95348ae7}{QALLOC\+\_\+\+MAYBE\+\_\+\+UNUSED}} = T
+\item 
+using \mbox{\hyperlink{classvector_afa0cbc44237c4e0dddf9d2cf46378e51}{pointer}} = T $\ast$
+\item 
+using \mbox{\hyperlink{classvector_ad42beffe9843a1e140fc1117792a5980}{QALLOC\+\_\+\+MAYBE\+\_\+\+UNUSED}} = const T $\ast$
+\item 
+using \mbox{\hyperlink{classvector_a75f5eb5f4f9c138e9505a0cd826dd820}{QALLOC\+\_\+\+MAYBE\+\_\+\+UNUSED}} = T \&
+\item 
+using \mbox{\hyperlink{classvector_a108bf903168148ee80eca67243d69a3f}{QALLOC\+\_\+\+MAYBE\+\_\+\+UNUSED}} = const T \&
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{defs_8hpp_a9952d1482158e7b98400c1847e0d5c29}{QALLOC\+\_\+\+CONSTEXPR\+\_\+14}} \mbox{\hyperlink{classvector_afa0cbc44237c4e0dddf9d2cf46378e51}{pointer}} \mbox{\hyperlink{classvector_a11b2c534c4da84029ec0f111dc23ee17}{base}} () const
+\item 
+\mbox{\hyperlink{defs_8hpp_a9952d1482158e7b98400c1847e0d5c29}{QALLOC\+\_\+\+CONSTEXPR\+\_\+14}} vector\+\_\+iterator \& \mbox{\hyperlink{classvector_ad7e4c42d012b4bafbc8458c49989cd70}{operator++}} ()
+\item 
+\mbox{\hyperlink{defs_8hpp_a9952d1482158e7b98400c1847e0d5c29}{QALLOC\+\_\+\+CONSTEXPR\+\_\+14}} vector\+\_\+iterator \mbox{\hyperlink{classvector_ac9078a1d1c81cb26c9f8c0ad79b71254}{operator++}} (int)
+\item 
+\mbox{\hyperlink{defs_8hpp_a9952d1482158e7b98400c1847e0d5c29}{QALLOC\+\_\+\+CONSTEXPR\+\_\+14}} vector\+\_\+iterator \mbox{\hyperlink{classvector_aa900da2e2f4b3312b412aa3df9897da8}{operator+}} (difference\+\_\+type n)
+\item 
+\mbox{\hyperlink{defs_8hpp_a9952d1482158e7b98400c1847e0d5c29}{QALLOC\+\_\+\+CONSTEXPR\+\_\+14}} vector\+\_\+iterator \mbox{\hyperlink{classvector_ae13c01e74a01991f8905c6b7d3165be2}{operator-\/}} (difference\+\_\+type n)
+\item 
+\mbox{\hyperlink{defs_8hpp_a9952d1482158e7b98400c1847e0d5c29}{QALLOC\+\_\+\+CONSTEXPR\+\_\+14}} difference\+\_\+type \mbox{\hyperlink{classvector_aa262d2327120c6b83aa274bdc073def9}{operator-\/}} (vector\+\_\+iterator it) const
+\item 
+\mbox{\hyperlink{defs_8hpp_a9952d1482158e7b98400c1847e0d5c29}{QALLOC\+\_\+\+CONSTEXPR\+\_\+14}} vector\+\_\+iterator \& \mbox{\hyperlink{classvector_ac647fb21f7209f6a28ade6af515e0ab6}{operator-\/-\/}} ()
+\item 
+\mbox{\hyperlink{defs_8hpp_a9952d1482158e7b98400c1847e0d5c29}{QALLOC\+\_\+\+CONSTEXPR\+\_\+14}} vector\+\_\+iterator \mbox{\hyperlink{classvector_a5690beb39802e012adf7ccaaf2a2138c}{operator-\/-\/}} (int)
+\item 
+\mbox{\hyperlink{classvector_a00d237f22fd5eb1aa9a536993e82e54f}{vector}} ()
+\item 
+\mbox{\hyperlink{classvector_a705cf3f1c4bd702e3f2e87a452d53b3c}{vector}} (size\+\_\+type, T \&\&first)
+\item 
+\mbox{\hyperlink{classvector_a6bef6ec5e1298bd7faf3569debbb697a}{vector}} (const \mbox{\hyperlink{classvector}{vector}} \&)=delete
+\item 
+\mbox{\hyperlink{classvector_abc385571f4b6aed331e7804d882e7fb2}{vector}} (\mbox{\hyperlink{classvector}{vector}} \&\&)=delete
+\item 
+\mbox{\hyperlink{classvector}{vector}} \& \mbox{\hyperlink{classvector_a1c97aee9c0e5a730824f71e7ae3d829a}{operator=}} (const \mbox{\hyperlink{classvector}{vector}} \&)=delete
+\item 
+\mbox{\hyperlink{classvector}{vector}} \& \mbox{\hyperlink{classvector_a8ac67ffccb8fdf94869a16ac0af9dddb}{operator=}} (\mbox{\hyperlink{classvector}{vector}} \&\&)=delete
+\item 
+\mbox{\hyperlink{classvector_a7bc236f547bb5debe890fa8ebaabe965}{$\sim$vector}} ()
+\item 
+{\footnotesize template$<$typename ... Args$>$ }\\void \mbox{\hyperlink{classvector_a6dce0f32730a359aa38fb9946ddf3ece}{emplace\+\_\+back}} (Args \&\&...args)
+\item 
+{\footnotesize template$<$typename ... Args$>$ }\\void \mbox{\hyperlink{classvector_a47ae78912fddf280eeb39473be643b4c}{emplace}} (\mbox{\hyperlink{classvector_a8209c5ca49c4b767d180f5fad9149711}{iterator}} pos, Args \&\&...args)
+\item 
+void \mbox{\hyperlink{classvector_a1b40adecf5f760ae30e8f03eebd47475}{erase}} (\mbox{\hyperlink{classvector_a8209c5ca49c4b767d180f5fad9149711}{iterator}} pos)
+\item 
+\mbox{\hyperlink{classvector_a6598a25c26f08389f34fb4fc7e4b567d}{QALLOC\+\_\+\+MAYBE\+\_\+\+UNUSED}} \mbox{\hyperlink{defs_8hpp_ade58da4f1b86dde2aa39f11a2578a19e}{QALLOC\+\_\+\+NODISCARD}} constexpr \mbox{\hyperlink{classvector_acf11cd96194104a6efa11a6529e7e451}{reference}} \mbox{\hyperlink{classvector_ab9a596059da8d1bbd3c11efcc0c86c74}{front}} () const
+\item 
+\mbox{\hyperlink{classvector_a6598a25c26f08389f34fb4fc7e4b567d}{QALLOC\+\_\+\+MAYBE\+\_\+\+UNUSED}} \mbox{\hyperlink{defs_8hpp_ade58da4f1b86dde2aa39f11a2578a19e}{QALLOC\+\_\+\+NODISCARD}} constexpr \mbox{\hyperlink{classvector_acf11cd96194104a6efa11a6529e7e451}{reference}} \mbox{\hyperlink{classvector_a3fa04b4284d3dcb96a355363b2239660}{back}} () const
+\item 
+\mbox{\hyperlink{defs_8hpp_ade58da4f1b86dde2aa39f11a2578a19e}{QALLOC\+\_\+\+NODISCARD}} constexpr \mbox{\hyperlink{classvector_acf11cd96194104a6efa11a6529e7e451}{reference}} \mbox{\hyperlink{classvector_a1ba370476d17300d067c5c3d82a9dd4a}{operator\mbox{[}$\,$\mbox{]}}} (size\+\_\+t index) const
+\item 
+\mbox{\hyperlink{defs_8hpp_ade58da4f1b86dde2aa39f11a2578a19e}{QALLOC\+\_\+\+NODISCARD}} constexpr size\+\_\+type \mbox{\hyperlink{classvector_ae10f35476ce6e41d397d9401f0fe7bb1}{capacity}} () const noexcept
+\item 
+\mbox{\hyperlink{defs_8hpp_ade58da4f1b86dde2aa39f11a2578a19e}{QALLOC\+\_\+\+NODISCARD}} constexpr size\+\_\+type \mbox{\hyperlink{classvector_a081a843a62321d1810b907af143e90c3}{size}} () const noexcept
+\item 
+\mbox{\hyperlink{defs_8hpp_ade58da4f1b86dde2aa39f11a2578a19e}{QALLOC\+\_\+\+NODISCARD}} constexpr bool \mbox{\hyperlink{classvector_a1416861bc9e5ef3fa95cd40d97f19e5f}{empty}} () const noexcept
+\item 
+\mbox{\hyperlink{defs_8hpp_ade58da4f1b86dde2aa39f11a2578a19e}{QALLOC\+\_\+\+NODISCARD}} \mbox{\hyperlink{defs_8hpp_a9952d1482158e7b98400c1847e0d5c29}{QALLOC\+\_\+\+CONSTEXPR\+\_\+14}} \mbox{\hyperlink{classvector_a8209c5ca49c4b767d180f5fad9149711}{iterator}} \mbox{\hyperlink{classvector_ae5b41d62ad5331759a6f843e1076411b}{begin}} () noexcept
+\item 
+\mbox{\hyperlink{defs_8hpp_ade58da4f1b86dde2aa39f11a2578a19e}{QALLOC\+\_\+\+NODISCARD}} \mbox{\hyperlink{defs_8hpp_a9952d1482158e7b98400c1847e0d5c29}{QALLOC\+\_\+\+CONSTEXPR\+\_\+14}} \mbox{\hyperlink{classvector_a8209c5ca49c4b767d180f5fad9149711}{iterator}} \mbox{\hyperlink{classvector_ab41d965770f3709a6dc4ff27a66a6929}{end}} () noexcept
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class vector$<$ T $>$}
+
+
+Definition at line \mbox{\hyperlink{vector_8hpp_source_l00043}{43}} of file \mbox{\hyperlink{vector_8hpp_source}{vector.\+hpp}}.
+
+
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classvector_a2fa410f761330484985cbf9c8cf7b20e}\label{classvector_a2fa410f761330484985cbf9c8cf7b20e}} 
+\index{vector$<$ T $>$@{vector$<$ T $>$}!const\_pointer@{const\_pointer}}
+\index{const\_pointer@{const\_pointer}!vector$<$ T $>$@{vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{const\_pointer}{const\_pointer}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+using \mbox{\hyperlink{classvector}{vector}}$<$ T $>$\+::const\+\_\+pointer =  const T$\ast$}
+
+
+
+Definition at line \mbox{\hyperlink{vector_8hpp_source_l00047}{47}} of file \mbox{\hyperlink{vector_8hpp_source}{vector.\+hpp}}.
+
+\mbox{\Hypertarget{classvector_a8209c5ca49c4b767d180f5fad9149711}\label{classvector_a8209c5ca49c4b767d180f5fad9149711}} 
+\index{vector$<$ T $>$@{vector$<$ T $>$}!iterator@{iterator}}
+\index{iterator@{iterator}!vector$<$ T $>$@{vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{iterator}{iterator}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+using \mbox{\hyperlink{classvector}{vector}}$<$ T $>$\mbox{\hyperlink{classiterator}{\+::iterator}} =  vector\+\_\+iterator \+: public qalloc\+::internal\+::iterator$<$T$>$ \{ public\+: using iterator\+\_\+category \mbox{\hyperlink{classvector_a6598a25c26f08389f34fb4fc7e4b567d}{QALLOC\+\_\+\+MAYBE\+\_\+\+UNUSED}} = std\+::forward\+\_\+iterator\+\_\+tag}
+
+
+
+Definition at line \mbox{\hyperlink{vector_8hpp_source_l00049}{49}} of file \mbox{\hyperlink{vector_8hpp_source}{vector.\+hpp}}.
+
+\mbox{\Hypertarget{classvector_afa0cbc44237c4e0dddf9d2cf46378e51}\label{classvector_afa0cbc44237c4e0dddf9d2cf46378e51}} 
+\index{vector$<$ T $>$@{vector$<$ T $>$}!pointer@{pointer}}
+\index{pointer@{pointer}!vector$<$ T $>$@{vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{pointer}{pointer}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+using \mbox{\hyperlink{classvector}{vector}}$<$ T $>$\+::pointer =  T$\ast$}
+
+
+
+Definition at line \mbox{\hyperlink{vector_8hpp_source_l00046}{46}} of file \mbox{\hyperlink{vector_8hpp_source}{vector.\+hpp}}.
+
+\mbox{\Hypertarget{classvector_afa0cbc44237c4e0dddf9d2cf46378e51}\label{classvector_afa0cbc44237c4e0dddf9d2cf46378e51}} 
+\index{vector$<$ T $>$@{vector$<$ T $>$}!pointer@{pointer}}
+\index{pointer@{pointer}!vector$<$ T $>$@{vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{pointer}{pointer}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+using \mbox{\hyperlink{classvector}{vector}}$<$ T $>$\+::pointer =  T$\ast$}
+
+
+
+Definition at line \mbox{\hyperlink{vector_8hpp_source_l00054}{54}} of file \mbox{\hyperlink{vector_8hpp_source}{vector.\+hpp}}.
+
+\mbox{\Hypertarget{classvector_a6598a25c26f08389f34fb4fc7e4b567d}\label{classvector_a6598a25c26f08389f34fb4fc7e4b567d}} 
+\index{vector$<$ T $>$@{vector$<$ T $>$}!QALLOC\_MAYBE\_UNUSED@{QALLOC\_MAYBE\_UNUSED}}
+\index{QALLOC\_MAYBE\_UNUSED@{QALLOC\_MAYBE\_UNUSED}!vector$<$ T $>$@{vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{QALLOC\_MAYBE\_UNUSED}{QALLOC\_MAYBE\_UNUSED}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+using \mbox{\hyperlink{classvector}{vector}}$<$ T $>$\+::\+QALLOC\+\_\+\+MAYBE\+\_\+\+UNUSED =  std\+::ptrdiff\+\_\+t}
+
+
+
+Definition at line \mbox{\hyperlink{vector_8hpp_source_l00052}{52}} of file \mbox{\hyperlink{vector_8hpp_source}{vector.\+hpp}}.
+
+\mbox{\Hypertarget{classvector_a7ecbcc7adca5ad855e5c922b95348ae7}\label{classvector_a7ecbcc7adca5ad855e5c922b95348ae7}} 
+\index{vector$<$ T $>$@{vector$<$ T $>$}!QALLOC\_MAYBE\_UNUSED@{QALLOC\_MAYBE\_UNUSED}}
+\index{QALLOC\_MAYBE\_UNUSED@{QALLOC\_MAYBE\_UNUSED}!vector$<$ T $>$@{vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{QALLOC\_MAYBE\_UNUSED}{QALLOC\_MAYBE\_UNUSED}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+using \mbox{\hyperlink{classvector}{vector}}$<$ T $>$\+::\+QALLOC\+\_\+\+MAYBE\+\_\+\+UNUSED =  T}
+
+
+
+Definition at line \mbox{\hyperlink{vector_8hpp_source_l00053}{53}} of file \mbox{\hyperlink{vector_8hpp_source}{vector.\+hpp}}.
+
+\mbox{\Hypertarget{classvector_ad42beffe9843a1e140fc1117792a5980}\label{classvector_ad42beffe9843a1e140fc1117792a5980}} 
+\index{vector$<$ T $>$@{vector$<$ T $>$}!QALLOC\_MAYBE\_UNUSED@{QALLOC\_MAYBE\_UNUSED}}
+\index{QALLOC\_MAYBE\_UNUSED@{QALLOC\_MAYBE\_UNUSED}!vector$<$ T $>$@{vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{QALLOC\_MAYBE\_UNUSED}{QALLOC\_MAYBE\_UNUSED}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+using \mbox{\hyperlink{classvector}{vector}}$<$ T $>$\+::\+QALLOC\+\_\+\+MAYBE\+\_\+\+UNUSED =  const T$\ast$}
+
+
+
+Definition at line \mbox{\hyperlink{vector_8hpp_source_l00055}{55}} of file \mbox{\hyperlink{vector_8hpp_source}{vector.\+hpp}}.
+
+\mbox{\Hypertarget{classvector_a75f5eb5f4f9c138e9505a0cd826dd820}\label{classvector_a75f5eb5f4f9c138e9505a0cd826dd820}} 
+\index{vector$<$ T $>$@{vector$<$ T $>$}!QALLOC\_MAYBE\_UNUSED@{QALLOC\_MAYBE\_UNUSED}}
+\index{QALLOC\_MAYBE\_UNUSED@{QALLOC\_MAYBE\_UNUSED}!vector$<$ T $>$@{vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{QALLOC\_MAYBE\_UNUSED}{QALLOC\_MAYBE\_UNUSED}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+using \mbox{\hyperlink{classvector}{vector}}$<$ T $>$\+::\+QALLOC\+\_\+\+MAYBE\+\_\+\+UNUSED =  T\&}
+
+
+
+Definition at line \mbox{\hyperlink{vector_8hpp_source_l00056}{56}} of file \mbox{\hyperlink{vector_8hpp_source}{vector.\+hpp}}.
+
+\mbox{\Hypertarget{classvector_a108bf903168148ee80eca67243d69a3f}\label{classvector_a108bf903168148ee80eca67243d69a3f}} 
+\index{vector$<$ T $>$@{vector$<$ T $>$}!QALLOC\_MAYBE\_UNUSED@{QALLOC\_MAYBE\_UNUSED}}
+\index{QALLOC\_MAYBE\_UNUSED@{QALLOC\_MAYBE\_UNUSED}!vector$<$ T $>$@{vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{QALLOC\_MAYBE\_UNUSED}{QALLOC\_MAYBE\_UNUSED}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+using \mbox{\hyperlink{classvector}{vector}}$<$ T $>$\+::\+QALLOC\+\_\+\+MAYBE\+\_\+\+UNUSED =  const T\&}
+
+
+
+Definition at line \mbox{\hyperlink{vector_8hpp_source_l00057}{57}} of file \mbox{\hyperlink{vector_8hpp_source}{vector.\+hpp}}.
+
+\mbox{\Hypertarget{classvector_acf11cd96194104a6efa11a6529e7e451}\label{classvector_acf11cd96194104a6efa11a6529e7e451}} 
+\index{vector$<$ T $>$@{vector$<$ T $>$}!reference@{reference}}
+\index{reference@{reference}!vector$<$ T $>$@{vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{reference}{reference}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+using \mbox{\hyperlink{classvector}{vector}}$<$ T $>$\+::reference =  T\&}
+
+
+
+Definition at line \mbox{\hyperlink{vector_8hpp_source_l00048}{48}} of file \mbox{\hyperlink{vector_8hpp_source}{vector.\+hpp}}.
+
+\mbox{\Hypertarget{classvector_a734f2f7bdca203914356632292c0c596}\label{classvector_a734f2f7bdca203914356632292c0c596}} 
+\index{vector$<$ T $>$@{vector$<$ T $>$}!value\_type@{value\_type}}
+\index{value\_type@{value\_type}!vector$<$ T $>$@{vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{value\_type}{value\_type}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+using \mbox{\hyperlink{classvector}{vector}}$<$ T $>$\+::value\+\_\+type =  T}
+
+
+
+Definition at line \mbox{\hyperlink{vector_8hpp_source_l00045}{45}} of file \mbox{\hyperlink{vector_8hpp_source}{vector.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classvector_a00d237f22fd5eb1aa9a536993e82e54f}\label{classvector_a00d237f22fd5eb1aa9a536993e82e54f}} 
+\index{vector$<$ T $>$@{vector$<$ T $>$}!vector@{vector}}
+\index{vector@{vector}!vector$<$ T $>$@{vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{vector()}{vector()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classvector}{vector}}$<$ T $>$\mbox{\hyperlink{classvector}{\+::vector}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{vector_8hpp_source_l00119}{119}} of file \mbox{\hyperlink{vector_8hpp_source}{vector.\+hpp}}.
+
+\mbox{\Hypertarget{classvector_a705cf3f1c4bd702e3f2e87a452d53b3c}\label{classvector_a705cf3f1c4bd702e3f2e87a452d53b3c}} 
+\index{vector$<$ T $>$@{vector$<$ T $>$}!vector@{vector}}
+\index{vector@{vector}!vector$<$ T $>$@{vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{vector()}{vector()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classvector}{vector}}$<$ T $>$\mbox{\hyperlink{classvector}{\+::vector}} (\begin{DoxyParamCaption}\item[{size\+\_\+type}]{,  }\item[{T \&\&}]{first }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{vector_8hpp_source_l00124}{124}} of file \mbox{\hyperlink{vector_8hpp_source}{vector.\+hpp}}.
+
+\mbox{\Hypertarget{classvector_a6bef6ec5e1298bd7faf3569debbb697a}\label{classvector_a6bef6ec5e1298bd7faf3569debbb697a}} 
+\index{vector$<$ T $>$@{vector$<$ T $>$}!vector@{vector}}
+\index{vector@{vector}!vector$<$ T $>$@{vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{vector()}{vector()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classvector}{vector}}$<$ T $>$\mbox{\hyperlink{classvector}{\+::vector}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classvector}{vector}}$<$ T $>$ \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{classvector_abc385571f4b6aed331e7804d882e7fb2}\label{classvector_abc385571f4b6aed331e7804d882e7fb2}} 
+\index{vector$<$ T $>$@{vector$<$ T $>$}!vector@{vector}}
+\index{vector@{vector}!vector$<$ T $>$@{vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{vector()}{vector()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classvector}{vector}}$<$ T $>$\mbox{\hyperlink{classvector}{\+::vector}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classvector}{vector}}$<$ T $>$ \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{classvector_a7bc236f547bb5debe890fa8ebaabe965}\label{classvector_a7bc236f547bb5debe890fa8ebaabe965}} 
+\index{vector$<$ T $>$@{vector$<$ T $>$}!````~vector@{$\sim$vector}}
+\index{````~vector@{$\sim$vector}!vector$<$ T $>$@{vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{$\sim$vector()}{~vector()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classvector}{vector}}$<$ T $>$\+::$\sim$\mbox{\hyperlink{classvector}{vector}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{vector_8hpp_source_l00140}{140}} of file \mbox{\hyperlink{vector_8hpp_source}{vector.\+hpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classvector_a3fa04b4284d3dcb96a355363b2239660}\label{classvector_a3fa04b4284d3dcb96a355363b2239660}} 
+\index{vector$<$ T $>$@{vector$<$ T $>$}!back@{back}}
+\index{back@{back}!vector$<$ T $>$@{vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{back()}{back()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classvector_a6598a25c26f08389f34fb4fc7e4b567d}{QALLOC\+\_\+\+MAYBE\+\_\+\+UNUSED}} \mbox{\hyperlink{defs_8hpp_ade58da4f1b86dde2aa39f11a2578a19e}{QALLOC\+\_\+\+NODISCARD}} constexpr \mbox{\hyperlink{classvector_acf11cd96194104a6efa11a6529e7e451}{reference}} \mbox{\hyperlink{classvector}{vector}}$<$ T $>$\+::back (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{vector_8hpp_source_l00230}{230}} of file \mbox{\hyperlink{vector_8hpp_source}{vector.\+hpp}}.
+
+\mbox{\Hypertarget{classvector_a11b2c534c4da84029ec0f111dc23ee17}\label{classvector_a11b2c534c4da84029ec0f111dc23ee17}} 
+\index{vector$<$ T $>$@{vector$<$ T $>$}!base@{base}}
+\index{base@{base}!vector$<$ T $>$@{vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{base()}{base()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{defs_8hpp_a9952d1482158e7b98400c1847e0d5c29}{QALLOC\+\_\+\+CONSTEXPR\+\_\+14}} \mbox{\hyperlink{classvector_afa0cbc44237c4e0dddf9d2cf46378e51}{pointer}} \mbox{\hyperlink{classvector}{vector}}$<$ T $>$\+::base (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{vector_8hpp_source_l00061}{61}} of file \mbox{\hyperlink{vector_8hpp_source}{vector.\+hpp}}.
+
+\mbox{\Hypertarget{classvector_ae5b41d62ad5331759a6f843e1076411b}\label{classvector_ae5b41d62ad5331759a6f843e1076411b}} 
+\index{vector$<$ T $>$@{vector$<$ T $>$}!begin@{begin}}
+\index{begin@{begin}!vector$<$ T $>$@{vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{defs_8hpp_ade58da4f1b86dde2aa39f11a2578a19e}{QALLOC\+\_\+\+NODISCARD}} \mbox{\hyperlink{defs_8hpp_a9952d1482158e7b98400c1847e0d5c29}{QALLOC\+\_\+\+CONSTEXPR\+\_\+14}} \mbox{\hyperlink{classvector_a8209c5ca49c4b767d180f5fad9149711}{iterator}} \mbox{\hyperlink{classvector}{vector}}$<$ T $>$\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{vector_8hpp_source_l00257}{257}} of file \mbox{\hyperlink{vector_8hpp_source}{vector.\+hpp}}.
+
+\mbox{\Hypertarget{classvector_ae10f35476ce6e41d397d9401f0fe7bb1}\label{classvector_ae10f35476ce6e41d397d9401f0fe7bb1}} 
+\index{vector$<$ T $>$@{vector$<$ T $>$}!capacity@{capacity}}
+\index{capacity@{capacity}!vector$<$ T $>$@{vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{capacity()}{capacity()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{defs_8hpp_ade58da4f1b86dde2aa39f11a2578a19e}{QALLOC\+\_\+\+NODISCARD}} constexpr size\+\_\+type \mbox{\hyperlink{classvector}{vector}}$<$ T $>$\+::capacity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{vector_8hpp_source_l00242}{242}} of file \mbox{\hyperlink{vector_8hpp_source}{vector.\+hpp}}.
+
+\mbox{\Hypertarget{classvector_a47ae78912fddf280eeb39473be643b4c}\label{classvector_a47ae78912fddf280eeb39473be643b4c}} 
+\index{vector$<$ T $>$@{vector$<$ T $>$}!emplace@{emplace}}
+\index{emplace@{emplace}!vector$<$ T $>$@{vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{emplace()}{emplace()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+template$<$typename ... Args$>$ \\
+void \mbox{\hyperlink{classvector}{vector}}$<$ T $>$\+::emplace (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classvector_a8209c5ca49c4b767d180f5fad9149711}{iterator}}}]{pos,  }\item[{Args \&\&...}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{vector_8hpp_source_l00171}{171}} of file \mbox{\hyperlink{vector_8hpp_source}{vector.\+hpp}}.
+
+\mbox{\Hypertarget{classvector_a6dce0f32730a359aa38fb9946ddf3ece}\label{classvector_a6dce0f32730a359aa38fb9946ddf3ece}} 
+\index{vector$<$ T $>$@{vector$<$ T $>$}!emplace\_back@{emplace\_back}}
+\index{emplace\_back@{emplace\_back}!vector$<$ T $>$@{vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{emplace\_back()}{emplace\_back()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+template$<$typename ... Args$>$ \\
+void \mbox{\hyperlink{classvector}{vector}}$<$ T $>$\+::emplace\+\_\+back (\begin{DoxyParamCaption}\item[{Args \&\&...}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{vector_8hpp_source_l00151}{151}} of file \mbox{\hyperlink{vector_8hpp_source}{vector.\+hpp}}.
+
+\mbox{\Hypertarget{classvector_a1416861bc9e5ef3fa95cd40d97f19e5f}\label{classvector_a1416861bc9e5ef3fa95cd40d97f19e5f}} 
+\index{vector$<$ T $>$@{vector$<$ T $>$}!empty@{empty}}
+\index{empty@{empty}!vector$<$ T $>$@{vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{empty()}{empty()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{defs_8hpp_ade58da4f1b86dde2aa39f11a2578a19e}{QALLOC\+\_\+\+NODISCARD}} constexpr bool \mbox{\hyperlink{classvector}{vector}}$<$ T $>$\+::empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{vector_8hpp_source_l00252}{252}} of file \mbox{\hyperlink{vector_8hpp_source}{vector.\+hpp}}.
+
+\mbox{\Hypertarget{classvector_ab41d965770f3709a6dc4ff27a66a6929}\label{classvector_ab41d965770f3709a6dc4ff27a66a6929}} 
+\index{vector$<$ T $>$@{vector$<$ T $>$}!end@{end}}
+\index{end@{end}!vector$<$ T $>$@{vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{end()}{end()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{defs_8hpp_ade58da4f1b86dde2aa39f11a2578a19e}{QALLOC\+\_\+\+NODISCARD}} \mbox{\hyperlink{defs_8hpp_a9952d1482158e7b98400c1847e0d5c29}{QALLOC\+\_\+\+CONSTEXPR\+\_\+14}} \mbox{\hyperlink{classvector_a8209c5ca49c4b767d180f5fad9149711}{iterator}} \mbox{\hyperlink{classvector}{vector}}$<$ T $>$\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{vector_8hpp_source_l00262}{262}} of file \mbox{\hyperlink{vector_8hpp_source}{vector.\+hpp}}.
+
+\mbox{\Hypertarget{classvector_a1b40adecf5f760ae30e8f03eebd47475}\label{classvector_a1b40adecf5f760ae30e8f03eebd47475}} 
+\index{vector$<$ T $>$@{vector$<$ T $>$}!erase@{erase}}
+\index{erase@{erase}!vector$<$ T $>$@{vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{erase()}{erase()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classvector}{vector}}$<$ T $>$\+::erase (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classvector_a8209c5ca49c4b767d180f5fad9149711}{iterator}}}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{vector_8hpp_source_l00211}{211}} of file \mbox{\hyperlink{vector_8hpp_source}{vector.\+hpp}}.
+
+\mbox{\Hypertarget{classvector_ab9a596059da8d1bbd3c11efcc0c86c74}\label{classvector_ab9a596059da8d1bbd3c11efcc0c86c74}} 
+\index{vector$<$ T $>$@{vector$<$ T $>$}!front@{front}}
+\index{front@{front}!vector$<$ T $>$@{vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{front()}{front()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classvector_a6598a25c26f08389f34fb4fc7e4b567d}{QALLOC\+\_\+\+MAYBE\+\_\+\+UNUSED}} \mbox{\hyperlink{defs_8hpp_ade58da4f1b86dde2aa39f11a2578a19e}{QALLOC\+\_\+\+NODISCARD}} constexpr \mbox{\hyperlink{classvector_acf11cd96194104a6efa11a6529e7e451}{reference}} \mbox{\hyperlink{classvector}{vector}}$<$ T $>$\+::front (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{vector_8hpp_source_l00225}{225}} of file \mbox{\hyperlink{vector_8hpp_source}{vector.\+hpp}}.
+
+\mbox{\Hypertarget{classvector_aa900da2e2f4b3312b412aa3df9897da8}\label{classvector_aa900da2e2f4b3312b412aa3df9897da8}} 
+\index{vector$<$ T $>$@{vector$<$ T $>$}!operator+@{operator+}}
+\index{operator+@{operator+}!vector$<$ T $>$@{vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{defs_8hpp_a9952d1482158e7b98400c1847e0d5c29}{QALLOC\+\_\+\+CONSTEXPR\+\_\+14}} vector\+\_\+iterator \mbox{\hyperlink{classvector}{vector}}$<$ T $>$\+::operator+ (\begin{DoxyParamCaption}\item[{difference\+\_\+type}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{vector_8hpp_source_l00081}{81}} of file \mbox{\hyperlink{vector_8hpp_source}{vector.\+hpp}}.
+
+\mbox{\Hypertarget{classvector_ad7e4c42d012b4bafbc8458c49989cd70}\label{classvector_ad7e4c42d012b4bafbc8458c49989cd70}} 
+\index{vector$<$ T $>$@{vector$<$ T $>$}!operator++@{operator++}}
+\index{operator++@{operator++}!vector$<$ T $>$@{vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator++()}{operator++()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{defs_8hpp_a9952d1482158e7b98400c1847e0d5c29}{QALLOC\+\_\+\+CONSTEXPR\+\_\+14}} vector\+\_\+iterator \& \mbox{\hyperlink{classvector}{vector}}$<$ T $>$\+::operator++ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{vector_8hpp_source_l00066}{66}} of file \mbox{\hyperlink{vector_8hpp_source}{vector.\+hpp}}.
+
+\mbox{\Hypertarget{classvector_ac9078a1d1c81cb26c9f8c0ad79b71254}\label{classvector_ac9078a1d1c81cb26c9f8c0ad79b71254}} 
+\index{vector$<$ T $>$@{vector$<$ T $>$}!operator++@{operator++}}
+\index{operator++@{operator++}!vector$<$ T $>$@{vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator++()}{operator++()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{defs_8hpp_a9952d1482158e7b98400c1847e0d5c29}{QALLOC\+\_\+\+CONSTEXPR\+\_\+14}} vector\+\_\+iterator \mbox{\hyperlink{classvector}{vector}}$<$ T $>$\+::operator++ (\begin{DoxyParamCaption}\item[{int}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{vector_8hpp_source_l00073}{73}} of file \mbox{\hyperlink{vector_8hpp_source}{vector.\+hpp}}.
+
+\mbox{\Hypertarget{classvector_ae13c01e74a01991f8905c6b7d3165be2}\label{classvector_ae13c01e74a01991f8905c6b7d3165be2}} 
+\index{vector$<$ T $>$@{vector$<$ T $>$}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!vector$<$ T $>$@{vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{defs_8hpp_a9952d1482158e7b98400c1847e0d5c29}{QALLOC\+\_\+\+CONSTEXPR\+\_\+14}} vector\+\_\+iterator \mbox{\hyperlink{classvector}{vector}}$<$ T $>$\+::operator-\/ (\begin{DoxyParamCaption}\item[{difference\+\_\+type}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{vector_8hpp_source_l00089}{89}} of file \mbox{\hyperlink{vector_8hpp_source}{vector.\+hpp}}.
+
+\mbox{\Hypertarget{classvector_aa262d2327120c6b83aa274bdc073def9}\label{classvector_aa262d2327120c6b83aa274bdc073def9}} 
+\index{vector$<$ T $>$@{vector$<$ T $>$}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!vector$<$ T $>$@{vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{defs_8hpp_a9952d1482158e7b98400c1847e0d5c29}{QALLOC\+\_\+\+CONSTEXPR\+\_\+14}} difference\+\_\+type \mbox{\hyperlink{classvector}{vector}}$<$ T $>$\+::operator-\/ (\begin{DoxyParamCaption}\item[{vector\+\_\+iterator}]{it }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{vector_8hpp_source_l00097}{97}} of file \mbox{\hyperlink{vector_8hpp_source}{vector.\+hpp}}.
+
+\mbox{\Hypertarget{classvector_ac647fb21f7209f6a28ade6af515e0ab6}\label{classvector_ac647fb21f7209f6a28ade6af515e0ab6}} 
+\index{vector$<$ T $>$@{vector$<$ T $>$}!operator-\/-\/@{operator-\/-\/}}
+\index{operator-\/-\/@{operator-\/-\/}!vector$<$ T $>$@{vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/-\/()}{operator--()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{defs_8hpp_a9952d1482158e7b98400c1847e0d5c29}{QALLOC\+\_\+\+CONSTEXPR\+\_\+14}} vector\+\_\+iterator \& \mbox{\hyperlink{classvector}{vector}}$<$ T $>$\+::operator-\/-\/ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{vector_8hpp_source_l00104}{104}} of file \mbox{\hyperlink{vector_8hpp_source}{vector.\+hpp}}.
+
+\mbox{\Hypertarget{classvector_a5690beb39802e012adf7ccaaf2a2138c}\label{classvector_a5690beb39802e012adf7ccaaf2a2138c}} 
+\index{vector$<$ T $>$@{vector$<$ T $>$}!operator-\/-\/@{operator-\/-\/}}
+\index{operator-\/-\/@{operator-\/-\/}!vector$<$ T $>$@{vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/-\/()}{operator--()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{defs_8hpp_a9952d1482158e7b98400c1847e0d5c29}{QALLOC\+\_\+\+CONSTEXPR\+\_\+14}} vector\+\_\+iterator \mbox{\hyperlink{classvector}{vector}}$<$ T $>$\+::operator-\/-\/ (\begin{DoxyParamCaption}\item[{int}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{vector_8hpp_source_l00111}{111}} of file \mbox{\hyperlink{vector_8hpp_source}{vector.\+hpp}}.
+
+\mbox{\Hypertarget{classvector_a1c97aee9c0e5a730824f71e7ae3d829a}\label{classvector_a1c97aee9c0e5a730824f71e7ae3d829a}} 
+\index{vector$<$ T $>$@{vector$<$ T $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!vector$<$ T $>$@{vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classvector}{vector}} \& \mbox{\hyperlink{classvector}{vector}}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classvector}{vector}}$<$ T $>$ \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{classvector_a8ac67ffccb8fdf94869a16ac0af9dddb}\label{classvector_a8ac67ffccb8fdf94869a16ac0af9dddb}} 
+\index{vector$<$ T $>$@{vector$<$ T $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!vector$<$ T $>$@{vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classvector}{vector}} \& \mbox{\hyperlink{classvector}{vector}}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classvector}{vector}}$<$ T $>$ \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{classvector_a1ba370476d17300d067c5c3d82a9dd4a}\label{classvector_a1ba370476d17300d067c5c3d82a9dd4a}} 
+\index{vector$<$ T $>$@{vector$<$ T $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!vector$<$ T $>$@{vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{defs_8hpp_ade58da4f1b86dde2aa39f11a2578a19e}{QALLOC\+\_\+\+NODISCARD}} constexpr \mbox{\hyperlink{classvector_acf11cd96194104a6efa11a6529e7e451}{reference}} \mbox{\hyperlink{classvector}{vector}}$<$ T $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{vector_8hpp_source_l00236}{236}} of file \mbox{\hyperlink{vector_8hpp_source}{vector.\+hpp}}.
+
+\mbox{\Hypertarget{classvector_a081a843a62321d1810b907af143e90c3}\label{classvector_a081a843a62321d1810b907af143e90c3}} 
+\index{vector$<$ T $>$@{vector$<$ T $>$}!size@{size}}
+\index{size@{size}!vector$<$ T $>$@{vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{defs_8hpp_ade58da4f1b86dde2aa39f11a2578a19e}{QALLOC\+\_\+\+NODISCARD}} constexpr size\+\_\+type \mbox{\hyperlink{classvector}{vector}}$<$ T $>$\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{vector_8hpp_source_l00247}{247}} of file \mbox{\hyperlink{vector_8hpp_source}{vector.\+hpp}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+F\+:/\+Documents/\+Projects/qalloc/include/qalloc/internal/experimental/\mbox{\hyperlink{vector_8hpp}{vector.\+hpp}}\end{DoxyCompactItemize}

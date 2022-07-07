@@ -1,0 +1,81 @@
+\hypertarget{global__pool_8hpp_source}{}\doxysection{global\+\_\+pool.\+hpp}
+\label{global__pool_8hpp_source}\index{F:/Documents/Projects/qalloc/include/qalloc/internal/global\_pool.hpp@{F:/Documents/Projects/qalloc/include/qalloc/internal/global\_pool.hpp}}
+\mbox{\hyperlink{global__pool_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{global__pool_8hpp_source_l00001}00001 \textcolor{comment}{// Copyright 2022 yusing. All rights reserved.}}
+\DoxyCodeLine{\Hypertarget{global__pool_8hpp_source_l00002}00002 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{global__pool_8hpp_source_l00003}00003 \textcolor{comment}{// Licensed under the Apache License, Version 2.0 (the "{}License"{});}}
+\DoxyCodeLine{\Hypertarget{global__pool_8hpp_source_l00004}00004 \textcolor{comment}{// you may not use this file except in compliance with the License.}}
+\DoxyCodeLine{\Hypertarget{global__pool_8hpp_source_l00005}00005 \textcolor{comment}{// You may obtain a copy of the License at}}
+\DoxyCodeLine{\Hypertarget{global__pool_8hpp_source_l00006}00006 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{global__pool_8hpp_source_l00007}00007 \textcolor{comment}{//     http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{\Hypertarget{global__pool_8hpp_source_l00008}00008 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{global__pool_8hpp_source_l00009}00009 \textcolor{comment}{// Unless required by applicable law or agreed to in writing, software}}
+\DoxyCodeLine{\Hypertarget{global__pool_8hpp_source_l00010}00010 \textcolor{comment}{// distributed under the License is distributed on an "{}AS IS"{} BASIS,}}
+\DoxyCodeLine{\Hypertarget{global__pool_8hpp_source_l00011}00011 \textcolor{comment}{// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.}}
+\DoxyCodeLine{\Hypertarget{global__pool_8hpp_source_l00012}00012 \textcolor{comment}{// See the License for the specific language governing permissions and}}
+\DoxyCodeLine{\Hypertarget{global__pool_8hpp_source_l00013}00013 \textcolor{comment}{// limitations under the License.}}
+\DoxyCodeLine{\Hypertarget{global__pool_8hpp_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{global__pool_8hpp_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{global__pool_8hpp_source_l00020}00020 \textcolor{preprocessor}{\#ifndef QALLOC\_GLOBAL\_POOL\_HPP}}
+\DoxyCodeLine{\Hypertarget{global__pool_8hpp_source_l00021}00021 \textcolor{preprocessor}{\#define QALLOC\_GLOBAL\_POOL\_HPP}}
+\DoxyCodeLine{\Hypertarget{global__pool_8hpp_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{global__pool_8hpp_source_l00023}00023 \textcolor{preprocessor}{\#include <list>}}
+\DoxyCodeLine{\Hypertarget{global__pool_8hpp_source_l00024}00024 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{\Hypertarget{global__pool_8hpp_source_l00025}00025 \textcolor{preprocessor}{\#include <utility>} \textcolor{comment}{// std::pair}}
+\DoxyCodeLine{\Hypertarget{global__pool_8hpp_source_l00026}00026 \textcolor{preprocessor}{\#include <type\_traits>}  \textcolor{comment}{// std::is\_scalar, std::integral\_constant, std::void\_t, std::false\_type, std::true\_type}}
+\DoxyCodeLine{\Hypertarget{global__pool_8hpp_source_l00027}00027 \textcolor{preprocessor}{\#include <mutex>} \textcolor{comment}{// std::mutex, std::lock\_guard}}
+\DoxyCodeLine{\Hypertarget{global__pool_8hpp_source_l00028}00028 \textcolor{preprocessor}{\#include <atomic>} \textcolor{comment}{// std::atomic}}
+\DoxyCodeLine{\Hypertarget{global__pool_8hpp_source_l00029}00029 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{allocator_8hpp}{qalloc/internal/allocator.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{global__pool_8hpp_source_l00030}00030 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{defs_8hpp}{qalloc/internal/defs.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{global__pool_8hpp_source_l00031}00031 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{memory_8hpp}{qalloc/internal/memory.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{global__pool_8hpp_source_l00032}00032 }
+\DoxyCodeLine{\Hypertarget{global__pool_8hpp_source_l00033}00033 \mbox{\hyperlink{defs_8hpp_a738f4b2ae3a9746873a20b9ee0f57d83}{QALLOC\_INTERNAL\_BEGIN}}}
+\DoxyCodeLine{\Hypertarget{global__pool_8hpp_source_l00035}00035 \textcolor{keyword}{template} <\textcolor{keywordtype}{size\_t}ype POOL\_SIZE>}
+\DoxyCodeLine{\Hypertarget{global__pool_8hpp_source_l00036}\mbox{\hyperlink{global__pool_8hpp_ae1beec7d96cb41d619c87f4d0be47c6d}{00036}} \textcolor{keyword}{inline} \mbox{\hyperlink{namespaceqalloc_a6d6f73a87b632e0151f0dd151bcc1917}{pool\_pointer}} \mbox{\hyperlink{global__pool_8hpp_ae1beec7d96cb41d619c87f4d0be47c6d}{initialize\_pool\_if\_needed}}(std::atomic<pool\_pointer>\& pool\_atomic) \{}
+\DoxyCodeLine{\Hypertarget{global__pool_8hpp_source_l00037}00037     \textcolor{keyword}{static} std::mutex g\_pool\_mutex;}
+\DoxyCodeLine{\Hypertarget{global__pool_8hpp_source_l00038}00038     \mbox{\hyperlink{namespaceqalloc_a6d6f73a87b632e0151f0dd151bcc1917}{pool\_pointer}} p\_pool = pool\_atomic.load(std::memory\_order\_relaxed);}
+\DoxyCodeLine{\Hypertarget{global__pool_8hpp_source_l00039}00039     std::atomic\_thread\_fence(std::memory\_order\_acquire);}
+\DoxyCodeLine{\Hypertarget{global__pool_8hpp_source_l00040}00040     \textcolor{keywordflow}{if} (p\_pool == \textcolor{keyword}{nullptr}) \{}
+\DoxyCodeLine{\Hypertarget{global__pool_8hpp_source_l00041}00041         std::lock\_guard<std::mutex> lock\_guard(g\_pool\_mutex);}
+\DoxyCodeLine{\Hypertarget{global__pool_8hpp_source_l00042}00042         p\_pool = pool\_atomic.load(std::memory\_order\_relaxed);}
+\DoxyCodeLine{\Hypertarget{global__pool_8hpp_source_l00043}00043         \textcolor{keywordflow}{if} (p\_pool == \textcolor{keyword}{nullptr}) \{ \textcolor{comment}{// double-\/check}}
+\DoxyCodeLine{\Hypertarget{global__pool_8hpp_source_l00044}00044             p\_pool = \textcolor{keyword}{new} pool\_t(POOL\_SIZE);}
+\DoxyCodeLine{\Hypertarget{global__pool_8hpp_source_l00045}00045             atomic\_thread\_fence(std::memory\_order\_release);}
+\DoxyCodeLine{\Hypertarget{global__pool_8hpp_source_l00046}00046             pool\_atomic.store(p\_pool, std::memory\_order\_relaxed);}
+\DoxyCodeLine{\Hypertarget{global__pool_8hpp_source_l00047}00047         \}}
+\DoxyCodeLine{\Hypertarget{global__pool_8hpp_source_l00048}00048     \}}
+\DoxyCodeLine{\Hypertarget{global__pool_8hpp_source_l00049}00049     \textcolor{keywordflow}{return} p\_pool;}
+\DoxyCodeLine{\Hypertarget{global__pool_8hpp_source_l00050}00050 \}}
+\DoxyCodeLine{\Hypertarget{global__pool_8hpp_source_l00051}00051 }
+\DoxyCodeLine{\Hypertarget{global__pool_8hpp_source_l00052}00052 \textcolor{preprocessor}{\#if QALLOC\_CXX\_14}}
+\DoxyCodeLine{\Hypertarget{global__pool_8hpp_source_l00053}00053 \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{global__pool_8hpp_source_l00054}00054 \textcolor{comment}{ * Using different pool for different type can reduce memory fragmentation.}}
+\DoxyCodeLine{\Hypertarget{global__pool_8hpp_source_l00055}00055 \textcolor{comment}{ * Might slightly improve performance.}}
+\DoxyCodeLine{\Hypertarget{global__pool_8hpp_source_l00056}00056 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{global__pool_8hpp_source_l00057}00057     \textcolor{keyword}{thread\_local} std::atomic<pool\_pointer> g\_pool\_shared;}
+\DoxyCodeLine{\Hypertarget{global__pool_8hpp_source_l00058}00058 }
+\DoxyCodeLine{\Hypertarget{global__pool_8hpp_source_l00059}00059     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{\Hypertarget{global__pool_8hpp_source_l00060}00060     \textcolor{keyword}{thread\_local} std::atomic<pool\_pointer> g\_pool\_unique;}
+\DoxyCodeLine{\Hypertarget{global__pool_8hpp_source_l00061}00061 }
+\DoxyCodeLine{\Hypertarget{global__pool_8hpp_source_l00062}00062     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{\Hypertarget{global__pool_8hpp_source_l00063}00063     \mbox{\hyperlink{namespaceqalloc_a6d6f73a87b632e0151f0dd151bcc1917}{pool\_pointer}} \mbox{\hyperlink{global__pool_8hpp_a171db12deae0a47a852d56207708d4bb}{get\_pool}}() \{}
+\DoxyCodeLine{\Hypertarget{global__pool_8hpp_source_l00064}00064 \textcolor{preprocessor}{\#if QALLOC\_DEBUG}}
+\DoxyCodeLine{\Hypertarget{global__pool_8hpp_source_l00065}00065         \textcolor{comment}{// use shared pool for debug mode}}
+\DoxyCodeLine{\Hypertarget{global__pool_8hpp_source_l00066}00066         \textcolor{keywordflow}{return} initialize\_pool\_if\_needed<256>(g\_pool\_shared);}
+\DoxyCodeLine{\Hypertarget{global__pool_8hpp_source_l00067}00067 \textcolor{preprocessor}{\#else }\textcolor{comment}{// QALLOC\_DEBUG}}
+\DoxyCodeLine{\Hypertarget{global__pool_8hpp_source_l00068}00068         \textcolor{keywordflow}{return} initialize\_pool\_if\_needed<sizeof(T) * 16>(g\_pool\_unique<T>); \textcolor{comment}{// the initial size does not affect performance much, just keep it small}}
+\DoxyCodeLine{\Hypertarget{global__pool_8hpp_source_l00069}00069 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// QALLOC\_DEBUG}}
+\DoxyCodeLine{\Hypertarget{global__pool_8hpp_source_l00070}00070     \}}
+\DoxyCodeLine{\Hypertarget{global__pool_8hpp_source_l00071}00071 \textcolor{preprocessor}{\#else }\textcolor{comment}{// QALLOC\_CXX\_14}}
+\DoxyCodeLine{\Hypertarget{global__pool_8hpp_source_l00072}00072     \textcolor{comment}{// use ahared pool for all types in C++11 or earlier, since variable templates is not supported}}
+\DoxyCodeLine{\Hypertarget{global__pool_8hpp_source_l00073}00073     \textcolor{keyword}{template} <\textcolor{keyword}{typename}>}
+\DoxyCodeLine{\Hypertarget{global__pool_8hpp_source_l00074}\mbox{\hyperlink{global__pool_8hpp_a171db12deae0a47a852d56207708d4bb}{00074}}     \mbox{\hyperlink{namespaceqalloc_a6d6f73a87b632e0151f0dd151bcc1917}{pool\_pointer}} \mbox{\hyperlink{global__pool_8hpp_a171db12deae0a47a852d56207708d4bb}{get\_pool}}() \{}
+\DoxyCodeLine{\Hypertarget{global__pool_8hpp_source_l00075}00075         \textcolor{keywordflow}{return} initialize\_pool\_if\_needed<256>(g\_pool\_shared);}
+\DoxyCodeLine{\Hypertarget{global__pool_8hpp_source_l00076}00076     \}}
+\DoxyCodeLine{\Hypertarget{global__pool_8hpp_source_l00077}00077 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// QALLOC\_CXX\_14}}
+\DoxyCodeLine{\Hypertarget{global__pool_8hpp_source_l00078}00078 }
+\DoxyCodeLine{\Hypertarget{global__pool_8hpp_source_l00079}00079 \mbox{\hyperlink{defs_8hpp_a9dfa7594d25c13b2880478b48840e016}{QALLOC\_INTERNAL\_END}}}
+\DoxyCodeLine{\Hypertarget{global__pool_8hpp_source_l00080}00080 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// QALLOC\_GLOBAL\_POOL\_HPP}}
+
+\end{DoxyCode}

@@ -1,0 +1,86 @@
+\hypertarget{iterator_8hpp_source}{}\doxysection{iterator.\+hpp}
+\label{iterator_8hpp_source}\index{F:/Documents/Projects/qalloc/include/qalloc/internal/experimental/iterator.hpp@{F:/Documents/Projects/qalloc/include/qalloc/internal/experimental/iterator.hpp}}
+\mbox{\hyperlink{iterator_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00001}00001 \textcolor{comment}{// Copyright 2022 yusing. All rights reserved.}}
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00002}00002 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00003}00003 \textcolor{comment}{// Licensed under the Apache License, Version 2.0 (the "{}License"{});}}
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00004}00004 \textcolor{comment}{// you may not use this file except in compliance with the License.}}
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00005}00005 \textcolor{comment}{// You may obtain a copy of the License at}}
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00006}00006 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00007}00007 \textcolor{comment}{//     http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00008}00008 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00009}00009 \textcolor{comment}{// Unless required by applicable law or agreed to in writing, software}}
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00010}00010 \textcolor{comment}{// distributed under the License is distributed on an "{}AS IS"{} BASIS,}}
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00011}00011 \textcolor{comment}{// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.}}
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00012}00012 \textcolor{comment}{// See the License for the specific language governing permissions and}}
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00013}00013 \textcolor{comment}{// limitations under the License.}}
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00020}00020 }
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00021}00021 \textcolor{preprocessor}{\#ifndef QALLOC\_ITERATOR\_HPP}}
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00022}00022 \textcolor{preprocessor}{\#define QALLOC\_ITERATOR\_HPP}}
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00023}00023 }
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00024}00024 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{defs_8hpp}{qalloc/internal/defs.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00025}00025 \mbox{\hyperlink{defs_8hpp_a738f4b2ae3a9746873a20b9ee0f57d83}{QALLOC\_INTERNAL\_BEGIN}}}
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00026}00026 }
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00027}00027 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00028}\mbox{\hyperlink{classiterator}{00028}} \textcolor{keyword}{class }\mbox{\hyperlink{classiterator}{iterator}} \{}
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00029}00029 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00030}\mbox{\hyperlink{classiterator_ae18bcf4f67d86d27eb23022a0f39f268}{00030}}     \textcolor{keyword}{using }\mbox{\hyperlink{classiterator_ae18bcf4f67d86d27eb23022a0f39f268}{difference\_type}}   = std::ptrdiff\_t;}
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00031}\mbox{\hyperlink{classiterator_a2b0c518c94f27168fd4fef32066c3756}{00031}}     \textcolor{keyword}{using }\mbox{\hyperlink{classiterator_a2b0c518c94f27168fd4fef32066c3756}{value\_type}}        = T;}
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00032}\mbox{\hyperlink{classiterator_aa8945d6803d3dbfc0403a8d83f859554}{00032}}     \textcolor{keyword}{using }\mbox{\hyperlink{classiterator_aa8945d6803d3dbfc0403a8d83f859554}{pointer}}           = T*;}
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00033}\mbox{\hyperlink{classiterator_ada1a9508c9e4758f7971ffcf7e3c48e7}{00033}}     \textcolor{keyword}{using }\mbox{\hyperlink{classiterator_ada1a9508c9e4758f7971ffcf7e3c48e7}{const\_pointer}}     = \textcolor{keyword}{const} T*;}
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00034}\mbox{\hyperlink{classiterator_a89c0ba9025029a29f017a66c794be771}{00034}}     \textcolor{keyword}{using }\mbox{\hyperlink{classiterator_a89c0ba9025029a29f017a66c794be771}{reference}}         = T\&;}
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00035}\mbox{\hyperlink{classiterator_a02542aa517c77bdb1157140fc1ebd86f}{00035}}     \textcolor{keyword}{using }\mbox{\hyperlink{classiterator_a02542aa517c77bdb1157140fc1ebd86f}{const\_reference}}   = \textcolor{keyword}{const} T\&;}
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00036}\mbox{\hyperlink{classiterator_a480a877683855d2cb02c0f8a3ae0c0e5}{00036}}     \textcolor{keyword}{using }\mbox{\hyperlink{classiterator_a480a877683855d2cb02c0f8a3ae0c0e5}{iterator\_category}} = std::input\_iterator\_tag;}
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00037}00037 }
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00038}00038     \mbox{\hyperlink{defs_8hpp_a9952d1482158e7b98400c1847e0d5c29}{QALLOC\_CONSTEXPR\_14}}}
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00039}\mbox{\hyperlink{classiterator_adc843073aa7315af07b412d4e2cd7942}{00039}}     \textcolor{keyword}{explicit} \mbox{\hyperlink{classiterator_adc843073aa7315af07b412d4e2cd7942}{iterator}}(\mbox{\hyperlink{classiterator_aa8945d6803d3dbfc0403a8d83f859554}{pointer}} p) : \mbox{\hyperlink{classiterator_ade1bf11d769a9e25470be632109a69c4}{m\_p}}(p) \{\}}
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00040}00040 }
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00041}00041     \mbox{\hyperlink{defs_8hpp_a9952d1482158e7b98400c1847e0d5c29}{QALLOC\_CONSTEXPR\_14}}}
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00042}\mbox{\hyperlink{classiterator_ab29a4901510cea9f5be69c8368e1007e}{00042}}     \mbox{\hyperlink{classiterator_a89c0ba9025029a29f017a66c794be771}{reference}} \mbox{\hyperlink{classiterator_ab29a4901510cea9f5be69c8368e1007e}{operator*}}()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00043}00043         \textcolor{keywordflow}{return} *\mbox{\hyperlink{classiterator_ade1bf11d769a9e25470be632109a69c4}{m\_p}};}
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00044}00044     \}}
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00045}00045 }
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00046}00046     \mbox{\hyperlink{defs_8hpp_a9952d1482158e7b98400c1847e0d5c29}{QALLOC\_CONSTEXPR\_14}}}
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00047}\mbox{\hyperlink{classiterator_a47b5da033b6db1e67f1199138fa817d9}{00047}}     \mbox{\hyperlink{classiterator_aa8945d6803d3dbfc0403a8d83f859554}{pointer}} \mbox{\hyperlink{classiterator_a47b5da033b6db1e67f1199138fa817d9}{operator-\/>}}()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00048}00048         \textcolor{keywordflow}{return} \mbox{\hyperlink{classiterator_ade1bf11d769a9e25470be632109a69c4}{m\_p}};}
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00049}00049     \}}
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00050}00050 }
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00051}00051     \mbox{\hyperlink{defs_8hpp_a9952d1482158e7b98400c1847e0d5c29}{QALLOC\_CONSTEXPR\_14}}}
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00052}\mbox{\hyperlink{classiterator_af9c64a63238945171f34f14002ee147b}{00052}}     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classiterator_af9c64a63238945171f34f14002ee147b}{operator==}}(\textcolor{keyword}{const} \mbox{\hyperlink{classiterator}{iterator}}\& rhs)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00053}00053         \textcolor{keywordflow}{return} \mbox{\hyperlink{classiterator_ade1bf11d769a9e25470be632109a69c4}{m\_p}} == rhs.\mbox{\hyperlink{classiterator_ade1bf11d769a9e25470be632109a69c4}{m\_p}};}
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00054}00054     \}}
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00055}00055 }
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00056}00056     \mbox{\hyperlink{defs_8hpp_a9952d1482158e7b98400c1847e0d5c29}{QALLOC\_CONSTEXPR\_14}}}
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00057}\mbox{\hyperlink{classiterator_aa6367ed9a0b9f1ffda156b9a11c89749}{00057}}     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classiterator_aa6367ed9a0b9f1ffda156b9a11c89749}{operator!=}}(\textcolor{keyword}{const} \mbox{\hyperlink{classiterator}{iterator}}\& rhs)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00058}00058         \textcolor{keywordflow}{return} \mbox{\hyperlink{classiterator_ade1bf11d769a9e25470be632109a69c4}{m\_p}} != rhs.\mbox{\hyperlink{classiterator_ade1bf11d769a9e25470be632109a69c4}{m\_p}};}
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00059}00059     \}}
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00060}00060 }
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00061}00061     \mbox{\hyperlink{defs_8hpp_a9952d1482158e7b98400c1847e0d5c29}{QALLOC\_CONSTEXPR\_14}}}
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00062}\mbox{\hyperlink{classiterator_ac07ffd5000af2159ea93971525847fec}{00062}}     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classiterator_ac07ffd5000af2159ea93971525847fec}{operator<}}(\textcolor{keyword}{const} \mbox{\hyperlink{classiterator}{iterator}}\& rhs)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00063}00063         \textcolor{keywordflow}{return} \mbox{\hyperlink{classiterator_ade1bf11d769a9e25470be632109a69c4}{m\_p}} < rhs.\mbox{\hyperlink{classiterator_ade1bf11d769a9e25470be632109a69c4}{m\_p}};}
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00064}00064     \}}
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00065}00065 }
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00066}00066     \mbox{\hyperlink{defs_8hpp_a9952d1482158e7b98400c1847e0d5c29}{QALLOC\_CONSTEXPR\_14}}}
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00067}\mbox{\hyperlink{classiterator_a9d11384d2a0412e754e7c8be02f3c26d}{00067}}     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classiterator_a9d11384d2a0412e754e7c8be02f3c26d}{operator>}}(\textcolor{keyword}{const} \mbox{\hyperlink{classiterator}{iterator}}\& rhs)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00068}00068         \textcolor{keywordflow}{return} \mbox{\hyperlink{classiterator_ade1bf11d769a9e25470be632109a69c4}{m\_p}} > rhs.\mbox{\hyperlink{classiterator_ade1bf11d769a9e25470be632109a69c4}{m\_p}};}
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00069}00069     \}}
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00070}00070 }
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00071}00071     \mbox{\hyperlink{defs_8hpp_a9952d1482158e7b98400c1847e0d5c29}{QALLOC\_CONSTEXPR\_14}}}
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00072}\mbox{\hyperlink{classiterator_aac7053fe6391882a11ce8153e1a233e9}{00072}}     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classiterator_aac7053fe6391882a11ce8153e1a233e9}{operator<=}}(\textcolor{keyword}{const} \mbox{\hyperlink{classiterator}{iterator}}\& rhs)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00073}00073         \textcolor{keywordflow}{return} \mbox{\hyperlink{classiterator_ade1bf11d769a9e25470be632109a69c4}{m\_p}} <= rhs.\mbox{\hyperlink{classiterator_ade1bf11d769a9e25470be632109a69c4}{m\_p}};}
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00074}00074     \}}
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00075}00075 }
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00076}00076     \mbox{\hyperlink{defs_8hpp_a9952d1482158e7b98400c1847e0d5c29}{QALLOC\_CONSTEXPR\_14}}}
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00077}\mbox{\hyperlink{classiterator_aafe5bada6d74582eb745028441b58efc}{00077}}     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classiterator_aafe5bada6d74582eb745028441b58efc}{operator>=}}(\textcolor{keyword}{const} \mbox{\hyperlink{classiterator}{iterator}}\& rhs)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00078}00078         \textcolor{keywordflow}{return} \mbox{\hyperlink{classiterator_ade1bf11d769a9e25470be632109a69c4}{m\_p}} >= rhs.\mbox{\hyperlink{classiterator_ade1bf11d769a9e25470be632109a69c4}{m\_p}};}
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00079}00079     \}}
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00080}00080 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00081}\mbox{\hyperlink{classiterator_ade1bf11d769a9e25470be632109a69c4}{00081}}     \mbox{\hyperlink{classiterator_aa8945d6803d3dbfc0403a8d83f859554}{pointer}} \mbox{\hyperlink{classiterator_ade1bf11d769a9e25470be632109a69c4}{m\_p}};}
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00082}00082 \}; \textcolor{comment}{// class iterator}}
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00083}00083 }
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00084}00084 \mbox{\hyperlink{defs_8hpp_a9dfa7594d25c13b2880478b48840e016}{QALLOC\_INTERNAL\_END}}}
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00085}00085 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// QALLOC\_ITERATOR\_HPP}}
+
+\end{DoxyCode}

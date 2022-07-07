@@ -1,0 +1,70 @@
+\hypertarget{type__info_8hpp_source}{}\doxysection{type\+\_\+info.\+hpp}
+\label{type__info_8hpp_source}\index{F:/Documents/Projects/qalloc/include/qalloc/internal/type\_info.hpp@{F:/Documents/Projects/qalloc/include/qalloc/internal/type\_info.hpp}}
+\mbox{\hyperlink{type__info_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{type__info_8hpp_source_l00001}00001 \textcolor{comment}{// Copyright 2022 yusing. All rights reserved.}}
+\DoxyCodeLine{\Hypertarget{type__info_8hpp_source_l00002}00002 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{type__info_8hpp_source_l00003}00003 \textcolor{comment}{// Licensed under the Apache License, Version 2.0 (the "{}License"{});}}
+\DoxyCodeLine{\Hypertarget{type__info_8hpp_source_l00004}00004 \textcolor{comment}{// you may not use this file except in compliance with the License.}}
+\DoxyCodeLine{\Hypertarget{type__info_8hpp_source_l00005}00005 \textcolor{comment}{// You may obtain a copy of the License at}}
+\DoxyCodeLine{\Hypertarget{type__info_8hpp_source_l00006}00006 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{type__info_8hpp_source_l00007}00007 \textcolor{comment}{//     http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{\Hypertarget{type__info_8hpp_source_l00008}00008 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{type__info_8hpp_source_l00009}00009 \textcolor{comment}{// Unless required by applicable law or agreed to in writing, software}}
+\DoxyCodeLine{\Hypertarget{type__info_8hpp_source_l00010}00010 \textcolor{comment}{// distributed under the License is distributed on an "{}AS IS"{} BASIS,}}
+\DoxyCodeLine{\Hypertarget{type__info_8hpp_source_l00011}00011 \textcolor{comment}{// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.}}
+\DoxyCodeLine{\Hypertarget{type__info_8hpp_source_l00012}00012 \textcolor{comment}{// See the License for the specific language governing permissions and}}
+\DoxyCodeLine{\Hypertarget{type__info_8hpp_source_l00013}00013 \textcolor{comment}{// limitations under the License.}}
+\DoxyCodeLine{\Hypertarget{type__info_8hpp_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{type__info_8hpp_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{type__info_8hpp_source_l00020}00020 \textcolor{preprocessor}{\#ifndef QALLOC\_TYPE\_INFO\_HPP}}
+\DoxyCodeLine{\Hypertarget{type__info_8hpp_source_l00021}00021 \textcolor{preprocessor}{\#define QALLOC\_TYPE\_INFO\_HPP}}
+\DoxyCodeLine{\Hypertarget{type__info_8hpp_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{type__info_8hpp_source_l00023}00023 \textcolor{preprocessor}{\#include <typeinfo>}}
+\DoxyCodeLine{\Hypertarget{type__info_8hpp_source_l00024}00024 \textcolor{preprocessor}{\#include <unordered\_map>}}
+\DoxyCodeLine{\Hypertarget{type__info_8hpp_source_l00025}00025 \textcolor{preprocessor}{\#include <cstring>} \textcolor{comment}{// std::strlen, std::memcpy}}
+\DoxyCodeLine{\Hypertarget{type__info_8hpp_source_l00026}00026 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{defs_8hpp}{qalloc/internal/defs.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{type__info_8hpp_source_l00027}00027 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{pointer_8hpp}{qalloc/internal/pointer.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{type__info_8hpp_source_l00028}00028 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{block_8hpp}{qalloc/internal/block.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{type__info_8hpp_source_l00029}00029 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{stl_8hpp}{qalloc/internal/stl.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{type__info_8hpp_source_l00030}00030 }
+\DoxyCodeLine{\Hypertarget{type__info_8hpp_source_l00031}00031 \mbox{\hyperlink{defs_8hpp_a0c5e46377ecf7e33c016739291f04c75}{QALLOC\_BEGIN}}}
+\DoxyCodeLine{\Hypertarget{type__info_8hpp_source_l00035}\mbox{\hyperlink{namespaceqalloc_a3382e2682d1ed74cead61018bc816010}{00035}} \textcolor{keyword}{constexpr} \textcolor{keyword}{const} std::type\_info\& \mbox{\hyperlink{namespaceqalloc_a3382e2682d1ed74cead61018bc816010}{type\_of}}(\mbox{\hyperlink{namespaceqalloc_a01158dc1896ab43737138392524e61d9}{void\_pointer}} p) \{}
+\DoxyCodeLine{\Hypertarget{type__info_8hpp_source_l00036}00036     \textcolor{keywordflow}{return} *block\_info\_t::of(p)-\/>type\_info;}
+\DoxyCodeLine{\Hypertarget{type__info_8hpp_source_l00037}00037 \}}
+\DoxyCodeLine{\Hypertarget{type__info_8hpp_source_l00038}00038 }
+\DoxyCodeLine{\Hypertarget{type__info_8hpp_source_l00042}\mbox{\hyperlink{namespaceqalloc_a69ea19642f283405929f935a82eb6bd4}{00042}} \textcolor{keyword}{inline} \textcolor{keyword}{const} \textcolor{keywordtype}{char}* \mbox{\hyperlink{namespaceqalloc_a69ea19642f283405929f935a82eb6bd4}{type\_name\_of}}(\mbox{\hyperlink{namespaceqalloc_a01158dc1896ab43737138392524e61d9}{void\_pointer}} p) \{}
+\DoxyCodeLine{\Hypertarget{type__info_8hpp_source_l00043}00043     \textcolor{keywordflow}{return} \mbox{\hyperlink{namespaceqalloc_a3382e2682d1ed74cead61018bc816010}{type\_of}}(p).name();}
+\DoxyCodeLine{\Hypertarget{type__info_8hpp_source_l00044}00044 \}}
+\DoxyCodeLine{\Hypertarget{type__info_8hpp_source_l00045}00045 }
+\DoxyCodeLine{\Hypertarget{type__info_8hpp_source_l00049}\mbox{\hyperlink{namespaceqalloc_a21ba5c580f374d43d6ae7e251f6d8c22}{00049}} \mbox{\hyperlink{namespaceqalloc_1_1stl_a10f8c4d7d0fd543c309c1aa7e9d477ef}{std::string}} \mbox{\hyperlink{namespaceqalloc_a41443b7060594c6eacbba4ccad35efc8}{demangled\_type\_name\_of}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* mangled\_name) \{}
+\DoxyCodeLine{\Hypertarget{type__info_8hpp_source_l00050}00050 \textcolor{preprocessor}{\#if QALLOC\_CXA\_DEMANGLE}}
+\DoxyCodeLine{\Hypertarget{type__info_8hpp_source_l00051}00051     \textcolor{keywordtype}{int} status;}
+\DoxyCodeLine{\Hypertarget{type__info_8hpp_source_l00052}00052     \textcolor{keywordtype}{char}* demangled\_name = abi::\_\_cxa\_demangle(mangled\_name, \textcolor{keyword}{nullptr}, \textcolor{keyword}{nullptr}, \&status);}
+\DoxyCodeLine{\Hypertarget{type__info_8hpp_source_l00053}00053     \textcolor{keywordflow}{if} (status != 0) \{}
+\DoxyCodeLine{\Hypertarget{type__info_8hpp_source_l00054}00054         \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}Cannot demangle type name"{}});}
+\DoxyCodeLine{\Hypertarget{type__info_8hpp_source_l00055}00055     \}}
+\DoxyCodeLine{\Hypertarget{type__info_8hpp_source_l00056}00056     \mbox{\hyperlink{namespaceqalloc_1_1stl_a10f8c4d7d0fd543c309c1aa7e9d477ef}{std::string}} result(demangled\_name);}
+\DoxyCodeLine{\Hypertarget{type__info_8hpp_source_l00057}00057     std::free(demangled\_name);}
+\DoxyCodeLine{\Hypertarget{type__info_8hpp_source_l00058}00058     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{\Hypertarget{type__info_8hpp_source_l00059}00059 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{type__info_8hpp_source_l00060}00060     \textcolor{keywordflow}{return} \{mangled\_name\};}
+\DoxyCodeLine{\Hypertarget{type__info_8hpp_source_l00061}00061 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{type__info_8hpp_source_l00062}00062 \}}
+\DoxyCodeLine{\Hypertarget{type__info_8hpp_source_l00063}00063 }
+\DoxyCodeLine{\Hypertarget{type__info_8hpp_source_l00067}\mbox{\hyperlink{namespaceqalloc_a41443b7060594c6eacbba4ccad35efc8}{00067}} \mbox{\hyperlink{namespaceqalloc_1_1stl_a10f8c4d7d0fd543c309c1aa7e9d477ef}{std::string}} \mbox{\hyperlink{namespaceqalloc_a41443b7060594c6eacbba4ccad35efc8}{demangled\_type\_name\_of}}(\mbox{\hyperlink{namespaceqalloc_a01158dc1896ab43737138392524e61d9}{void\_pointer}} p) \{}
+\DoxyCodeLine{\Hypertarget{type__info_8hpp_source_l00068}00068     \textcolor{keywordflow}{return} \mbox{\hyperlink{namespaceqalloc_a41443b7060594c6eacbba4ccad35efc8}{demangled\_type\_name\_of}}(\mbox{\hyperlink{namespaceqalloc_a69ea19642f283405929f935a82eb6bd4}{type\_name\_of}}(p));}
+\DoxyCodeLine{\Hypertarget{type__info_8hpp_source_l00069}00069 \}}
+\DoxyCodeLine{\Hypertarget{type__info_8hpp_source_l00070}00070 }
+\DoxyCodeLine{\Hypertarget{type__info_8hpp_source_l00075}00075 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T> \mbox{\hyperlink{defs_8hpp_a0a542caf1ef757dc9777bffee9e045b9}{QALLOC\_MAYBE\_UNUSED}}}
+\DoxyCodeLine{\Hypertarget{type__info_8hpp_source_l00076}\mbox{\hyperlink{namespaceqalloc_a98dbfa4d3a82c020e36c40e4e22c08fe}{00076}} T\& \mbox{\hyperlink{namespaceqalloc_a98dbfa4d3a82c020e36c40e4e22c08fe}{safe\_cast}}(\mbox{\hyperlink{namespaceqalloc_a01158dc1896ab43737138392524e61d9}{void\_pointer}} p) \{}
+\DoxyCodeLine{\Hypertarget{type__info_8hpp_source_l00077}00077     \textcolor{keywordflow}{if}(\mbox{\hyperlink{namespaceqalloc_a3382e2682d1ed74cead61018bc816010}{type\_of}}(p) != \textcolor{keyword}{typeid}(T)) \{}
+\DoxyCodeLine{\Hypertarget{type__info_8hpp_source_l00078}00078         \textcolor{keywordflow}{throw} std::bad\_cast();}
+\DoxyCodeLine{\Hypertarget{type__info_8hpp_source_l00079}00079     \}}
+\DoxyCodeLine{\Hypertarget{type__info_8hpp_source_l00080}00080     \textcolor{keywordflow}{return} *\textcolor{keyword}{static\_cast<}T*\textcolor{keyword}{>}(p);}
+\DoxyCodeLine{\Hypertarget{type__info_8hpp_source_l00081}00081 \}}
+\DoxyCodeLine{\Hypertarget{type__info_8hpp_source_l00082}00082 \mbox{\hyperlink{defs_8hpp_ae6074cc5b731bee29a970dd996470029}{QALLOC\_END}}}
+\DoxyCodeLine{\Hypertarget{type__info_8hpp_source_l00083}00083 }
+\DoxyCodeLine{\Hypertarget{type__info_8hpp_source_l00084}00084 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// QALLOC\_TYPE\_INFO\_HPP}}
+
+\end{DoxyCode}

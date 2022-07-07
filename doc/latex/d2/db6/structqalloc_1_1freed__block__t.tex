@@ -1,0 +1,86 @@
+\hypertarget{structqalloc_1_1freed__block__t}{}\doxysection{qalloc\+::freed\+\_\+block\+\_\+t Struct Reference}
+\label{structqalloc_1_1freed__block__t}\index{qalloc::freed\_block\_t@{qalloc::freed\_block\_t}}
+
+
+freed block information class.  
+
+
+
+
+{\ttfamily \#include $<$block.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{defs_8hpp_ade58da4f1b86dde2aa39f11a2578a19e}{QALLOC\+\_\+\+NODISCARD}} constexpr bool \mbox{\hyperlink{structqalloc_1_1freed__block__t_a61389d04cd119b4ffecc72a4b87d89ee}{is\+\_\+adjacent\+\_\+to}} (const \mbox{\hyperlink{structqalloc_1_1freed__block__t}{freed\+\_\+block\+\_\+t}} \&other) const noexcept
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{defs_8hpp_ade58da4f1b86dde2aa39f11a2578a19e}{QALLOC\+\_\+\+NODISCARD}} constexpr bool \mbox{\hyperlink{structqalloc_1_1freed__block__t_a0c8dbeec0ae98eb12e6afabc397eb782}{less}} (const \mbox{\hyperlink{structqalloc_1_1freed__block__t}{freed\+\_\+block\+\_\+t}} \&lhs, const \mbox{\hyperlink{structqalloc_1_1freed__block__t}{freed\+\_\+block\+\_\+t}} \&rhs) noexcept
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceqalloc_a5b36ec8e13ab5c8aebd049e1b0e07574}{size\+\_\+type}} \mbox{\hyperlink{structqalloc_1_1freed__block__t_a88c05f31a456e68321591a24f2aa0d71}{n\+\_\+bytes}}
+\item 
+\mbox{\hyperlink{namespaceqalloc_ae3a2d1ddce51c70146088378000a5946}{byte\+\_\+pointer}} \mbox{\hyperlink{structqalloc_1_1freed__block__t_a8a4dfbdc1d17b95e82c0d0c141288b48}{address}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+freed block information class. 
+
+Definition at line \mbox{\hyperlink{block_8hpp_source_l00032}{32}} of file \mbox{\hyperlink{block_8hpp_source}{block.\+hpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structqalloc_1_1freed__block__t_a61389d04cd119b4ffecc72a4b87d89ee}\label{structqalloc_1_1freed__block__t_a61389d04cd119b4ffecc72a4b87d89ee}} 
+\index{qalloc::freed\_block\_t@{qalloc::freed\_block\_t}!is\_adjacent\_to@{is\_adjacent\_to}}
+\index{is\_adjacent\_to@{is\_adjacent\_to}!qalloc::freed\_block\_t@{qalloc::freed\_block\_t}}
+\doxysubsubsection{\texorpdfstring{is\_adjacent\_to()}{is\_adjacent\_to()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{defs_8hpp_ade58da4f1b86dde2aa39f11a2578a19e}{QALLOC\+\_\+\+NODISCARD}} constexpr bool qalloc\+::freed\+\_\+block\+\_\+t\+::is\+\_\+adjacent\+\_\+to (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structqalloc_1_1freed__block__t}{freed\+\_\+block\+\_\+t}} \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{block_8hpp_source_l00042}{42}} of file \mbox{\hyperlink{block_8hpp_source}{block.\+hpp}}.
+
+\mbox{\Hypertarget{structqalloc_1_1freed__block__t_a0c8dbeec0ae98eb12e6afabc397eb782}\label{structqalloc_1_1freed__block__t_a0c8dbeec0ae98eb12e6afabc397eb782}} 
+\index{qalloc::freed\_block\_t@{qalloc::freed\_block\_t}!less@{less}}
+\index{less@{less}!qalloc::freed\_block\_t@{qalloc::freed\_block\_t}}
+\doxysubsubsection{\texorpdfstring{less()}{less()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{defs_8hpp_ade58da4f1b86dde2aa39f11a2578a19e}{QALLOC\+\_\+\+NODISCARD}} constexpr bool qalloc\+::freed\+\_\+block\+\_\+t\+::less (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structqalloc_1_1freed__block__t}{freed\+\_\+block\+\_\+t}} \&}]{lhs,  }\item[{const \mbox{\hyperlink{structqalloc_1_1freed__block__t}{freed\+\_\+block\+\_\+t}} \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{block_8hpp_source_l00037}{37}} of file \mbox{\hyperlink{block_8hpp_source}{block.\+hpp}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structqalloc_1_1freed__block__t_a8a4dfbdc1d17b95e82c0d0c141288b48}\label{structqalloc_1_1freed__block__t_a8a4dfbdc1d17b95e82c0d0c141288b48}} 
+\index{qalloc::freed\_block\_t@{qalloc::freed\_block\_t}!address@{address}}
+\index{address@{address}!qalloc::freed\_block\_t@{qalloc::freed\_block\_t}}
+\doxysubsubsection{\texorpdfstring{address}{address}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceqalloc_ae3a2d1ddce51c70146088378000a5946}{byte\+\_\+pointer}} qalloc\+::freed\+\_\+block\+\_\+t\+::address}
+
+
+
+Definition at line \mbox{\hyperlink{block_8hpp_source_l00034}{34}} of file \mbox{\hyperlink{block_8hpp_source}{block.\+hpp}}.
+
+\mbox{\Hypertarget{structqalloc_1_1freed__block__t_a88c05f31a456e68321591a24f2aa0d71}\label{structqalloc_1_1freed__block__t_a88c05f31a456e68321591a24f2aa0d71}} 
+\index{qalloc::freed\_block\_t@{qalloc::freed\_block\_t}!n\_bytes@{n\_bytes}}
+\index{n\_bytes@{n\_bytes}!qalloc::freed\_block\_t@{qalloc::freed\_block\_t}}
+\doxysubsubsection{\texorpdfstring{n\_bytes}{n\_bytes}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceqalloc_a5b36ec8e13ab5c8aebd049e1b0e07574}{size\+\_\+type}} qalloc\+::freed\+\_\+block\+\_\+t\+::n\+\_\+bytes}
+
+
+
+Definition at line \mbox{\hyperlink{block_8hpp_source_l00033}{33}} of file \mbox{\hyperlink{block_8hpp_source}{block.\+hpp}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+F\+:/\+Documents/\+Projects/qalloc/include/qalloc/internal/\mbox{\hyperlink{block_8hpp}{block.\+hpp}}\end{DoxyCompactItemize}

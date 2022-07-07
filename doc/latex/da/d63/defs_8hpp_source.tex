@@ -1,0 +1,127 @@
+\hypertarget{defs_8hpp_source}{}\doxysection{defs.\+hpp}
+\label{defs_8hpp_source}\index{F:/Documents/Projects/qalloc/include/qalloc/internal/defs.hpp@{F:/Documents/Projects/qalloc/include/qalloc/internal/defs.hpp}}
+\mbox{\hyperlink{defs_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00001}00001 \textcolor{comment}{// Copyright 2022 yusing. All rights reserved.}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00002}00002 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00003}00003 \textcolor{comment}{// Licensed under the Apache License, Version 2.0 (the "{}License"{});}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00004}00004 \textcolor{comment}{// you may not use this file except in compliance with the License.}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00005}00005 \textcolor{comment}{// You may obtain a copy of the License at}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00006}00006 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00007}00007 \textcolor{comment}{//     http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00008}00008 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00009}00009 \textcolor{comment}{// Unless required by applicable law or agreed to in writing, software}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00010}00010 \textcolor{comment}{// distributed under the License is distributed on an "{}AS IS"{} BASIS,}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00011}00011 \textcolor{comment}{// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00012}00012 \textcolor{comment}{// See the License for the specific language governing permissions and}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00013}00013 \textcolor{comment}{// limitations under the License.}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00020}00020 \textcolor{preprocessor}{\#ifndef QALLOC\_DEFS\_HPP}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00021}00021 \textcolor{preprocessor}{\#define QALLOC\_DEFS\_HPP}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00023}00023 \textcolor{preprocessor}{\#include <ciso646>}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00024}00024 \textcolor{preprocessor}{\#include <version>}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00025}00025 \textcolor{preprocessor}{\#include <cstddef>}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00026}00026 }
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00027}00027 \textcolor{preprocessor}{\#if !defined(\_\_cplusplus) || \_\_cplusplus == 199711L}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00028}00028 \textcolor{preprocessor}{    \#ifdef \_MSVC\_LANG}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00029}00029 \textcolor{preprocessor}{        \#define QALLOC\_CPP\_STANDARD \_MSVC\_LANG}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00030}00030 \textcolor{preprocessor}{    \#else}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00031}00031 \textcolor{preprocessor}{        \#error "{}C++ standard not defined"{}}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00032}00032 \textcolor{preprocessor}{    \#endif }\textcolor{comment}{// \_MSVC\_LANG}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00033}00033 \textcolor{preprocessor}{\#else }\textcolor{comment}{// !defined(\_\_cplusplus) || \_\_cplusplus == 199711L}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00034}00034 \textcolor{preprocessor}{    \#define QALLOC\_CPP\_STANDARD \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00035}00035 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00036}00036 }
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00037}00037 \textcolor{preprocessor}{\#ifdef \_\_has\_cpp\_attribute}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00038}00038 \textcolor{preprocessor}{\#   define QALLOC\_HAS\_CPP\_ATTRIBUTE(NAME) \_\_has\_cpp\_attribute(NAME) || QALLOC\_CPP\_STANDARD >= 201703L}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00039}00039 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00040}\mbox{\hyperlink{defs_8hpp_a608302519252f5a493f5b6175d60c0d7}{00040}} \textcolor{preprocessor}{\#   define QALLOC\_HAS\_CPP\_ATTRIBUTE(NAME) \_\_cplusplus >= 201703L}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00041}00041 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// \_\_has\_cpp\_attribute}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00042}00042 }
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00043}00043 \textcolor{preprocessor}{\#if QALLOC\_HAS\_CPP\_ATTRIBUTE(maybe\_unused)}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00044}00044 \textcolor{preprocessor}{\#   define QALLOC\_MAYBE\_UNUSED [[maybe\_unused]]}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00045}00045 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00046}\mbox{\hyperlink{defs_8hpp_a0a542caf1ef757dc9777bffee9e045b9}{00046}} \textcolor{preprocessor}{\#   define QALLOC\_MAYBE\_UNUSED}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00047}00047 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// QALLOC\_HAS\_CPP\_ATTRIBUTE(maybe\_unused)}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00048}00048 }
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00049}00049 \textcolor{preprocessor}{\#if QALLOC\_HAS\_CPP\_ATTRIBUTE(nodiscard)}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00050}00050 \textcolor{preprocessor}{\#   define QALLOC\_NODISCARD [[nodiscard]]}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00051}00051 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00052}\mbox{\hyperlink{defs_8hpp_ade58da4f1b86dde2aa39f11a2578a19e}{00052}} \textcolor{preprocessor}{\#   define QALLOC\_NODISCARD}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00053}00053 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// QALLOC\_HAS\_CPP\_ATTRIBUTE(nodiscard)}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00054}00054 }
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00055}00055 \textcolor{preprocessor}{\#if QALLOC\_CPP\_STANDARD >= 201400L}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00056}00056 \textcolor{preprocessor}{    \#define QALLOC\_CONSTEXPR\_14 constexpr}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00057}00057 \textcolor{preprocessor}{    \#define QALLOC\_CONSTEXPR\_14\_C static constexpr}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00058}00058 \textcolor{preprocessor}{    \#define QALLOC\_CXX\_14 1}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00059}00059 \textcolor{preprocessor}{    \#define QALLOC\_STRINGVIEW std::string\_view}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00060}00060 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00061}\mbox{\hyperlink{defs_8hpp_a9952d1482158e7b98400c1847e0d5c29}{00061}} \textcolor{preprocessor}{    \#define QALLOC\_CONSTEXPR\_14 inline}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00062}\mbox{\hyperlink{defs_8hpp_a0160641df56937a2e0427cb9bec806fb}{00062}} \textcolor{preprocessor}{    \#define QALLOC\_CONSTEXPR\_14\_C static const}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00063}\mbox{\hyperlink{defs_8hpp_a22ef8e96498bda188a5ba6cb974a9faa}{00063}} \textcolor{preprocessor}{    \#define QALLOC\_CXX\_14 0}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00064}\mbox{\hyperlink{defs_8hpp_acbddab0d51dce45736e940323cf5a3a7}{00064}} \textcolor{preprocessor}{    \#define QALLOC\_STRINGVIEW qalloc::string}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00065}00065 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// QALLOC\_CPP\_STANDARD >= 201400L}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00066}00066 }
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00067}00067 \textcolor{preprocessor}{\#if QALLOC\_CPP\_STANDARD >= 201703L}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00068}00068 \textcolor{preprocessor}{    \#define QALLOC\_IF\_CONSTEXPR if constexpr}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00069}00069 \textcolor{preprocessor}{    \#define QALLOC\_CXX\_17 1}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00070}00070 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00071}\mbox{\hyperlink{defs_8hpp_ac985d9b598dc1aad574c5db6759db7cf}{00071}} \textcolor{preprocessor}{    \#define QALLOC\_IF\_CONSTEXPR if}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00072}\mbox{\hyperlink{defs_8hpp_a161d74733f9eeeef65f09b72bf8ae38d}{00072}} \textcolor{preprocessor}{    \#define QALLOC\_CXX\_17 0}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00073}00073 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// QALLOC\_CPP\_STANDARD >= 201703L}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00074}00074 }
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00075}00075 \textcolor{preprocessor}{\#if defined(\_WIN32) || defined(\_WIN64)}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00076}00076 \textcolor{preprocessor}{    \#ifndef NOMINMAX}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00077}00077 \textcolor{preprocessor}{        \#define NOMINMAX}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00078}00078 \textcolor{preprocessor}{    \#endif }\textcolor{comment}{// NOMINMAX}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00079}00079 \textcolor{preprocessor}{    \#include <Windows.h>}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00080}00080 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// defined(\_WIN32) || defined(\_WIN64)}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00081}00081 }
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00082}00082 \textcolor{preprocessor}{\#ifdef \_MSVC\_LANG}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00083}00083 \textcolor{preprocessor}{    \#define QALLOC\_RESTRICT \_\_restrict}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00084}00084 \textcolor{preprocessor}{    \#define QALLOC\_MALLOC\_FUNCTION(DECLARATION) QALLOC\_NODISCARD \_\_declspec(restrict) \_\_declspec(noalias) DECLARATION}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00085}00085 \textcolor{preprocessor}{    \#define QALLOC\_FOPEN(PTR, FILENAME, MODE) fopen\_s((PTR), (FILENAME), (MODE))}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00086}00086 \textcolor{preprocessor}{\#else }\textcolor{comment}{// \_MSVC\_LANG}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00087}\mbox{\hyperlink{defs_8hpp_abd9d01a9bdcdb529f52d7d9e3e44b552}{00087}} \textcolor{preprocessor}{    \#define QALLOC\_RESTRICT \_\_restrict\_\_}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00088}\mbox{\hyperlink{defs_8hpp_a3867648fe5c1dfaa0e9aa9de03c7c663}{00088}} \textcolor{preprocessor}{    \#define QALLOC\_MALLOC\_FUNCTION(DECLARATION) QALLOC\_NODISCARD DECLARATION}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00089}\mbox{\hyperlink{defs_8hpp_a6aeac36a4662f302351fb5558b6bfa28}{00089}} \textcolor{preprocessor}{    \#define QALLOC\_FOPEN(PTR, FILENAME, MODE) (*PTR) = fopen((FILENAME), (MODE))}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00090}00090 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// \_MSVC\_LANG}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00091}00091 }
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00092}00092 \textcolor{preprocessor}{\#if defined(DEBUG) || defined(\_DEBUG) || !defined(NDEBUG)}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00093}00093 \textcolor{preprocessor}{    \#include <cassert>}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00094}\mbox{\hyperlink{defs_8hpp_acd8aab65eb0c19c3d86873d9c27803ed}{00094}} \textcolor{preprocessor}{    \#define QALLOC\_DEBUG 1}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00095}\mbox{\hyperlink{defs_8hpp_a92e808d95e376699a51e80dba29f5c16}{00095}} \textcolor{preprocessor}{    \#define QALLOC\_DEBUG\_STATEMENT(STMT) STMT}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00096}\mbox{\hyperlink{defs_8hpp_a2c3bd862e7053b2e3e8f7b2c25cc6854}{00096}} \textcolor{preprocessor}{    \#define QALLOC\_NDEBUG\_CONSTEXPR inline}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00097}\mbox{\hyperlink{defs_8hpp_a9be58a357a6e5331cf1ea72c7a65f315}{00097}} \textcolor{preprocessor}{        \#define QALLOC\_ASSERT(expr) assert(expr)}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00098}00098 \textcolor{preprocessor}{    \#ifndef QALLOC\_STORE\_TYPEINFO}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00099}\mbox{\hyperlink{defs_8hpp_af0cb4d1ee2aa329e3bde17df9adc6127}{00099}} \textcolor{preprocessor}{        \#define QALLOC\_STORE\_TYPEINFO 1}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00100}00100 \textcolor{preprocessor}{    \#endif }\textcolor{comment}{// QALLOC\_STORE\_TYPEINFO}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00101}00101 \textcolor{preprocessor}{\#else }\textcolor{comment}{// !defined(NDEBUG)}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00102}00102 \textcolor{preprocessor}{    \#define QALLOC\_DEBUG 0}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00103}00103 \textcolor{preprocessor}{    \#define QALLOC\_DEBUG\_STATEMENT(...)}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00104}00104 \textcolor{preprocessor}{    \#define QALLOC\_NDEBUG\_CONSTEXPR constexpr}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00105}00105 \textcolor{preprocessor}{    \#define QALLOC\_ASSERT(expr) (void)0}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00106}00106 \textcolor{preprocessor}{    \#ifndef QALLOC\_STORE\_TYPEINFO}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00107}00107 \textcolor{preprocessor}{        \#define QALLOC\_STORE\_TYPEINFO 0}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00108}00108 \textcolor{preprocessor}{    \#endif }\textcolor{comment}{// QALLOC\_STORE\_TYPEINFO}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00109}00109 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// !defined(NDEBUG)}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00110}00110 }
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00111}00111 \textcolor{preprocessor}{\#if defined(\_\_has\_include) \&\& \_\_has\_include(<cxxabi.h>)}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00112}00112 \textcolor{preprocessor}{    \#include <cxxabi.h>}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00113}00113 \textcolor{preprocessor}{    \#define QALLOC\_CXA\_DEMANGLE 1}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00114}00114 \textcolor{preprocessor}{\#else }\textcolor{comment}{// !(defined(\_\_has\_include) \&\& \_\_has\_include(<cxxabi.h>))}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00115}\mbox{\hyperlink{defs_8hpp_a9c8e214e9ecad10705e8c18f4e0d5298}{00115}} \textcolor{preprocessor}{    \#define QALLOC\_CXA\_DEMANGLE 0}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00116}00116 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// defined(\_\_has\_include) \&\& \_\_has\_include(<cxxabi.h>)}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00117}00117 }
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00118}\mbox{\hyperlink{defs_8hpp_a0c5e46377ecf7e33c016739291f04c75}{00118}} \textcolor{preprocessor}{\#define QALLOC\_BEGIN namespace qalloc \{}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00119}\mbox{\hyperlink{defs_8hpp_ae6074cc5b731bee29a970dd996470029}{00119}} \textcolor{preprocessor}{\#define QALLOC\_END \}}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00120}\mbox{\hyperlink{defs_8hpp_a738f4b2ae3a9746873a20b9ee0f57d83}{00120}} \textcolor{preprocessor}{\#define QALLOC\_INTERNAL\_BEGIN QALLOC\_BEGIN namespace internal \{}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00121}\mbox{\hyperlink{defs_8hpp_a9dfa7594d25c13b2880478b48840e016}{00121}} \textcolor{preprocessor}{\#define QALLOC\_INTERNAL\_END \} QALLOC\_END}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00122}\mbox{\hyperlink{defs_8hpp_afa317ae078e3aa6464f612d9d5c3cda1}{00122}} \textcolor{preprocessor}{\#define QALLOC\_PRINTF (void) std::printf}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00123}\mbox{\hyperlink{defs_8hpp_a3b2d4cc752a36a4a7ba6d736d45ff36b}{00123}} \textcolor{preprocessor}{\#define QALLOC\_FPRINTF (void) std::fprintf}}
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00124}00124 }
+\DoxyCodeLine{\Hypertarget{defs_8hpp_source_l00125}00125 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// QALLOC\_DEFS\_HPP}}
+
+\end{DoxyCode}

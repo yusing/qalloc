@@ -1,0 +1,111 @@
+\hypertarget{classqalloc_1_1pool__t}{}\doxysection{qalloc\+::pool\+\_\+t Class Reference}
+\label{classqalloc_1_1pool__t}\index{qalloc::pool\_t@{qalloc::pool\_t}}
+
+
+qalloc pool class.  
+
+
+
+
+{\ttfamily \#include $<$pool.\+hpp$>$}
+
+Inheritance diagram for qalloc\+::pool\+\_\+t\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{df/d71/classqalloc_1_1pool__t}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class T $>$ }\\\mbox{\hyperlink{namespaceqalloc_ae3a2d1ddce51c70146088378000a5946}{byte\+\_\+pointer}} \mbox{\hyperlink{classqalloc_1_1pool__t_abb2be648d55f33e536904f25564eb5da}{detailed\+\_\+allocate}} (\mbox{\hyperlink{namespaceqalloc_a5b36ec8e13ab5c8aebd049e1b0e07574}{size\+\_\+type}} n\+\_\+bytes\+\_\+requested) const
+\item 
+{\footnotesize template$<$class T $>$ }\\void \mbox{\hyperlink{classqalloc_1_1pool__t_ab5eec8b8cd16f54a9e8b13cf4dc40f06}{detailed\+\_\+deallocate}} (\mbox{\hyperlink{namespaceqalloc_ae3a2d1ddce51c70146088378000a5946}{byte\+\_\+pointer}} p, \mbox{\hyperlink{namespaceqalloc_a5b36ec8e13ab5c8aebd049e1b0e07574}{size\+\_\+type}} n\+\_\+bytes\+\_\+requested) const
+\item 
+\mbox{\hyperlink{namespaceqalloc_a5b36ec8e13ab5c8aebd049e1b0e07574}{size\+\_\+type}} \mbox{\hyperlink{classqalloc_1_1pool__t_ac80a374f77ee7924702a4418f0bc637d}{gc}} () const
+\item 
+\mbox{\hyperlink{classqalloc_1_1pool__t_a710a67787d7c193a73f159c2158c23bb}{pool\+\_\+base\+\_\+t}} ()=delete
+\item 
+\mbox{\hyperlink{classqalloc_1_1pool__t_af427c8f9b09137234b3cf6d6eb2ebade}{pool\+\_\+base\+\_\+t}} (\mbox{\hyperlink{namespaceqalloc_a5b36ec8e13ab5c8aebd049e1b0e07574}{size\+\_\+type}} byte\+\_\+size)
+\item 
+\mbox{\hyperlink{classqalloc_1_1pool__t_a86f2a6b7d25379cf50ef9e1993c29da5}{pool\+\_\+base\+\_\+t}} (const \mbox{\hyperlink{classqalloc_1_1pool__base__t}{pool\+\_\+base\+\_\+t}} \&)=delete
+\item 
+\mbox{\hyperlink{classqalloc_1_1pool__t_a43b4e4e9ef1500aede72e793819b1e54}{pool\+\_\+base\+\_\+t}} (\mbox{\hyperlink{classqalloc_1_1pool__base__t}{pool\+\_\+base\+\_\+t}} \&\&)=delete
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+qalloc pool class. 
+
+Definition at line \mbox{\hyperlink{pool_8hpp_source_l00029}{29}} of file \mbox{\hyperlink{pool_8hpp_source}{pool.\+hpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classqalloc_1_1pool__t_abb2be648d55f33e536904f25564eb5da}\label{classqalloc_1_1pool__t_abb2be648d55f33e536904f25564eb5da}} 
+\index{qalloc::pool\_t@{qalloc::pool\_t}!detailed\_allocate@{detailed\_allocate}}
+\index{detailed\_allocate@{detailed\_allocate}!qalloc::pool\_t@{qalloc::pool\_t}}
+\doxysubsubsection{\texorpdfstring{detailed\_allocate()}{detailed\_allocate()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{namespaceqalloc_ae3a2d1ddce51c70146088378000a5946}{byte\+\_\+pointer}} qalloc\+::pool\+\_\+t\+::detailed\+\_\+allocate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceqalloc_a5b36ec8e13ab5c8aebd049e1b0e07574}{size\+\_\+type}}}]{n\+\_\+bytes\+\_\+requested }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{pool__impl_8hpp_source_l00034}{34}} of file \mbox{\hyperlink{pool__impl_8hpp_source}{pool\+\_\+impl.\+hpp}}.
+
+\mbox{\Hypertarget{classqalloc_1_1pool__t_ab5eec8b8cd16f54a9e8b13cf4dc40f06}\label{classqalloc_1_1pool__t_ab5eec8b8cd16f54a9e8b13cf4dc40f06}} 
+\index{qalloc::pool\_t@{qalloc::pool\_t}!detailed\_deallocate@{detailed\_deallocate}}
+\index{detailed\_deallocate@{detailed\_deallocate}!qalloc::pool\_t@{qalloc::pool\_t}}
+\doxysubsubsection{\texorpdfstring{detailed\_deallocate()}{detailed\_deallocate()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void qalloc\+::pool\+\_\+t\+::detailed\+\_\+deallocate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceqalloc_ae3a2d1ddce51c70146088378000a5946}{byte\+\_\+pointer}}}]{p,  }\item[{\mbox{\hyperlink{namespaceqalloc_a5b36ec8e13ab5c8aebd049e1b0e07574}{size\+\_\+type}}}]{n\+\_\+bytes\+\_\+requested }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{pool__impl_8hpp_source_l00041}{41}} of file \mbox{\hyperlink{pool__impl_8hpp_source}{pool\+\_\+impl.\+hpp}}.
+
+\mbox{\Hypertarget{classqalloc_1_1pool__t_ac80a374f77ee7924702a4418f0bc637d}\label{classqalloc_1_1pool__t_ac80a374f77ee7924702a4418f0bc637d}} 
+\index{qalloc::pool\_t@{qalloc::pool\_t}!gc@{gc}}
+\index{gc@{gc}!qalloc::pool\_t@{qalloc::pool\_t}}
+\doxysubsubsection{\texorpdfstring{gc()}{gc()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{defs_8hpp_a0a542caf1ef757dc9777bffee9e045b9}{QALLOC\+\_\+\+MAYBE\+\_\+\+UNUSED}} \mbox{\hyperlink{namespaceqalloc_a5b36ec8e13ab5c8aebd049e1b0e07574}{size\+\_\+type}} qalloc\+::pool\+\_\+t\+::gc (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{pool__impl_8hpp_source_l00051}{51}} of file \mbox{\hyperlink{pool__impl_8hpp_source}{pool\+\_\+impl.\+hpp}}.
+
+\mbox{\Hypertarget{classqalloc_1_1pool__t_a710a67787d7c193a73f159c2158c23bb}\label{classqalloc_1_1pool__t_a710a67787d7c193a73f159c2158c23bb}} 
+\index{qalloc::pool\_t@{qalloc::pool\_t}!pool\_base\_t@{pool\_base\_t}}
+\index{pool\_base\_t@{pool\_base\_t}!qalloc::pool\_t@{qalloc::pool\_t}}
+\doxysubsubsection{\texorpdfstring{pool\_base\_t()}{pool\_base\_t()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily qalloc\+::pool\+\_\+base\+\_\+t\+::pool\+\_\+base\+\_\+t (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{classqalloc_1_1pool__t_a86f2a6b7d25379cf50ef9e1993c29da5}\label{classqalloc_1_1pool__t_a86f2a6b7d25379cf50ef9e1993c29da5}} 
+\index{qalloc::pool\_t@{qalloc::pool\_t}!pool\_base\_t@{pool\_base\_t}}
+\index{pool\_base\_t@{pool\_base\_t}!qalloc::pool\_t@{qalloc::pool\_t}}
+\doxysubsubsection{\texorpdfstring{pool\_base\_t()}{pool\_base\_t()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily qalloc\+::pool\+\_\+base\+\_\+t\+::pool\+\_\+base\+\_\+t (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classqalloc_1_1pool__base__t}{pool\+\_\+base\+\_\+t}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{classqalloc_1_1pool__t_a43b4e4e9ef1500aede72e793819b1e54}\label{classqalloc_1_1pool__t_a43b4e4e9ef1500aede72e793819b1e54}} 
+\index{qalloc::pool\_t@{qalloc::pool\_t}!pool\_base\_t@{pool\_base\_t}}
+\index{pool\_base\_t@{pool\_base\_t}!qalloc::pool\_t@{qalloc::pool\_t}}
+\doxysubsubsection{\texorpdfstring{pool\_base\_t()}{pool\_base\_t()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily qalloc\+::pool\+\_\+base\+\_\+t\+::pool\+\_\+base\+\_\+t (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classqalloc_1_1pool__base__t}{pool\+\_\+base\+\_\+t}} \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{classqalloc_1_1pool__t_af427c8f9b09137234b3cf6d6eb2ebade}\label{classqalloc_1_1pool__t_af427c8f9b09137234b3cf6d6eb2ebade}} 
+\index{qalloc::pool\_t@{qalloc::pool\_t}!pool\_base\_t@{pool\_base\_t}}
+\index{pool\_base\_t@{pool\_base\_t}!qalloc::pool\_t@{qalloc::pool\_t}}
+\doxysubsubsection{\texorpdfstring{pool\_base\_t()}{pool\_base\_t()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily qalloc\+::pool\+\_\+base\+\_\+t\+::pool\+\_\+base\+\_\+t (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceqalloc_a5b36ec8e13ab5c8aebd049e1b0e07574}{size\+\_\+type}}}]{byte\+\_\+size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Definition at line \mbox{\hyperlink{pool__base__impl_8hpp_source_l00034}{34}} of file \mbox{\hyperlink{pool__base__impl_8hpp_source}{pool\+\_\+base\+\_\+impl.\+hpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+F\+:/\+Documents/\+Projects/qalloc/include/qalloc/internal/\mbox{\hyperlink{pool_8hpp}{pool.\+hpp}}\item 
+F\+:/\+Documents/\+Projects/qalloc/include/qalloc/internal/\mbox{\hyperlink{pool__impl_8hpp}{pool\+\_\+impl.\+hpp}}\end{DoxyCompactItemize}

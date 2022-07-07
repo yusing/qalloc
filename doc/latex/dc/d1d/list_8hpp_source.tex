@@ -1,0 +1,132 @@
+\hypertarget{list_8hpp_source}{}\doxysection{list.\+hpp}
+\label{list_8hpp_source}\index{F:/Documents/Projects/qalloc/include/qalloc/internal/experimental/list.hpp@{F:/Documents/Projects/qalloc/include/qalloc/internal/experimental/list.hpp}}
+\mbox{\hyperlink{list_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00001}00001 \textcolor{comment}{// Copyright 2022 yusing. All rights reserved.}}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00002}00002 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00003}00003 \textcolor{comment}{// Licensed under the Apache License, Version 2.0 (the "{}License"{});}}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00004}00004 \textcolor{comment}{// you may not use this file except in compliance with the License.}}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00005}00005 \textcolor{comment}{// You may obtain a copy of the License at}}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00006}00006 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00007}00007 \textcolor{comment}{//     http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00008}00008 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00009}00009 \textcolor{comment}{// Unless required by applicable law or agreed to in writing, software}}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00010}00010 \textcolor{comment}{// distributed under the License is distributed on an "{}AS IS"{} BASIS,}}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00011}00011 \textcolor{comment}{// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.}}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00012}00012 \textcolor{comment}{// See the License for the specific language governing permissions and}}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00013}00013 \textcolor{comment}{// limitations under the License.}}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00020}00020 }
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00021}00021 \textcolor{preprocessor}{\#ifndef QALLOC\_LIST\_HPP}}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00022}00022 \textcolor{preprocessor}{\#define QALLOC\_LIST\_HPP}}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00023}00023 }
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00024}00024 \textcolor{preprocessor}{\#include <cstddef>}}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00025}00025 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00026}00026 \textcolor{preprocessor}{\#include <cassert>}}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00027}00027 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{iterator_8hpp}{qalloc/internal/experimental/iterator.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00028}00028 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{memory_8hpp}{qalloc/internal/memory.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00029}00029 }
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00030}00030 \mbox{\hyperlink{defs_8hpp_a738f4b2ae3a9746873a20b9ee0f57d83}{QALLOC\_INTERNAL\_BEGIN}}}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00031}00031 }
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00032}00032 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00033}\mbox{\hyperlink{classlist}{00033}} \textcolor{keyword}{class }\mbox{\hyperlink{classlist}{list}} \{}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00034}00034 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00035}\mbox{\hyperlink{classlist_a5ffaef9da769a6b3096566a09f604aa3}{00035}}     \textcolor{keyword}{using }\mbox{\hyperlink{classlist_a5ffaef9da769a6b3096566a09f604aa3}{value\_type}} = T;}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00036}\mbox{\hyperlink{classlist_ac197334f7ed09443afde8762ba66f2fc}{00036}}     \textcolor{keyword}{using }\mbox{\hyperlink{classlist_ac197334f7ed09443afde8762ba66f2fc}{pointer}} = T*;}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00037}\mbox{\hyperlink{classlist_a47a1e85cdc07b45cc1f01f097cb026c7}{00037}}     \textcolor{keyword}{using }const\_pointer   \mbox{\hyperlink{classlist_a47a1e85cdc07b45cc1f01f097cb026c7}{QALLOC\_MAYBE\_UNUSED}} = \textcolor{keyword}{const} T*;}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00038}\mbox{\hyperlink{classlist_a86f834f49e74ceef827ad2d5c4bf7a6d}{00038}}     \textcolor{keyword}{using }const\_reference \mbox{\hyperlink{classlist_a47a1e85cdc07b45cc1f01f097cb026c7}{QALLOC\_MAYBE\_UNUSED}} = \textcolor{keyword}{const} T\&;}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00039}\mbox{\hyperlink{classlist_aa599046dd4380c33212aff6442390c07}{00039}}     \textcolor{keyword}{using }\mbox{\hyperlink{classlist_aa599046dd4380c33212aff6442390c07}{reference}} = T\&;}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00040}00040 }
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00041}\mbox{\hyperlink{structlist_1_1node__type}{00041}}     \textcolor{keyword}{struct }\mbox{\hyperlink{structlist_1_1node__type}{node\_type}} : \textcolor{keyword}{public} T \{}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00042}00042         \textcolor{comment}{// don't use value\_type here}}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00043}00043         \textcolor{comment}{// because when T::value\_type exists}}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00044}00044         \textcolor{comment}{// it maybe used instead of T}}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00045}\mbox{\hyperlink{structlist_1_1node__type_ac42204b5084c7f2429dd841c5aafc7e0}{00045}}         \mbox{\hyperlink{structlist_1_1node__type}{node\_type}}* \mbox{\hyperlink{structlist_1_1node__type_ac42204b5084c7f2429dd841c5aafc7e0}{next}};}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00046}\mbox{\hyperlink{structlist_1_1node__type_a1af770a60784c92ebd9672a064729c9a}{00046}}         \textcolor{keyword}{explicit} \mbox{\hyperlink{structlist_1_1node__type_a1af770a60784c92ebd9672a064729c9a}{node\_type}}(T\&\& lv) : T(std::forward<T>(lv)),}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00047}00047                                               \mbox{\hyperlink{structlist_1_1node__type_ac42204b5084c7f2429dd841c5aafc7e0}{next}}(nullptr) \{\}}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00048}\mbox{\hyperlink{structlist_1_1node__type_a47d561b49ab2285a196f11f32c2360be}{00048}}         \textcolor{keyword}{static} \mbox{\hyperlink{structlist_1_1node__type}{node\_type}}* \mbox{\hyperlink{structlist_1_1node__type_a47d561b49ab2285a196f11f32c2360be}{set}}(\mbox{\hyperlink{namespaceqalloc_a01158dc1896ab43737138392524e61d9}{void\_pointer}} p\_this, T\&\& lv) \{}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00049}00049             \textcolor{keywordflow}{return} \textcolor{keyword}{new} (p\_this) \mbox{\hyperlink{structlist_1_1node__type_a1af770a60784c92ebd9672a064729c9a}{node\_type}}(std::forward<T>(lv));}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00050}00050         \}}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00051}00051     \};}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00052}\mbox{\hyperlink{classlist_af9d1ec1b9a42f0695ade276e6c63cf81}{00052}}     \textcolor{keyword}{using }\mbox{\hyperlink{structlist_1_1node__type}{node\_pointer}} = \mbox{\hyperlink{structlist_1_1node__type}{node\_type}}*;}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00053}00053 }
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00054}\mbox{\hyperlink{classlist_a9144dfe69aa68a685deebd72e3fb77fc}{00054}}     \textcolor{keyword}{using }\mbox{\hyperlink{classiterator}{iterator}} = \textcolor{keyword}{class }list\_iterator : \textcolor{keyword}{public} qalloc::internal::iterator<node\_type> \{}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00055}00055     \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00056}00056       \textcolor{keyword}{using }iterator\_category \mbox{\hyperlink{classlist_a47a1e85cdc07b45cc1f01f097cb026c7}{QALLOC\_MAYBE\_UNUSED}} = std::forward\_iterator\_tag;}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00057}00057       \textcolor{keyword}{using }qalloc::internal::iterator<\mbox{\hyperlink{structlist_1_1node__type}{node\_type}}>\mbox{\hyperlink{classlist_a9144dfe69aa68a685deebd72e3fb77fc}{::iterator}};}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00058}\mbox{\hyperlink{classlist_afd5a1a7cd60aa72485a6ef6a9beedab5}{00058}}       list\_iterator\& \mbox{\hyperlink{classlist_afd5a1a7cd60aa72485a6ef6a9beedab5}{operator++}}() \{}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00059}00059         assert(this-\/>m\_p != \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00060}00060         this-\/>m\_p = this-\/>m\_p-\/>next;}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00061}00061         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00062}00062       \}}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00063}\mbox{\hyperlink{classlist_ab9f373bae9a79c98868fdee511e9033e}{00063}}       list\_iterator \mbox{\hyperlink{classlist_ab9f373bae9a79c98868fdee511e9033e}{operator++}}(\textcolor{keywordtype}{int}) \{}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00064}00064         assert(this-\/>m\_p != \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00065}00065         list\_iterator it = *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00066}00066         ++(*this);}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00067}00067         \textcolor{keywordflow}{return} it;}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00068}00068       \}}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00069}00069     \};}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00070}00070 }
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00071}\mbox{\hyperlink{classlist_a0ce0895c9beaa2f4093909ab61144c27}{00071}}     \mbox{\hyperlink{classlist_a0ce0895c9beaa2f4093909ab61144c27}{list}}() = \textcolor{keyword}{delete};}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00072}\mbox{\hyperlink{classlist_a05d44a091f3df8233771967a1b6750e4}{00072}}     \mbox{\hyperlink{classlist_a05d44a091f3df8233771967a1b6750e4}{list}}(\textcolor{keyword}{const} \mbox{\hyperlink{classlist}{list}}\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00073}\mbox{\hyperlink{classlist_ac937d8a7058f1a0e109d7e3d6428cbab}{00073}}     \mbox{\hyperlink{classlist_ac937d8a7058f1a0e109d7e3d6428cbab}{list}}(\mbox{\hyperlink{classlist}{list}}\&\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00074}\mbox{\hyperlink{classlist_aceaf5f41346b4212e429973de48b2674}{00074}}     \mbox{\hyperlink{classlist}{list}}\& \mbox{\hyperlink{classlist_aceaf5f41346b4212e429973de48b2674}{operator=}}(\textcolor{keyword}{const} \mbox{\hyperlink{classlist}{list}}\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00075}\mbox{\hyperlink{classlist_af92bc948b122af91ed04db7ee9bb9e8f}{00075}}     \mbox{\hyperlink{classlist}{list}}\& \mbox{\hyperlink{classlist_af92bc948b122af91ed04db7ee9bb9e8f}{operator=}}(\mbox{\hyperlink{classlist}{list}}\&\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00076}\mbox{\hyperlink{classlist_ab9723088fc4531e82c8eb5dd2f51367d}{00076}}     \textcolor{keyword}{inline} \mbox{\hyperlink{classlist_ab9723088fc4531e82c8eb5dd2f51367d}{list}}(\mbox{\hyperlink{namespaceqalloc_a5b36ec8e13ab5c8aebd049e1b0e07574}{size\_type}}, \mbox{\hyperlink{classlist_a5ffaef9da769a6b3096566a09f604aa3}{value\_type}}\&\& first) : m\_size(1) \{}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00077}00077         \mbox{\hyperlink{namespaceqalloc_a01158dc1896ab43737138392524e61d9}{void\_pointer}} ptr  = \mbox{\hyperlink{namespaceqalloc_a3814825bf67bbfcbb1078b176f47333e}{q\_malloc}}(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{structlist_1_1node__type}{node\_type}}));}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00078}00078         \mbox{\hyperlink{structlist_1_1node__type}{node\_pointer}} node = \mbox{\hyperlink{structlist_1_1node__type_a47d561b49ab2285a196f11f32c2360be}{node\_type::set}}(ptr, std::forward<value\_type>(first));}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00079}00079         m\_head = node;}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00080}00080         m\_tail = node;}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00081}00081     \}}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00082}00082     \textcolor{comment}{// no need to support copy constructor and move constructor}}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00083}00083     \textcolor{comment}{// because we don't use them}}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00084}00084     \textcolor{comment}{// it is only used for pool}}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00085}00085     \textcolor{comment}{// once initialized by pool, it will never be copied nor moved}}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00086}\mbox{\hyperlink{classlist_adf352cf28624c0811f4f9b160062a88c}{00086}}     \textcolor{keyword}{inline} \mbox{\hyperlink{classlist_adf352cf28624c0811f4f9b160062a88c}{\string~list}}() \{}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00087}00087         \textcolor{keywordflow}{while} (m\_head) \{}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00088}00088             \textcolor{keyword}{auto}* next = m\_head-\/>\mbox{\hyperlink{structlist_1_1node__type_ac42204b5084c7f2429dd841c5aafc7e0}{next}};}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00089}00089             m\_head-\/>\string~node\_type();}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00090}00090             \mbox{\hyperlink{memory_8hpp_a3dd12bc4507909ad9e011d4cb70d9ce2}{q\_free}}(m\_head);}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00091}00091             m\_head = next;}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00092}00092         \}}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00093}00093     \}}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00094}00094     \textcolor{keyword}{template} <\textcolor{keyword}{typename} ...Args>}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00095}\mbox{\hyperlink{classlist_ae9124bd39665f16f351fa412618eb872}{00095}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{classlist_ae9124bd39665f16f351fa412618eb872}{emplace\_back}}(Args\&\& ...args) \{}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00096}00096         \mbox{\hyperlink{namespaceqalloc_a01158dc1896ab43737138392524e61d9}{void\_pointer}} ptr  = \mbox{\hyperlink{namespaceqalloc_a3814825bf67bbfcbb1078b176f47333e}{q\_malloc}}(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{structlist_1_1node__type}{node\_type}}));}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00097}00097         \mbox{\hyperlink{structlist_1_1node__type}{node\_pointer}} node = \mbox{\hyperlink{structlist_1_1node__type_a47d561b49ab2285a196f11f32c2360be}{node\_type::set}}(ptr, std::forward<Args>(args)...);}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00098}00098         m\_tail-\/>\mbox{\hyperlink{structlist_1_1node__type_ac42204b5084c7f2429dd841c5aafc7e0}{next}} = node;}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00099}00099         m\_tail = node;}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00100}00100         ++m\_size;}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00101}00101     \}}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00102}\mbox{\hyperlink{classlist_ae4c3d72af1e507190d17ad7fd9e63aeb}{00102}}     \mbox{\hyperlink{defs_8hpp_ade58da4f1b86dde2aa39f11a2578a19e}{QALLOC\_NODISCARD}} \textcolor{keyword}{inline} \mbox{\hyperlink{classlist_aa599046dd4380c33212aff6442390c07}{reference}} \mbox{\hyperlink{classlist_ae4c3d72af1e507190d17ad7fd9e63aeb}{front}}()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00103}00103         assert(m\_head != \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00104}00104         \textcolor{keywordflow}{return} *m\_head;}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00105}00105     \}}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00106}\mbox{\hyperlink{classlist_a11e188b22eae8af2e4721922f4e663a1}{00106}}     \mbox{\hyperlink{defs_8hpp_ade58da4f1b86dde2aa39f11a2578a19e}{QALLOC\_NODISCARD}} \textcolor{keyword}{inline} \mbox{\hyperlink{classlist_aa599046dd4380c33212aff6442390c07}{reference}} \mbox{\hyperlink{classlist_a11e188b22eae8af2e4721922f4e663a1}{back}}()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00107}00107         assert(m\_tail != \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00108}00108         \textcolor{keywordflow}{return} *m\_tail;}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00109}00109     \}}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00110}\mbox{\hyperlink{classlist_aa97cf7ffa23102b26fb9d263c6e093ac}{00110}}     \mbox{\hyperlink{defs_8hpp_ade58da4f1b86dde2aa39f11a2578a19e}{QALLOC\_NODISCARD}} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classlist_aa97cf7ffa23102b26fb9d263c6e093ac}{empty}}() const noexcept \{}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00111}00111         \textcolor{keywordflow}{return} m\_head == \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00112}00112     \}}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00113}\mbox{\hyperlink{classlist_a0f5bd85766647da6cb5ca4c72791042b}{00113}}     \mbox{\hyperlink{defs_8hpp_ade58da4f1b86dde2aa39f11a2578a19e}{QALLOC\_NODISCARD}} \textcolor{keyword}{constexpr} \mbox{\hyperlink{namespaceqalloc_a5b36ec8e13ab5c8aebd049e1b0e07574}{size\_type}} \mbox{\hyperlink{classlist_a0f5bd85766647da6cb5ca4c72791042b}{size}}() const noexcept \{}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00114}00114         \textcolor{keywordflow}{return} m\_size;}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00115}00115     \}}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00116}00116 }
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00117}\mbox{\hyperlink{classlist_a254beaef0a23d76871212c8af2f6118c}{00117}}     \textcolor{keyword}{inline} \mbox{\hyperlink{classiterator}{iterator}} \mbox{\hyperlink{classlist_a254beaef0a23d76871212c8af2f6118c}{begin}}() \{}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00118}00118         \textcolor{keywordflow}{return} \mbox{\hyperlink{classlist_a9144dfe69aa68a685deebd72e3fb77fc}{iterator}}(m\_head);}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00119}00119     \}}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00120}00120 }
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00121}\mbox{\hyperlink{classlist_a0a0fb2870706f1a5c96500edc5fa8d51}{00121}}     \textcolor{keyword}{inline} \mbox{\hyperlink{classiterator}{iterator}} \mbox{\hyperlink{classlist_a0a0fb2870706f1a5c96500edc5fa8d51}{end}}() \{}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00122}00122         \textcolor{keywordflow}{return} \mbox{\hyperlink{classlist_a9144dfe69aa68a685deebd72e3fb77fc}{iterator}}(\textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00123}00123     \}}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00124}00124 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00125}00125     \mbox{\hyperlink{classlist_af9d1ec1b9a42f0695ade276e6c63cf81}{node\_pointer}} m\_head;}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00126}00126     \mbox{\hyperlink{classlist_af9d1ec1b9a42f0695ade276e6c63cf81}{node\_pointer}} m\_tail;}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00127}00127     \mbox{\hyperlink{namespaceqalloc_a5b36ec8e13ab5c8aebd049e1b0e07574}{size\_type}} m\_size;}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00128}00128 \};}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00129}00129 }
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00130}00130 \mbox{\hyperlink{defs_8hpp_a9dfa7594d25c13b2880478b48840e016}{QALLOC\_INTERNAL\_END}}}
+\DoxyCodeLine{\Hypertarget{list_8hpp_source_l00131}00131 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,47 @@
+\hypertarget{type__info_8hpp}{}\doxysection{F\+:/\+Documents/\+Projects/qalloc/include/qalloc/internal/type\+\_\+info.hpp File Reference}
+\label{type__info_8hpp}\index{F:/Documents/Projects/qalloc/include/qalloc/internal/type\_info.hpp@{F:/Documents/Projects/qalloc/include/qalloc/internal/type\_info.hpp}}
+
+
+qalloc type info header file.  
+
+
+{\ttfamily \#include $<$typeinfo$>$}\newline
+{\ttfamily \#include $<$unordered\+\_\+map$>$}\newline
+{\ttfamily \#include $<$cstring$>$}\newline
+{\ttfamily \#include $<$qalloc/internal/defs.\+hpp$>$}\newline
+{\ttfamily \#include $<$qalloc/internal/pointer.\+hpp$>$}\newline
+{\ttfamily \#include $<$qalloc/internal/block.\+hpp$>$}\newline
+{\ttfamily \#include $<$qalloc/internal/stl.\+hpp$>$}\newline
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceqalloc}{qalloc}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+constexpr const std\+::type\+\_\+info \& \mbox{\hyperlink{namespaceqalloc_a3382e2682d1ed74cead61018bc816010}{qalloc\+::type\+\_\+of}} (void\+\_\+pointer p)
+\begin{DoxyCompactList}\small\item\em get type info of pointer. \end{DoxyCompactList}\item 
+const char $\ast$ \mbox{\hyperlink{namespaceqalloc_a69ea19642f283405929f935a82eb6bd4}{qalloc\+::type\+\_\+name\+\_\+of}} (void\+\_\+pointer p)
+\begin{DoxyCompactList}\small\item\em get raw type name of object in pointer. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{namespaceqalloc_a21ba5c580f374d43d6ae7e251f6d8c22}{qalloc\+::demangled\+\_\+type\+\_\+name\+\_\+of}} (const char $\ast$mangled\+\_\+name)
+\begin{DoxyCompactList}\small\item\em get demangled type name from mangled type name. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{namespaceqalloc_a41443b7060594c6eacbba4ccad35efc8}{qalloc\+::demangled\+\_\+type\+\_\+name\+\_\+of}} (void\+\_\+pointer p)
+\begin{DoxyCompactList}\small\item\em get demangled type name of object in pointer. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{defs_8hpp_a0a542caf1ef757dc9777bffee9e045b9}{QALLOC\+\_\+\+MAYBE\+\_\+\+UNUSED}} T \& \mbox{\hyperlink{namespaceqalloc_a98dbfa4d3a82c020e36c40e4e22c08fe}{qalloc\+::safe\+\_\+cast}} (void\+\_\+pointer p)
+\begin{DoxyCompactList}\small\item\em cast pointer to another type with type check. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+qalloc type info header file. 
+
+\begin{DoxyAuthor}{Author}
+yusing 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2022-\/07-\/02 
+\end{DoxyDate}
+
+
+Definition in file \mbox{\hyperlink{type__info_8hpp_source}{type\+\_\+info.\+hpp}}.
+

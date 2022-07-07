@@ -1,0 +1,123 @@
+\hypertarget{pointer_8hpp_source}{}\doxysection{pointer.\+hpp}
+\label{pointer_8hpp_source}\index{F:/Documents/Projects/qalloc/include/qalloc/internal/pointer.hpp@{F:/Documents/Projects/qalloc/include/qalloc/internal/pointer.hpp}}
+\mbox{\hyperlink{pointer_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00001}00001 \textcolor{comment}{// Copyright 2022 yusing. All rights reserved.}}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00002}00002 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00003}00003 \textcolor{comment}{// Licensed under the Apache License, Version 2.0 (the "{}License"{});}}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00004}00004 \textcolor{comment}{// you may not use this file except in compliance with the License.}}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00005}00005 \textcolor{comment}{// You may obtain a copy of the License at}}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00006}00006 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00007}00007 \textcolor{comment}{//     http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00008}00008 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00009}00009 \textcolor{comment}{// Unless required by applicable law or agreed to in writing, software}}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00010}00010 \textcolor{comment}{// distributed under the License is distributed on an "{}AS IS"{} BASIS,}}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00011}00011 \textcolor{comment}{// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.}}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00012}00012 \textcolor{comment}{// See the License for the specific language governing permissions and}}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00013}00013 \textcolor{comment}{// limitations under the License.}}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00020}00020 \textcolor{preprocessor}{\#ifndef QALLOC\_POINTER\_HPP}}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00021}00021 \textcolor{preprocessor}{\#define QALLOC\_POINTER\_HPP}}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00023}00023 \textcolor{preprocessor}{\#include <ostream>}}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00024}00024 \textcolor{preprocessor}{\#include <utility>}}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00025}00025 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{defs_8hpp}{qalloc/internal/defs.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00026}00026 }
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00027}00027 \mbox{\hyperlink{defs_8hpp_a0c5e46377ecf7e33c016739291f04c75}{QALLOC\_BEGIN}}}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00029}\mbox{\hyperlink{namespaceqalloc_ae3a2d1ddce51c70146088378000a5946}{00029}} \textcolor{keyword}{enum class} \mbox{\hyperlink{namespaceqalloc_ae3a2d1ddce51c70146088378000a5946}{byte}} : \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char}\{\};}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00030}00030 }
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00031}\mbox{\hyperlink{namespaceqalloc_a15dbd90bcf32a0cda82fef6ab9189823}{00031}} \textcolor{keyword}{using }\mbox{\hyperlink{namespaceqalloc_ae3a2d1ddce51c70146088378000a5946}{byte\_pointer}}        = \textcolor{keywordtype}{byte}*;}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00032}\mbox{\hyperlink{namespaceqalloc_a0fcbf28d8aec7f6a33e6dff63b6e1357}{00032}} \textcolor{keyword}{using }\mbox{\hyperlink{namespaceqalloc_ae3a2d1ddce51c70146088378000a5946}{const\_byte\_pointer}}  = \textcolor{keyword}{const} \textcolor{keywordtype}{byte}*;}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00033}\mbox{\hyperlink{namespaceqalloc_a01158dc1896ab43737138392524e61d9}{00033}} \textcolor{keyword}{using }\mbox{\hyperlink{namespaceqalloc_a01158dc1896ab43737138392524e61d9}{void\_pointer}}        = \textcolor{keywordtype}{void}*;}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00034}\mbox{\hyperlink{namespaceqalloc_a88ff7078fa672c6ff9de26bdcb9daeca}{00034}} \textcolor{keyword}{using }\mbox{\hyperlink{namespaceqalloc_a88ff7078fa672c6ff9de26bdcb9daeca}{const\_void\_pointer}}  = \textcolor{keyword}{const} \textcolor{keywordtype}{void}*;}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00035}\mbox{\hyperlink{namespaceqalloc_a5b36ec8e13ab5c8aebd049e1b0e07574}{00035}} \textcolor{keyword}{using }\mbox{\hyperlink{namespaceqalloc_a5b36ec8e13ab5c8aebd049e1b0e07574}{size\_type}}           = std::size\_t;}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00036}\mbox{\hyperlink{namespaceqalloc_a3eaa567e837689805c5f4c5dda562e16}{00036}} \textcolor{keyword}{using }\mbox{\hyperlink{namespaceqalloc_a3eaa567e837689805c5f4c5dda562e16}{difference\_type}}     = std::ptrdiff\_t;}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00037}00037 }
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00039}\mbox{\hyperlink{namespaceqalloc_a0c8786ebe9d96517ed824f01ecf36f2e}{00039}} \textcolor{keyword}{enum class} \mbox{\hyperlink{namespaceqalloc_a0c8786ebe9d96517ed824f01ecf36f2e}{index\_type}} : \mbox{\hyperlink{namespaceqalloc_a5b36ec8e13ab5c8aebd049e1b0e07574}{size\_type}} \{}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00040}00040     \mbox{\hyperlink{namespaceqalloc_a0c8786ebe9d96517ed824f01ecf36f2ead7ed4ee1df437474d005188535f74875}{Zero}} = 0}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00041}00041 \};}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00042}00042 }
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00047}\mbox{\hyperlink{namespaceqalloc_a72bbdc6602c8378e0039a83d88e55c33}{00047}} std::ostream\& \mbox{\hyperlink{namespaceqalloc_a72bbdc6602c8378e0039a83d88e55c33}{operator<<}}(std::ostream\& os, \mbox{\hyperlink{namespaceqalloc_ae3a2d1ddce51c70146088378000a5946}{qalloc::const\_byte\_pointer}} p) \{}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00048}00048     os << static\_cast<qalloc::const\_void\_pointer>(p);}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00049}00049     \textcolor{keywordflow}{return} os;}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00050}00050 \}}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00051}00051 }
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00055}\mbox{\hyperlink{namespaceqalloc_afbe2e097d5f884fa7b34da384d7b1a69}{00055}} \textcolor{keyword}{constexpr} \mbox{\hyperlink{namespaceqalloc_a0c8786ebe9d96517ed824f01ecf36f2e}{index\_type}}\& \mbox{\hyperlink{namespaceqalloc_afbe2e097d5f884fa7b34da384d7b1a69}{operator-\/-\/}}(\mbox{\hyperlink{namespaceqalloc_a0c8786ebe9d96517ed824f01ecf36f2e}{index\_type}}\& i) \{}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00056}00056     \textcolor{keywordflow}{return} i = \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{namespaceqalloc_a0c8786ebe9d96517ed824f01ecf36f2e}{index\_type}}\textcolor{keyword}{>}(\textcolor{keyword}{static\_cast<}\mbox{\hyperlink{namespaceqalloc_a5b36ec8e13ab5c8aebd049e1b0e07574}{size\_type}}\textcolor{keyword}{>}(i) -\/ 1);}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00057}00057 \}}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00058}00058 }
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00061}\mbox{\hyperlink{namespaceqalloc_a8ec1582ea2955deea02a637178ab2047}{00061}} \textcolor{keyword}{constexpr} \mbox{\hyperlink{namespaceqalloc_a5b36ec8e13ab5c8aebd049e1b0e07574}{size\_type}} \textcolor{keyword}{operator} \textcolor{stringliteral}{"{}"{}} \_z (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} n) \{}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00062}00062     \textcolor{keywordflow}{return} \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{namespaceqalloc_a5b36ec8e13ab5c8aebd049e1b0e07574}{size\_type}}\textcolor{keyword}{>}(n);}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00063}00063 \}}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00064}00064 \textcolor{keyword}{static\_assert}(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{namespaceqalloc_ae3a2d1ddce51c70146088378000a5946}{byte}}) == 1\_z, \textcolor{stringliteral}{"{}byte is not 1 byte"{}});}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00065}00065 \textcolor{keyword}{static\_assert}(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{namespaceqalloc_a0c8786ebe9d96517ed824f01ecf36f2e}{index\_type}}) == \textcolor{keyword}{sizeof}(\mbox{\hyperlink{namespaceqalloc_a5b36ec8e13ab5c8aebd049e1b0e07574}{size\_type}}), \textcolor{stringliteral}{"{}size of index\_type != size of size\_type!"{}});}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00066}00066 }
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00069}\mbox{\hyperlink{namespaceqalloc_a9b6a3324c716b59468f390dbe4e9a1bc}{00069}} \textcolor{keyword}{constexpr} \mbox{\hyperlink{namespaceqalloc_a5b36ec8e13ab5c8aebd049e1b0e07574}{size\_type}} \mbox{\hyperlink{namespaceqalloc_aa3991f062700899cabdea80d0d364f11}{size\_cast}}(\mbox{\hyperlink{namespaceqalloc_a0c8786ebe9d96517ed824f01ecf36f2e}{index\_type}} i) \{}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00070}00070     \textcolor{keywordflow}{return} \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{namespaceqalloc_a5b36ec8e13ab5c8aebd049e1b0e07574}{size\_type}}\textcolor{keyword}{>}(i);}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00071}00071 \}}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00072}00072 }
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00075}\mbox{\hyperlink{namespaceqalloc_aa3991f062700899cabdea80d0d364f11}{00075}} \textcolor{keyword}{constexpr} \mbox{\hyperlink{namespaceqalloc_a5b36ec8e13ab5c8aebd049e1b0e07574}{size\_type}} \mbox{\hyperlink{namespaceqalloc_aa3991f062700899cabdea80d0d364f11}{size\_cast}}(\mbox{\hyperlink{namespaceqalloc_a3eaa567e837689805c5f4c5dda562e16}{difference\_type}} diff) \{}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00076}00076     \textcolor{keywordflow}{return} \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{namespaceqalloc_a5b36ec8e13ab5c8aebd049e1b0e07574}{size\_type}}\textcolor{keyword}{>}(diff);}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00077}00077 \}}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00078}00078 }
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00080}\mbox{\hyperlink{namespaceqalloc_1_1pointer}{00080}} \textcolor{keyword}{namespace }pointer \{}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00081}00081 }
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00082}00082 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00087}\mbox{\hyperlink{namespaceqalloc_1_1pointer_a595422cf79a1a54d0b8665423d6f717d}{00087}} \textcolor{keyword}{constexpr} T* \mbox{\hyperlink{namespaceqalloc_1_1pointer_a595422cf79a1a54d0b8665423d6f717d}{launder}}(T* p) \{}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00088}00088 \textcolor{preprocessor}{\#if QALLOC\_CXX\_17}}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00089}00089     \textcolor{keywordflow}{if} \textcolor{keyword}{constexpr}(!std::is\_void\_v<T>) \{}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00090}00090         \textcolor{keywordflow}{return} \mbox{\hyperlink{namespaceqalloc_1_1pointer_a595422cf79a1a54d0b8665423d6f717d}{std::launder}}(p);}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00091}00091     \}}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00092}00092     \textcolor{keywordflow}{return} p;}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00093}00093 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00094}00094     \textcolor{keywordflow}{return} p;}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00095}00095 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00096}00096 \}}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00097}00097 }
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00098}00098 \textcolor{keyword}{template} <\textcolor{keyword}{typename} OutType = \textcolor{keywordtype}{byte}\_po\textcolor{keywordtype}{int}er, \textcolor{keyword}{typename} OffsetType, \textcolor{keyword}{typename} InType>}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00099}\mbox{\hyperlink{namespaceqalloc_1_1pointer_a860d064389a2399eeb0cf0622dc4ebcc}{00099}} \textcolor{keyword}{constexpr} OutType \mbox{\hyperlink{namespaceqalloc_1_1pointer_a860d064389a2399eeb0cf0622dc4ebcc}{add}}(InType ptr, OffsetType offset) \{}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00100}00100     \textcolor{keyword}{static\_assert}(}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00101}00101         (std::is\_const<InType>::value \&\& std::is\_const<OutType>::value)}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00102}00102         || (!std::is\_const<InType>::value \&\& !std::is\_const<OutType>::value)}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00103}00103         , \textcolor{stringliteral}{"{}constness of InType and OutType must be the same"{}}}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00104}00104     );}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00105}00105     \textcolor{keywordflow}{return} \textcolor{keyword}{static\_cast<}OutType\textcolor{keyword}{>}(}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00106}00106         \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{namespaceqalloc_a01158dc1896ab43737138392524e61d9}{void\_pointer}}\textcolor{keyword}{>}(}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00107}00107             \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{namespaceqalloc_ae3a2d1ddce51c70146088378000a5946}{byte\_pointer}}\textcolor{keyword}{>}(}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00108}00108                 \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{namespaceqalloc_a01158dc1896ab43737138392524e61d9}{void\_pointer}}\textcolor{keyword}{>}(\mbox{\hyperlink{namespaceqalloc_1_1pointer_a595422cf79a1a54d0b8665423d6f717d}{launder}}(ptr))}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00109}00109             ) + offset}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00110}00110         )}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00111}00111     );}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00112}00112 \}}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00113}00113 }
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00114}00114 \textcolor{keyword}{template} <\textcolor{keyword}{typename} OutType = \textcolor{keywordtype}{byte}\_po\textcolor{keywordtype}{int}er, \textcolor{keyword}{typename} OffsetType, \textcolor{keyword}{typename} InType>}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00115}\mbox{\hyperlink{namespaceqalloc_1_1pointer_a93a3b0837a830c6e18aeb56a344215e6}{00115}} \textcolor{keyword}{constexpr} OutType \mbox{\hyperlink{namespaceqalloc_1_1pointer_a93a3b0837a830c6e18aeb56a344215e6}{sub}}(InType ptr, OffsetType offset) \{}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00116}00116     \textcolor{keyword}{static\_assert}(}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00117}00117         (std::is\_const<InType>::value \&\& std::is\_const<OutType>::value)}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00118}00118         || (!std::is\_const<InType>::value \&\& !std::is\_const<OutType>::value)}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00119}00119         , \textcolor{stringliteral}{"{}constness of InType and OutType must be the same"{}}}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00120}00120     );}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00121}00121     \textcolor{keywordflow}{return} \textcolor{keyword}{static\_cast<}OutType\textcolor{keyword}{>}(}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00122}00122         \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{namespaceqalloc_a01158dc1896ab43737138392524e61d9}{void\_pointer}}\textcolor{keyword}{>}(}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00123}00123             \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{namespaceqalloc_ae3a2d1ddce51c70146088378000a5946}{byte\_pointer}}\textcolor{keyword}{>}(}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00124}00124                 \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{namespaceqalloc_a01158dc1896ab43737138392524e61d9}{void\_pointer}}\textcolor{keyword}{>}(\mbox{\hyperlink{namespaceqalloc_1_1pointer_a595422cf79a1a54d0b8665423d6f717d}{launder}}(ptr))}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00125}00125             ) -\/ offset}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00126}00126         )}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00127}00127     );}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00128}00128 \}}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00129}00129 }
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00130}\mbox{\hyperlink{namespaceqalloc_1_1pointer_a77189b59b856e89a0da009483fdb0eaa}{00130}} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespaceqalloc_1_1pointer_a77189b59b856e89a0da009483fdb0eaa}{in\_range}}(\mbox{\hyperlink{namespaceqalloc_a88ff7078fa672c6ff9de26bdcb9daeca}{const\_void\_pointer}} pos, \mbox{\hyperlink{namespaceqalloc_a88ff7078fa672c6ff9de26bdcb9daeca}{const\_void\_pointer}} lb, \mbox{\hyperlink{namespaceqalloc_a88ff7078fa672c6ff9de26bdcb9daeca}{const\_void\_pointer}} ub) \{}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00131}00131     \textcolor{keywordflow}{return} pos >= lb \&\& pos < ub;}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00132}00132 \}}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00133}00133 }
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00134}\mbox{\hyperlink{namespaceqalloc_1_1pointer_ab3e62123693cfbbc5b22ce054e388e7a}{00134}} \textcolor{keyword}{constexpr} \mbox{\hyperlink{namespaceqalloc_ae3a2d1ddce51c70146088378000a5946}{byte\_pointer}} \mbox{\hyperlink{namespaceqalloc_1_1pointer_ab3e62123693cfbbc5b22ce054e388e7a}{remove\_const}}(\mbox{\hyperlink{namespaceqalloc_ae3a2d1ddce51c70146088378000a5946}{const\_byte\_pointer}} p) \{}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00135}00135     \textcolor{keywordflow}{return} \textcolor{keyword}{const\_cast<}\mbox{\hyperlink{namespaceqalloc_ae3a2d1ddce51c70146088378000a5946}{byte\_pointer}}\textcolor{keyword}{>}(\mbox{\hyperlink{namespaceqalloc_1_1pointer_a595422cf79a1a54d0b8665423d6f717d}{launder}}(p));}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00136}00136 \}}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00137}00137 }
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00138}00138 \} \textcolor{comment}{// namespace pointer}}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00139}00139 \mbox{\hyperlink{defs_8hpp_ae6074cc5b731bee29a970dd996470029}{QALLOC\_END}}}
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00140}00140 }
+\DoxyCodeLine{\Hypertarget{pointer_8hpp_source_l00141}00141 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

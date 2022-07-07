@@ -1,0 +1,64 @@
+\hypertarget{classallocator__base}{}\doxysection{allocator\+\_\+base\texorpdfstring{$<$}{<} T, detailed \texorpdfstring{$>$}{>} Class Template Reference}
+\label{classallocator__base}\index{allocator\_base$<$ T, detailed $>$@{allocator\_base$<$ T, detailed $>$}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classallocator__base_1_1rebind}{rebind}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classallocator__base_a76b9fd646cd9d6049498982d12c30f30}\label{classallocator__base_a76b9fd646cd9d6049498982d12c30f30}} 
+using {\bfseries value\+\_\+type} = T
+\item 
+\mbox{\Hypertarget{classallocator__base_a91e82266604459210ea9ae0ccaaf6acb}\label{classallocator__base_a91e82266604459210ea9ae0ccaaf6acb}} 
+using {\bfseries pointer} = T $\ast$
+\item 
+\mbox{\Hypertarget{classallocator__base_ae68519db0847835444d6ff57d07f3812}\label{classallocator__base_ae68519db0847835444d6ff57d07f3812}} 
+using {\bfseries const\+\_\+pointer} = const T $\ast$
+\item 
+\mbox{\Hypertarget{classallocator__base_a82196d0b29456ecfe20661ddff2e364c}\label{classallocator__base_a82196d0b29456ecfe20661ddff2e364c}} 
+using {\bfseries reference} = T \&
+\item 
+\mbox{\Hypertarget{classallocator__base_aa8d0bbd1cb646db8a892df128e2eaf2f}\label{classallocator__base_aa8d0bbd1cb646db8a892df128e2eaf2f}} 
+using {\bfseries const\+\_\+reference} = const T \&
+\item 
+\mbox{\Hypertarget{classallocator__base_a7ca4a185120166832aada3b8b0ddf9d0}\label{classallocator__base_a7ca4a185120166832aada3b8b0ddf9d0}} 
+using {\bfseries size\+\_\+type} = qalloc\+::size\+\_\+type
+\item 
+\mbox{\Hypertarget{classallocator__base_a063754edc15eebba96f48b56b8d9df53}\label{classallocator__base_a063754edc15eebba96f48b56b8d9df53}} 
+using {\bfseries difference\+\_\+type} = std\+::ptrdiff\+\_\+t
+\item 
+\mbox{\Hypertarget{classallocator__base_ade771637dcb513ae50520b79dfa7a77a}\label{classallocator__base_ade771637dcb513ae50520b79dfa7a77a}} 
+using {\bfseries is\+\_\+always\+\_\+equal} = std\+::false\+\_\+type
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classallocator__base_a15c25a8fefbb3464dc29283b6ecb79a0}\label{classallocator__base_a15c25a8fefbb3464dc29283b6ecb79a0}} 
+{\bfseries allocator\+\_\+base} (\mbox{\hyperlink{classpool__t}{pool\+\_\+pointer}}) noexcept
+\item 
+\mbox{\Hypertarget{classallocator__base_aa7c5c49c22a682f8a389b5c16435c31a}\label{classallocator__base_aa7c5c49c22a682f8a389b5c16435c31a}} 
+{\bfseries allocator\+\_\+base} (const \mbox{\hyperlink{classallocator__base}{allocator\+\_\+base}} \&) noexcept
+\item 
+\mbox{\Hypertarget{classallocator__base_a4a386d668ff645905d7931378cd5cadc}\label{classallocator__base_a4a386d668ff645905d7931378cd5cadc}} 
+{\footnotesize template$<$typename U , bool U\+\_\+detailed$>$ }\\{\bfseries allocator\+\_\+base} (const \mbox{\hyperlink{classallocator__base}{allocator\+\_\+base}}$<$ U, U\+\_\+detailed $>$ \&) noexcept
+\item 
+\mbox{\Hypertarget{classallocator__base_a2d74f27a17b5bf20d44855108614fdca}\label{classallocator__base_a2d74f27a17b5bf20d44855108614fdca}} 
+\mbox{\hyperlink{classallocator__base}{allocator\+\_\+base}} \& {\bfseries operator=} (const \mbox{\hyperlink{classallocator__base}{allocator\+\_\+base}} \&) noexcept
+\item 
+\mbox{\Hypertarget{classallocator__base_a82516ea8b94f0746fe1bf0e2590d45ac}\label{classallocator__base_a82516ea8b94f0746fe1bf0e2590d45ac}} 
+virtual pointer {\bfseries allocate} (size\+\_\+type n\+\_\+elements)
+\item 
+\mbox{\Hypertarget{classallocator__base_a5039888debdffbe6d5673ab1ccf62be3}\label{classallocator__base_a5039888debdffbe6d5673ab1ccf62be3}} 
+virtual void {\bfseries deallocate} (pointer p, size\+\_\+type n\+\_\+elements)
+\item 
+\mbox{\Hypertarget{classallocator__base_a326a7c889db4546196eeb11fcb019555}\label{classallocator__base_a326a7c889db4546196eeb11fcb019555}} 
+QALLOC\+\_\+\+NODISCARD constexpr \mbox{\hyperlink{classpool__t}{pool\+\_\+pointer}} {\bfseries pool} () const noexcept
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/qalloc/internal/\mbox{\hyperlink{allocator_8hpp}{allocator.\+hpp}}\item 
+include/qalloc/internal/\mbox{\hyperlink{allocator__impl_8hpp}{allocator\+\_\+impl.\+hpp}}\end{DoxyCompactItemize}

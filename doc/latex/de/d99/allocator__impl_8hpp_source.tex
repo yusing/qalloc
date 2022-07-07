@@ -1,0 +1,94 @@
+\hypertarget{allocator__impl_8hpp_source}{}\doxysection{allocator\+\_\+impl.\+hpp}
+\label{allocator__impl_8hpp_source}\index{F:/Documents/Projects/qalloc/include/qalloc/internal/allocator\_impl.hpp@{F:/Documents/Projects/qalloc/include/qalloc/internal/allocator\_impl.hpp}}
+\mbox{\hyperlink{allocator__impl_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00001}00001 \textcolor{comment}{// Copyright 2022 yusing. All rights reserved.}}
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00002}00002 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00003}00003 \textcolor{comment}{// Licensed under the Apache License, Version 2.0 (the "{}License"{});}}
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00004}00004 \textcolor{comment}{// you may not use this file except in compliance with the License.}}
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00005}00005 \textcolor{comment}{// You may obtain a copy of the License at}}
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00006}00006 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00007}00007 \textcolor{comment}{//     http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00008}00008 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00009}00009 \textcolor{comment}{// Unless required by applicable law or agreed to in writing, software}}
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00010}00010 \textcolor{comment}{// distributed under the License is distributed on an "{}AS IS"{} BASIS,}}
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00011}00011 \textcolor{comment}{// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.}}
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00012}00012 \textcolor{comment}{// See the License for the specific language governing permissions and}}
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00013}00013 \textcolor{comment}{// limitations under the License.}}
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00020}00020 \textcolor{preprocessor}{\#ifndef QALLOC\_ALLOCATOR\_IMPL\_HPP}}
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00021}00021 \textcolor{preprocessor}{\#define QALLOC\_ALLOCATOR\_IMPL\_HPP}}
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00023}00023 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{allocator_8hpp}{qalloc/internal/allocator.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00024}00024 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{defs_8hpp}{qalloc/internal/defs.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00025}00025 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{pool_8hpp}{qalloc/internal/pool.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00026}00026 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{global__pool_8hpp}{qalloc/internal/global\_pool.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00027}00027 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{pointer_8hpp}{qalloc/internal/pointer.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00028}00028 }
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00029}00029 \mbox{\hyperlink{defs_8hpp_a0c5e46377ecf7e33c016739291f04c75}{QALLOC\_BEGIN}}}
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00030}00030 }
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00031}\mbox{\hyperlink{classqalloc_1_1allocator__base_a69c22a3569a2499598f45f551a069762}{00031}} \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, \textcolor{keywordtype}{bool} detailed> \mbox{\hyperlink{classqalloc_1_1allocator__base}{allocator\_base<T, detailed>::}}}
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00032}00032 \mbox{\hyperlink{classqalloc_1_1allocator__base}{allocator\_base}}() noexcept}
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00033}00033     : m\_pool\_ptr(internal::\mbox{\hyperlink{global__pool_8hpp_a171db12deae0a47a852d56207708d4bb}{get\_pool}}<T>()) \{\}}
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00034}00034 }
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00035}\mbox{\hyperlink{classqalloc_1_1allocator__base_a010e65be32b8a5c416c5e3412edf748c}{00035}} \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, \textcolor{keywordtype}{bool} detailed> \mbox{\hyperlink{classqalloc_1_1allocator__base}{allocator\_base<T, detailed>::}}}
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00036}00036 \mbox{\hyperlink{classqalloc_1_1allocator__base}{allocator\_base}}(\mbox{\hyperlink{classqalloc_1_1pool__t}{pool\_pointer}} p\_pool) noexcept}
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00037}00037     : m\_pool\_ptr(p\_pool) \{\}}
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00038}00038 }
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00039}\mbox{\hyperlink{classqalloc_1_1allocator__base_a085f715f9c8021b7531e0ab0030ee9d0}{00039}} \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, \textcolor{keywordtype}{bool} detailed> \mbox{\hyperlink{classqalloc_1_1allocator__base}{allocator\_base<T, detailed>::}}}
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00040}00040 \mbox{\hyperlink{classqalloc_1_1allocator__base}{allocator\_base}}(\textcolor{keyword}{const} \mbox{\hyperlink{classqalloc_1_1allocator__base}{allocator\_base}}\& other) noexcept}
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00041}00041     : m\_pool\_ptr(other.m\_pool\_ptr) \{\}}
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00042}00042 }
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00043}\mbox{\hyperlink{classqalloc_1_1allocator__base_ac65230c142b5adfd0789cc668bf3901f}{00043}} \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, \textcolor{keywordtype}{bool} detailed> \textcolor{keyword}{template} <\textcolor{keyword}{typename} U, \textcolor{keywordtype}{bool} U\_detailed> \mbox{\hyperlink{classqalloc_1_1allocator__base}{allocator\_base<T, detailed>::}}}
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00044}00044 \mbox{\hyperlink{classqalloc_1_1allocator__base}{allocator\_base}}(\textcolor{keyword}{const} \mbox{\hyperlink{classqalloc_1_1allocator__base}{allocator\_base<U, U\_detailed>}}\& other) noexcept}
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00045}00045     : m\_pool\_ptr(other.pool()) \{\}}
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00046}00046 }
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00047}\mbox{\hyperlink{classqalloc_1_1allocator__base_afb3eda3d4d550e7a95cc99013121682d}{00047}} \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, \textcolor{keywordtype}{bool} detailed> \mbox{\hyperlink{classqalloc_1_1allocator__base}{allocator\_base<T, detailed>}} \& \mbox{\hyperlink{classqalloc_1_1allocator__base}{allocator\_base<T, detailed>::}}}
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00048}00048 \mbox{\hyperlink{classqalloc_1_1allocator__base}{operator=}}(\textcolor{keyword}{const} \mbox{\hyperlink{classqalloc_1_1allocator__base}{allocator\_base<T, detailed>}}\& other) \textcolor{keyword}{noexcept} \{}
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00049}00049     \textcolor{keywordflow}{if} (\textcolor{keyword}{this} != \&other) \{}
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00050}00050         m\_pool\_ptr = other.m\_pool\_ptr;}
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00051}00051     \}}
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00052}00052     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00053}00053 \}}
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00054}00054 }
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00055}\mbox{\hyperlink{classqalloc_1_1allocator__base_ab141a1b9e60fa65097e79a9c2b13e2bb}{00055}} \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, \textcolor{keywordtype}{bool} detailed> \textcolor{keyword}{typename} \mbox{\hyperlink{classqalloc_1_1allocator__base_a74091dbe456ca7121a0ea50c0f023acf}{allocator\_base<T, detailed>::pointer}} \mbox{\hyperlink{classqalloc_1_1allocator__base}{allocator\_base<T, detailed>::}}}
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00056}00056 \mbox{\hyperlink{classqalloc_1_1allocator__base}{allocate}}(\mbox{\hyperlink{classqalloc_1_1allocator__base_a5eb663eb75ce6259cc68c75c1839076e}{size\_type}} n\_elements) \{}
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00057}00057     \mbox{\hyperlink{defs_8hpp_a9be58a357a6e5331cf1ea72c7a65f315}{QALLOC\_ASSERT}}(n\_elements > 0);}
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00058}00058     \mbox{\hyperlink{defs_8hpp_ac985d9b598dc1aad574c5db6759db7cf}{QALLOC\_IF\_CONSTEXPR}}(detailed) \{}
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00059}00059         \textcolor{keywordflow}{return} \textcolor{keyword}{reinterpret\_cast<}\mbox{\hyperlink{classqalloc_1_1allocator__base_a74091dbe456ca7121a0ea50c0f023acf}{pointer}}\textcolor{keyword}{>}(m\_pool\_ptr-\/>template detailed\_allocate<T>(n\_elements * \textcolor{keyword}{sizeof}(T)));}
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00060}00060     \}}
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00061}00061     \textcolor{keywordflow}{return} \textcolor{keyword}{reinterpret\_cast<}\mbox{\hyperlink{classqalloc_1_1allocator__base_a74091dbe456ca7121a0ea50c0f023acf}{pointer}}\textcolor{keyword}{>}(m\_pool\_ptr-\/>allocate(n\_elements * \textcolor{keyword}{sizeof}(T)));}
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00062}00062 \}}
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00063}00063 }
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00064}\mbox{\hyperlink{classqalloc_1_1allocator__base_a0d99eab0789e3129a60c3c40f9e5755e}{00064}} \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, \textcolor{keywordtype}{bool} detailed> \textcolor{keywordtype}{void} \mbox{\hyperlink{classqalloc_1_1allocator__base}{allocator\_base<T, detailed>::}}}
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00065}00065 \mbox{\hyperlink{classqalloc_1_1allocator__base}{deallocate}}(\mbox{\hyperlink{classqalloc_1_1allocator__base_a74091dbe456ca7121a0ea50c0f023acf}{pointer}} p, \mbox{\hyperlink{classqalloc_1_1allocator__base_a5eb663eb75ce6259cc68c75c1839076e}{size\_type}} n\_elements) \{}
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00066}00066     \mbox{\hyperlink{defs_8hpp_a9be58a357a6e5331cf1ea72c7a65f315}{QALLOC\_ASSERT}}(n\_elements > 0);}
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00067}00067     \textcolor{keywordflow}{if} (p == \textcolor{keyword}{nullptr}) \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00068}00068     \mbox{\hyperlink{defs_8hpp_ac985d9b598dc1aad574c5db6759db7cf}{QALLOC\_IF\_CONSTEXPR}}(detailed) \{}
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00069}00069         m\_pool\_ptr-\/>template detailed\_deallocate<T>(\mbox{\hyperlink{namespaceqalloc_1_1pointer_a595422cf79a1a54d0b8665423d6f717d}{qalloc::pointer::launder}}(\textcolor{keyword}{reinterpret\_cast<}\mbox{\hyperlink{namespaceqalloc_ae3a2d1ddce51c70146088378000a5946}{byte\_pointer}}\textcolor{keyword}{>}(p)), n\_elements * \textcolor{keyword}{sizeof}(T));}
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00070}00070     \}}
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00071}00071     \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00072}00072         m\_pool\_ptr-\/>deallocate(\mbox{\hyperlink{namespaceqalloc_1_1pointer_a595422cf79a1a54d0b8665423d6f717d}{qalloc::pointer::launder}}(\textcolor{keyword}{reinterpret\_cast<}\mbox{\hyperlink{namespaceqalloc_ae3a2d1ddce51c70146088378000a5946}{byte\_pointer}}\textcolor{keyword}{>}(p)), n\_elements * \textcolor{keyword}{sizeof}(T));}
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00073}00073     \}}
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00074}00074 \}}
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00075}00075 }
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00076}00076 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, \textcolor{keywordtype}{bool} detailed>}
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00077}\mbox{\hyperlink{classqalloc_1_1allocator__base_a11dc199c42527313bed6e6d90b915661}{00077}} \textcolor{keyword}{constexpr} \mbox{\hyperlink{classqalloc_1_1pool__t}{pool\_pointer}} \mbox{\hyperlink{classqalloc_1_1allocator__base}{allocator\_base<T, detailed>::pool}}() const noexcept \{}
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00078}00078     \textcolor{keywordflow}{return} m\_pool\_ptr;}
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00079}00079 \}}
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00080}00080 }
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00081}00081 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, \textcolor{keywordtype}{bool} T\_detailed, \textcolor{keyword}{typename} U, \textcolor{keywordtype}{bool} U\_detailed>}
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00082}\mbox{\hyperlink{namespaceqalloc_a62082393da7050f561c991b6180ccaaa}{00082}} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespaceqalloc_a62082393da7050f561c991b6180ccaaa}{operator==}}(\textcolor{keyword}{const} \mbox{\hyperlink{classqalloc_1_1allocator__base}{allocator\_base<T, T\_detailed>}}\&, \textcolor{keyword}{const} \mbox{\hyperlink{classqalloc_1_1allocator__base}{allocator\_base<U, U\_detailed>}}\&) \textcolor{keyword}{noexcept} \{}
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00083}00083     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00084}00084 \}}
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00085}00085 }
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00086}00086 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, \textcolor{keywordtype}{bool} T\_detailed, \textcolor{keyword}{typename} U, \textcolor{keywordtype}{bool} U\_detailed>}
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00087}\mbox{\hyperlink{namespaceqalloc_a5f6396d53116ae2d240a335597367f80}{00087}} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespaceqalloc_a5f6396d53116ae2d240a335597367f80}{operator!=}}(\textcolor{keyword}{const} \mbox{\hyperlink{classqalloc_1_1allocator__base}{allocator\_base<T, T\_detailed>}}\&, \textcolor{keyword}{const} \mbox{\hyperlink{classqalloc_1_1allocator__base}{allocator\_base<U, U\_detailed>}}\&) \textcolor{keyword}{noexcept} \{}
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00088}00088     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00089}00089 \}}
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00090}00090 \mbox{\hyperlink{defs_8hpp_ae6074cc5b731bee29a970dd996470029}{QALLOC\_END}}}
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00091}00091 }
+\DoxyCodeLine{\Hypertarget{allocator__impl_8hpp_source_l00092}00092 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// QALLOC\_ALLOCATOR\_IMPL\_HPP}}
+
+\end{DoxyCode}

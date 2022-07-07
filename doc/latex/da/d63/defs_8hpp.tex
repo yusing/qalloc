@@ -1,0 +1,320 @@
+\hypertarget{defs_8hpp}{}\doxysection{F\+:/\+Documents/\+Projects/qalloc/include/qalloc/internal/defs.hpp File Reference}
+\label{defs_8hpp}\index{F:/Documents/Projects/qalloc/include/qalloc/internal/defs.hpp@{F:/Documents/Projects/qalloc/include/qalloc/internal/defs.hpp}}
+
+
+qalloc macro definitions header file.  
+
+
+{\ttfamily \#include $<$ciso646$>$}\newline
+{\ttfamily \#include $<$version$>$}\newline
+{\ttfamily \#include $<$cstddef$>$}\newline
+{\ttfamily \#include $<$cassert$>$}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{defs_8hpp_a608302519252f5a493f5b6175d60c0d7}{QALLOC\+\_\+\+HAS\+\_\+\+CPP\+\_\+\+ATTRIBUTE}}(NAME)~\+\_\+\+\_\+cplusplus $>$= 201703L
+\item 
+\#define \mbox{\hyperlink{defs_8hpp_a0a542caf1ef757dc9777bffee9e045b9}{QALLOC\+\_\+\+MAYBE\+\_\+\+UNUSED}}
+\item 
+\#define \mbox{\hyperlink{defs_8hpp_ade58da4f1b86dde2aa39f11a2578a19e}{QALLOC\+\_\+\+NODISCARD}}
+\item 
+\#define \mbox{\hyperlink{defs_8hpp_a9952d1482158e7b98400c1847e0d5c29}{QALLOC\+\_\+\+CONSTEXPR\+\_\+14}}~inline
+\item 
+\#define \mbox{\hyperlink{defs_8hpp_a0160641df56937a2e0427cb9bec806fb}{QALLOC\+\_\+\+CONSTEXPR\+\_\+14\+\_\+C}}~static const
+\item 
+\#define \mbox{\hyperlink{defs_8hpp_a22ef8e96498bda188a5ba6cb974a9faa}{QALLOC\+\_\+\+CXX\+\_\+14}}~0
+\item 
+\#define \mbox{\hyperlink{defs_8hpp_acbddab0d51dce45736e940323cf5a3a7}{QALLOC\+\_\+\+STRINGVIEW}}~\mbox{\hyperlink{namespaceqalloc_1_1stl_a10f8c4d7d0fd543c309c1aa7e9d477ef}{qalloc\+::string}}
+\item 
+\#define \mbox{\hyperlink{defs_8hpp_ac985d9b598dc1aad574c5db6759db7cf}{QALLOC\+\_\+\+IF\+\_\+\+CONSTEXPR}}~if
+\item 
+\#define \mbox{\hyperlink{defs_8hpp_a161d74733f9eeeef65f09b72bf8ae38d}{QALLOC\+\_\+\+CXX\+\_\+17}}~0
+\item 
+\#define \mbox{\hyperlink{defs_8hpp_abd9d01a9bdcdb529f52d7d9e3e44b552}{QALLOC\+\_\+\+RESTRICT}}~\+\_\+\+\_\+restrict\+\_\+\+\_\+
+\item 
+\#define \mbox{\hyperlink{defs_8hpp_a3867648fe5c1dfaa0e9aa9de03c7c663}{QALLOC\+\_\+\+MALLOC\+\_\+\+FUNCTION}}(DECLARATION)~\mbox{\hyperlink{defs_8hpp_ade58da4f1b86dde2aa39f11a2578a19e}{QALLOC\+\_\+\+NODISCARD}} DECLARATION
+\item 
+\#define \mbox{\hyperlink{defs_8hpp_a6aeac36a4662f302351fb5558b6bfa28}{QALLOC\+\_\+\+FOPEN}}(PTR,  FILENAME,  MODE)~($\ast$PTR) = fopen((FILENAME), (MODE))
+\item 
+\#define \mbox{\hyperlink{defs_8hpp_acd8aab65eb0c19c3d86873d9c27803ed}{QALLOC\+\_\+\+DEBUG}}~1
+\item 
+\#define \mbox{\hyperlink{defs_8hpp_a92e808d95e376699a51e80dba29f5c16}{QALLOC\+\_\+\+DEBUG\+\_\+\+STATEMENT}}(STMT)~STMT
+\item 
+\#define \mbox{\hyperlink{defs_8hpp_a2c3bd862e7053b2e3e8f7b2c25cc6854}{QALLOC\+\_\+\+NDEBUG\+\_\+\+CONSTEXPR}}~inline
+\item 
+\#define \mbox{\hyperlink{defs_8hpp_a9be58a357a6e5331cf1ea72c7a65f315}{QALLOC\+\_\+\+ASSERT}}(expr)~assert(expr)
+\item 
+\#define \mbox{\hyperlink{defs_8hpp_af0cb4d1ee2aa329e3bde17df9adc6127}{QALLOC\+\_\+\+STORE\+\_\+\+TYPEINFO}}~1
+\item 
+\#define \mbox{\hyperlink{defs_8hpp_a9c8e214e9ecad10705e8c18f4e0d5298}{QALLOC\+\_\+\+CXA\+\_\+\+DEMANGLE}}~0
+\item 
+\#define \mbox{\hyperlink{defs_8hpp_a0c5e46377ecf7e33c016739291f04c75}{QALLOC\+\_\+\+BEGIN}}~namespace qalloc \{
+\item 
+\#define \mbox{\hyperlink{defs_8hpp_ae6074cc5b731bee29a970dd996470029}{QALLOC\+\_\+\+END}}~\}
+\item 
+\#define \mbox{\hyperlink{defs_8hpp_a738f4b2ae3a9746873a20b9ee0f57d83}{QALLOC\+\_\+\+INTERNAL\+\_\+\+BEGIN}}~\mbox{\hyperlink{defs_8hpp_a0c5e46377ecf7e33c016739291f04c75}{QALLOC\+\_\+\+BEGIN}} namespace internal \{
+\item 
+\#define \mbox{\hyperlink{defs_8hpp_a9dfa7594d25c13b2880478b48840e016}{QALLOC\+\_\+\+INTERNAL\+\_\+\+END}}~\} \mbox{\hyperlink{defs_8hpp_ae6074cc5b731bee29a970dd996470029}{QALLOC\+\_\+\+END}}
+\item 
+\#define \mbox{\hyperlink{defs_8hpp_afa317ae078e3aa6464f612d9d5c3cda1}{QALLOC\+\_\+\+PRINTF}}~(void) std\+::printf
+\item 
+\#define \mbox{\hyperlink{defs_8hpp_a3b2d4cc752a36a4a7ba6d736d45ff36b}{QALLOC\+\_\+\+FPRINTF}}~(void) std\+::fprintf
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+qalloc macro definitions header file. 
+
+\begin{DoxyAuthor}{Author}
+yusing 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2022-\/07-\/02 
+\end{DoxyDate}
+
+
+Definition in file \mbox{\hyperlink{defs_8hpp_source}{defs.\+hpp}}.
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{defs_8hpp_a9be58a357a6e5331cf1ea72c7a65f315}\label{defs_8hpp_a9be58a357a6e5331cf1ea72c7a65f315}} 
+\index{defs.hpp@{defs.hpp}!QALLOC\_ASSERT@{QALLOC\_ASSERT}}
+\index{QALLOC\_ASSERT@{QALLOC\_ASSERT}!defs.hpp@{defs.hpp}}
+\doxysubsubsection{\texorpdfstring{QALLOC\_ASSERT}{QALLOC\_ASSERT}}
+{\footnotesize\ttfamily \#define QALLOC\+\_\+\+ASSERT(\begin{DoxyParamCaption}\item[{}]{expr }\end{DoxyParamCaption})~assert(expr)}
+
+
+
+Definition at line \mbox{\hyperlink{defs_8hpp_source_l00097}{97}} of file \mbox{\hyperlink{defs_8hpp_source}{defs.\+hpp}}.
+
+\mbox{\Hypertarget{defs_8hpp_a0c5e46377ecf7e33c016739291f04c75}\label{defs_8hpp_a0c5e46377ecf7e33c016739291f04c75}} 
+\index{defs.hpp@{defs.hpp}!QALLOC\_BEGIN@{QALLOC\_BEGIN}}
+\index{QALLOC\_BEGIN@{QALLOC\_BEGIN}!defs.hpp@{defs.hpp}}
+\doxysubsubsection{\texorpdfstring{QALLOC\_BEGIN}{QALLOC\_BEGIN}}
+{\footnotesize\ttfamily \#define QALLOC\+\_\+\+BEGIN~namespace qalloc \{}
+
+
+
+Definition at line \mbox{\hyperlink{defs_8hpp_source_l00118}{118}} of file \mbox{\hyperlink{defs_8hpp_source}{defs.\+hpp}}.
+
+\mbox{\Hypertarget{defs_8hpp_a9952d1482158e7b98400c1847e0d5c29}\label{defs_8hpp_a9952d1482158e7b98400c1847e0d5c29}} 
+\index{defs.hpp@{defs.hpp}!QALLOC\_CONSTEXPR\_14@{QALLOC\_CONSTEXPR\_14}}
+\index{QALLOC\_CONSTEXPR\_14@{QALLOC\_CONSTEXPR\_14}!defs.hpp@{defs.hpp}}
+\doxysubsubsection{\texorpdfstring{QALLOC\_CONSTEXPR\_14}{QALLOC\_CONSTEXPR\_14}}
+{\footnotesize\ttfamily \#define QALLOC\+\_\+\+CONSTEXPR\+\_\+14~inline}
+
+
+
+Definition at line \mbox{\hyperlink{defs_8hpp_source_l00061}{61}} of file \mbox{\hyperlink{defs_8hpp_source}{defs.\+hpp}}.
+
+\mbox{\Hypertarget{defs_8hpp_a0160641df56937a2e0427cb9bec806fb}\label{defs_8hpp_a0160641df56937a2e0427cb9bec806fb}} 
+\index{defs.hpp@{defs.hpp}!QALLOC\_CONSTEXPR\_14\_C@{QALLOC\_CONSTEXPR\_14\_C}}
+\index{QALLOC\_CONSTEXPR\_14\_C@{QALLOC\_CONSTEXPR\_14\_C}!defs.hpp@{defs.hpp}}
+\doxysubsubsection{\texorpdfstring{QALLOC\_CONSTEXPR\_14\_C}{QALLOC\_CONSTEXPR\_14\_C}}
+{\footnotesize\ttfamily \#define QALLOC\+\_\+\+CONSTEXPR\+\_\+14\+\_\+C~static const}
+
+
+
+Definition at line \mbox{\hyperlink{defs_8hpp_source_l00062}{62}} of file \mbox{\hyperlink{defs_8hpp_source}{defs.\+hpp}}.
+
+\mbox{\Hypertarget{defs_8hpp_a9c8e214e9ecad10705e8c18f4e0d5298}\label{defs_8hpp_a9c8e214e9ecad10705e8c18f4e0d5298}} 
+\index{defs.hpp@{defs.hpp}!QALLOC\_CXA\_DEMANGLE@{QALLOC\_CXA\_DEMANGLE}}
+\index{QALLOC\_CXA\_DEMANGLE@{QALLOC\_CXA\_DEMANGLE}!defs.hpp@{defs.hpp}}
+\doxysubsubsection{\texorpdfstring{QALLOC\_CXA\_DEMANGLE}{QALLOC\_CXA\_DEMANGLE}}
+{\footnotesize\ttfamily \#define QALLOC\+\_\+\+CXA\+\_\+\+DEMANGLE~0}
+
+
+
+Definition at line \mbox{\hyperlink{defs_8hpp_source_l00115}{115}} of file \mbox{\hyperlink{defs_8hpp_source}{defs.\+hpp}}.
+
+\mbox{\Hypertarget{defs_8hpp_a22ef8e96498bda188a5ba6cb974a9faa}\label{defs_8hpp_a22ef8e96498bda188a5ba6cb974a9faa}} 
+\index{defs.hpp@{defs.hpp}!QALLOC\_CXX\_14@{QALLOC\_CXX\_14}}
+\index{QALLOC\_CXX\_14@{QALLOC\_CXX\_14}!defs.hpp@{defs.hpp}}
+\doxysubsubsection{\texorpdfstring{QALLOC\_CXX\_14}{QALLOC\_CXX\_14}}
+{\footnotesize\ttfamily \#define QALLOC\+\_\+\+CXX\+\_\+14~0}
+
+
+
+Definition at line \mbox{\hyperlink{defs_8hpp_source_l00063}{63}} of file \mbox{\hyperlink{defs_8hpp_source}{defs.\+hpp}}.
+
+\mbox{\Hypertarget{defs_8hpp_a161d74733f9eeeef65f09b72bf8ae38d}\label{defs_8hpp_a161d74733f9eeeef65f09b72bf8ae38d}} 
+\index{defs.hpp@{defs.hpp}!QALLOC\_CXX\_17@{QALLOC\_CXX\_17}}
+\index{QALLOC\_CXX\_17@{QALLOC\_CXX\_17}!defs.hpp@{defs.hpp}}
+\doxysubsubsection{\texorpdfstring{QALLOC\_CXX\_17}{QALLOC\_CXX\_17}}
+{\footnotesize\ttfamily \#define QALLOC\+\_\+\+CXX\+\_\+17~0}
+
+
+
+Definition at line \mbox{\hyperlink{defs_8hpp_source_l00072}{72}} of file \mbox{\hyperlink{defs_8hpp_source}{defs.\+hpp}}.
+
+\mbox{\Hypertarget{defs_8hpp_acd8aab65eb0c19c3d86873d9c27803ed}\label{defs_8hpp_acd8aab65eb0c19c3d86873d9c27803ed}} 
+\index{defs.hpp@{defs.hpp}!QALLOC\_DEBUG@{QALLOC\_DEBUG}}
+\index{QALLOC\_DEBUG@{QALLOC\_DEBUG}!defs.hpp@{defs.hpp}}
+\doxysubsubsection{\texorpdfstring{QALLOC\_DEBUG}{QALLOC\_DEBUG}}
+{\footnotesize\ttfamily \#define QALLOC\+\_\+\+DEBUG~1}
+
+
+
+Definition at line \mbox{\hyperlink{defs_8hpp_source_l00094}{94}} of file \mbox{\hyperlink{defs_8hpp_source}{defs.\+hpp}}.
+
+\mbox{\Hypertarget{defs_8hpp_a92e808d95e376699a51e80dba29f5c16}\label{defs_8hpp_a92e808d95e376699a51e80dba29f5c16}} 
+\index{defs.hpp@{defs.hpp}!QALLOC\_DEBUG\_STATEMENT@{QALLOC\_DEBUG\_STATEMENT}}
+\index{QALLOC\_DEBUG\_STATEMENT@{QALLOC\_DEBUG\_STATEMENT}!defs.hpp@{defs.hpp}}
+\doxysubsubsection{\texorpdfstring{QALLOC\_DEBUG\_STATEMENT}{QALLOC\_DEBUG\_STATEMENT}}
+{\footnotesize\ttfamily \#define QALLOC\+\_\+\+DEBUG\+\_\+\+STATEMENT(\begin{DoxyParamCaption}\item[{}]{STMT }\end{DoxyParamCaption})~STMT}
+
+
+
+Definition at line \mbox{\hyperlink{defs_8hpp_source_l00095}{95}} of file \mbox{\hyperlink{defs_8hpp_source}{defs.\+hpp}}.
+
+\mbox{\Hypertarget{defs_8hpp_ae6074cc5b731bee29a970dd996470029}\label{defs_8hpp_ae6074cc5b731bee29a970dd996470029}} 
+\index{defs.hpp@{defs.hpp}!QALLOC\_END@{QALLOC\_END}}
+\index{QALLOC\_END@{QALLOC\_END}!defs.hpp@{defs.hpp}}
+\doxysubsubsection{\texorpdfstring{QALLOC\_END}{QALLOC\_END}}
+{\footnotesize\ttfamily \#define QALLOC\+\_\+\+END~\}}
+
+
+
+Definition at line \mbox{\hyperlink{defs_8hpp_source_l00119}{119}} of file \mbox{\hyperlink{defs_8hpp_source}{defs.\+hpp}}.
+
+\mbox{\Hypertarget{defs_8hpp_a6aeac36a4662f302351fb5558b6bfa28}\label{defs_8hpp_a6aeac36a4662f302351fb5558b6bfa28}} 
+\index{defs.hpp@{defs.hpp}!QALLOC\_FOPEN@{QALLOC\_FOPEN}}
+\index{QALLOC\_FOPEN@{QALLOC\_FOPEN}!defs.hpp@{defs.hpp}}
+\doxysubsubsection{\texorpdfstring{QALLOC\_FOPEN}{QALLOC\_FOPEN}}
+{\footnotesize\ttfamily \#define QALLOC\+\_\+\+FOPEN(\begin{DoxyParamCaption}\item[{}]{PTR,  }\item[{}]{FILENAME,  }\item[{}]{MODE }\end{DoxyParamCaption})~($\ast$PTR) = fopen((FILENAME), (MODE))}
+
+
+
+Definition at line \mbox{\hyperlink{defs_8hpp_source_l00089}{89}} of file \mbox{\hyperlink{defs_8hpp_source}{defs.\+hpp}}.
+
+\mbox{\Hypertarget{defs_8hpp_a3b2d4cc752a36a4a7ba6d736d45ff36b}\label{defs_8hpp_a3b2d4cc752a36a4a7ba6d736d45ff36b}} 
+\index{defs.hpp@{defs.hpp}!QALLOC\_FPRINTF@{QALLOC\_FPRINTF}}
+\index{QALLOC\_FPRINTF@{QALLOC\_FPRINTF}!defs.hpp@{defs.hpp}}
+\doxysubsubsection{\texorpdfstring{QALLOC\_FPRINTF}{QALLOC\_FPRINTF}}
+{\footnotesize\ttfamily \#define QALLOC\+\_\+\+FPRINTF~(void) std\+::fprintf}
+
+
+
+Definition at line \mbox{\hyperlink{defs_8hpp_source_l00123}{123}} of file \mbox{\hyperlink{defs_8hpp_source}{defs.\+hpp}}.
+
+\mbox{\Hypertarget{defs_8hpp_a608302519252f5a493f5b6175d60c0d7}\label{defs_8hpp_a608302519252f5a493f5b6175d60c0d7}} 
+\index{defs.hpp@{defs.hpp}!QALLOC\_HAS\_CPP\_ATTRIBUTE@{QALLOC\_HAS\_CPP\_ATTRIBUTE}}
+\index{QALLOC\_HAS\_CPP\_ATTRIBUTE@{QALLOC\_HAS\_CPP\_ATTRIBUTE}!defs.hpp@{defs.hpp}}
+\doxysubsubsection{\texorpdfstring{QALLOC\_HAS\_CPP\_ATTRIBUTE}{QALLOC\_HAS\_CPP\_ATTRIBUTE}}
+{\footnotesize\ttfamily \#define QALLOC\+\_\+\+HAS\+\_\+\+CPP\+\_\+\+ATTRIBUTE(\begin{DoxyParamCaption}\item[{}]{NAME }\end{DoxyParamCaption})~\+\_\+\+\_\+cplusplus $>$= 201703L}
+
+
+
+Definition at line \mbox{\hyperlink{defs_8hpp_source_l00040}{40}} of file \mbox{\hyperlink{defs_8hpp_source}{defs.\+hpp}}.
+
+\mbox{\Hypertarget{defs_8hpp_ac985d9b598dc1aad574c5db6759db7cf}\label{defs_8hpp_ac985d9b598dc1aad574c5db6759db7cf}} 
+\index{defs.hpp@{defs.hpp}!QALLOC\_IF\_CONSTEXPR@{QALLOC\_IF\_CONSTEXPR}}
+\index{QALLOC\_IF\_CONSTEXPR@{QALLOC\_IF\_CONSTEXPR}!defs.hpp@{defs.hpp}}
+\doxysubsubsection{\texorpdfstring{QALLOC\_IF\_CONSTEXPR}{QALLOC\_IF\_CONSTEXPR}}
+{\footnotesize\ttfamily \#define QALLOC\+\_\+\+IF\+\_\+\+CONSTEXPR~if}
+
+
+
+Definition at line \mbox{\hyperlink{defs_8hpp_source_l00071}{71}} of file \mbox{\hyperlink{defs_8hpp_source}{defs.\+hpp}}.
+
+\mbox{\Hypertarget{defs_8hpp_a738f4b2ae3a9746873a20b9ee0f57d83}\label{defs_8hpp_a738f4b2ae3a9746873a20b9ee0f57d83}} 
+\index{defs.hpp@{defs.hpp}!QALLOC\_INTERNAL\_BEGIN@{QALLOC\_INTERNAL\_BEGIN}}
+\index{QALLOC\_INTERNAL\_BEGIN@{QALLOC\_INTERNAL\_BEGIN}!defs.hpp@{defs.hpp}}
+\doxysubsubsection{\texorpdfstring{QALLOC\_INTERNAL\_BEGIN}{QALLOC\_INTERNAL\_BEGIN}}
+{\footnotesize\ttfamily \#define QALLOC\+\_\+\+INTERNAL\+\_\+\+BEGIN~\mbox{\hyperlink{defs_8hpp_a0c5e46377ecf7e33c016739291f04c75}{QALLOC\+\_\+\+BEGIN}} namespace internal \{}
+
+
+
+Definition at line \mbox{\hyperlink{defs_8hpp_source_l00120}{120}} of file \mbox{\hyperlink{defs_8hpp_source}{defs.\+hpp}}.
+
+\mbox{\Hypertarget{defs_8hpp_a9dfa7594d25c13b2880478b48840e016}\label{defs_8hpp_a9dfa7594d25c13b2880478b48840e016}} 
+\index{defs.hpp@{defs.hpp}!QALLOC\_INTERNAL\_END@{QALLOC\_INTERNAL\_END}}
+\index{QALLOC\_INTERNAL\_END@{QALLOC\_INTERNAL\_END}!defs.hpp@{defs.hpp}}
+\doxysubsubsection{\texorpdfstring{QALLOC\_INTERNAL\_END}{QALLOC\_INTERNAL\_END}}
+{\footnotesize\ttfamily \#define QALLOC\+\_\+\+INTERNAL\+\_\+\+END~\} \mbox{\hyperlink{defs_8hpp_ae6074cc5b731bee29a970dd996470029}{QALLOC\+\_\+\+END}}}
+
+
+
+Definition at line \mbox{\hyperlink{defs_8hpp_source_l00121}{121}} of file \mbox{\hyperlink{defs_8hpp_source}{defs.\+hpp}}.
+
+\mbox{\Hypertarget{defs_8hpp_a3867648fe5c1dfaa0e9aa9de03c7c663}\label{defs_8hpp_a3867648fe5c1dfaa0e9aa9de03c7c663}} 
+\index{defs.hpp@{defs.hpp}!QALLOC\_MALLOC\_FUNCTION@{QALLOC\_MALLOC\_FUNCTION}}
+\index{QALLOC\_MALLOC\_FUNCTION@{QALLOC\_MALLOC\_FUNCTION}!defs.hpp@{defs.hpp}}
+\doxysubsubsection{\texorpdfstring{QALLOC\_MALLOC\_FUNCTION}{QALLOC\_MALLOC\_FUNCTION}}
+{\footnotesize\ttfamily \#define QALLOC\+\_\+\+MALLOC\+\_\+\+FUNCTION(\begin{DoxyParamCaption}\item[{}]{DECLARATION  }\end{DoxyParamCaption})~\mbox{\hyperlink{defs_8hpp_ade58da4f1b86dde2aa39f11a2578a19e}{QALLOC\+\_\+\+NODISCARD}} DECLARATION}
+
+
+
+Definition at line \mbox{\hyperlink{defs_8hpp_source_l00088}{88}} of file \mbox{\hyperlink{defs_8hpp_source}{defs.\+hpp}}.
+
+\mbox{\Hypertarget{defs_8hpp_a0a542caf1ef757dc9777bffee9e045b9}\label{defs_8hpp_a0a542caf1ef757dc9777bffee9e045b9}} 
+\index{defs.hpp@{defs.hpp}!QALLOC\_MAYBE\_UNUSED@{QALLOC\_MAYBE\_UNUSED}}
+\index{QALLOC\_MAYBE\_UNUSED@{QALLOC\_MAYBE\_UNUSED}!defs.hpp@{defs.hpp}}
+\doxysubsubsection{\texorpdfstring{QALLOC\_MAYBE\_UNUSED}{QALLOC\_MAYBE\_UNUSED}}
+{\footnotesize\ttfamily \#define QALLOC\+\_\+\+MAYBE\+\_\+\+UNUSED}
+
+
+
+Definition at line \mbox{\hyperlink{defs_8hpp_source_l00046}{46}} of file \mbox{\hyperlink{defs_8hpp_source}{defs.\+hpp}}.
+
+\mbox{\Hypertarget{defs_8hpp_a2c3bd862e7053b2e3e8f7b2c25cc6854}\label{defs_8hpp_a2c3bd862e7053b2e3e8f7b2c25cc6854}} 
+\index{defs.hpp@{defs.hpp}!QALLOC\_NDEBUG\_CONSTEXPR@{QALLOC\_NDEBUG\_CONSTEXPR}}
+\index{QALLOC\_NDEBUG\_CONSTEXPR@{QALLOC\_NDEBUG\_CONSTEXPR}!defs.hpp@{defs.hpp}}
+\doxysubsubsection{\texorpdfstring{QALLOC\_NDEBUG\_CONSTEXPR}{QALLOC\_NDEBUG\_CONSTEXPR}}
+{\footnotesize\ttfamily \#define QALLOC\+\_\+\+NDEBUG\+\_\+\+CONSTEXPR~inline}
+
+
+
+Definition at line \mbox{\hyperlink{defs_8hpp_source_l00096}{96}} of file \mbox{\hyperlink{defs_8hpp_source}{defs.\+hpp}}.
+
+\mbox{\Hypertarget{defs_8hpp_ade58da4f1b86dde2aa39f11a2578a19e}\label{defs_8hpp_ade58da4f1b86dde2aa39f11a2578a19e}} 
+\index{defs.hpp@{defs.hpp}!QALLOC\_NODISCARD@{QALLOC\_NODISCARD}}
+\index{QALLOC\_NODISCARD@{QALLOC\_NODISCARD}!defs.hpp@{defs.hpp}}
+\doxysubsubsection{\texorpdfstring{QALLOC\_NODISCARD}{QALLOC\_NODISCARD}}
+{\footnotesize\ttfamily \#define QALLOC\+\_\+\+NODISCARD}
+
+
+
+Definition at line \mbox{\hyperlink{defs_8hpp_source_l00052}{52}} of file \mbox{\hyperlink{defs_8hpp_source}{defs.\+hpp}}.
+
+\mbox{\Hypertarget{defs_8hpp_afa317ae078e3aa6464f612d9d5c3cda1}\label{defs_8hpp_afa317ae078e3aa6464f612d9d5c3cda1}} 
+\index{defs.hpp@{defs.hpp}!QALLOC\_PRINTF@{QALLOC\_PRINTF}}
+\index{QALLOC\_PRINTF@{QALLOC\_PRINTF}!defs.hpp@{defs.hpp}}
+\doxysubsubsection{\texorpdfstring{QALLOC\_PRINTF}{QALLOC\_PRINTF}}
+{\footnotesize\ttfamily \#define QALLOC\+\_\+\+PRINTF~(void) std\+::printf}
+
+
+
+Definition at line \mbox{\hyperlink{defs_8hpp_source_l00122}{122}} of file \mbox{\hyperlink{defs_8hpp_source}{defs.\+hpp}}.
+
+\mbox{\Hypertarget{defs_8hpp_abd9d01a9bdcdb529f52d7d9e3e44b552}\label{defs_8hpp_abd9d01a9bdcdb529f52d7d9e3e44b552}} 
+\index{defs.hpp@{defs.hpp}!QALLOC\_RESTRICT@{QALLOC\_RESTRICT}}
+\index{QALLOC\_RESTRICT@{QALLOC\_RESTRICT}!defs.hpp@{defs.hpp}}
+\doxysubsubsection{\texorpdfstring{QALLOC\_RESTRICT}{QALLOC\_RESTRICT}}
+{\footnotesize\ttfamily \#define QALLOC\+\_\+\+RESTRICT~\+\_\+\+\_\+restrict\+\_\+\+\_\+}
+
+
+
+Definition at line \mbox{\hyperlink{defs_8hpp_source_l00087}{87}} of file \mbox{\hyperlink{defs_8hpp_source}{defs.\+hpp}}.
+
+\mbox{\Hypertarget{defs_8hpp_af0cb4d1ee2aa329e3bde17df9adc6127}\label{defs_8hpp_af0cb4d1ee2aa329e3bde17df9adc6127}} 
+\index{defs.hpp@{defs.hpp}!QALLOC\_STORE\_TYPEINFO@{QALLOC\_STORE\_TYPEINFO}}
+\index{QALLOC\_STORE\_TYPEINFO@{QALLOC\_STORE\_TYPEINFO}!defs.hpp@{defs.hpp}}
+\doxysubsubsection{\texorpdfstring{QALLOC\_STORE\_TYPEINFO}{QALLOC\_STORE\_TYPEINFO}}
+{\footnotesize\ttfamily \#define QALLOC\+\_\+\+STORE\+\_\+\+TYPEINFO~1}
+
+
+
+Definition at line \mbox{\hyperlink{defs_8hpp_source_l00099}{99}} of file \mbox{\hyperlink{defs_8hpp_source}{defs.\+hpp}}.
+
+\mbox{\Hypertarget{defs_8hpp_acbddab0d51dce45736e940323cf5a3a7}\label{defs_8hpp_acbddab0d51dce45736e940323cf5a3a7}} 
+\index{defs.hpp@{defs.hpp}!QALLOC\_STRINGVIEW@{QALLOC\_STRINGVIEW}}
+\index{QALLOC\_STRINGVIEW@{QALLOC\_STRINGVIEW}!defs.hpp@{defs.hpp}}
+\doxysubsubsection{\texorpdfstring{QALLOC\_STRINGVIEW}{QALLOC\_STRINGVIEW}}
+{\footnotesize\ttfamily \#define QALLOC\+\_\+\+STRINGVIEW~\mbox{\hyperlink{namespaceqalloc_1_1stl_a10f8c4d7d0fd543c309c1aa7e9d477ef}{qalloc\+::string}}}
+
+
+
+Definition at line \mbox{\hyperlink{defs_8hpp_source_l00064}{64}} of file \mbox{\hyperlink{defs_8hpp_source}{defs.\+hpp}}.
+

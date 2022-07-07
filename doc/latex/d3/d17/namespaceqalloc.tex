@@ -1,0 +1,484 @@
+\hypertarget{namespaceqalloc}{}\doxysection{qalloc Namespace Reference}
+\label{namespaceqalloc}\index{qalloc@{qalloc}}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceqalloc_1_1pointer}{pointer}}
+\begin{DoxyCompactList}\small\item\em pointer utilities namespace \end{DoxyCompactList}\item 
+namespace \mbox{\hyperlink{namespaceqalloc_1_1simple}{simple}}
+\begin{DoxyCompactList}\small\item\em STL container types with no type info and gc support. \end{DoxyCompactList}\item 
+namespace \mbox{\hyperlink{namespaceqalloc_1_1stl}{stl}}
+\begin{DoxyCompactList}\small\item\em STL container types with type info and gc support. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classqalloc_1_1allocator__base}{allocator\+\_\+base}}
+\begin{DoxyCompactList}\small\item\em qalloc allocator base class. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structqalloc_1_1block__info__t}{block\+\_\+info\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em block allocation information class. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structqalloc_1_1freed__block__t}{freed\+\_\+block\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em freed block information class. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classqalloc_1_1pool__base__t}{pool\+\_\+base\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em qalloc pool base class. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classqalloc_1_1pool__t}{pool\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em qalloc pool class. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structqalloc_1_1subpool__t}{subpool\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em qalloc subpool class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\using \mbox{\hyperlink{namespaceqalloc_a2cdfac821f57c7b82ea32b5932e51a1c}{allocator}} = \mbox{\hyperlink{classqalloc_1_1allocator__base}{allocator\+\_\+base}}$<$ T, true $>$
+\begin{DoxyCompactList}\small\item\em qalloc allocator class with typeinfo and gc support. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\using \mbox{\hyperlink{namespaceqalloc_a4b98e706108382920c6ae4b1e6703b26}{simple\+\_\+allocator}} = \mbox{\hyperlink{classqalloc_1_1allocator__base}{allocator\+\_\+base}}$<$ T, false $>$
+\begin{DoxyCompactList}\small\item\em qalloc simple allocator class without typeinfo and gc support. \end{DoxyCompactList}\item 
+using \mbox{\hyperlink{namespaceqalloc_a15dbd90bcf32a0cda82fef6ab9189823}{byte\+\_\+pointer}} = \mbox{\hyperlink{namespaceqalloc_ae3a2d1ddce51c70146088378000a5946}{byte}} $\ast$
+\item 
+using \mbox{\hyperlink{namespaceqalloc_a0fcbf28d8aec7f6a33e6dff63b6e1357}{const\+\_\+byte\+\_\+pointer}} = const \mbox{\hyperlink{namespaceqalloc_ae3a2d1ddce51c70146088378000a5946}{byte}} $\ast$
+\item 
+using \mbox{\hyperlink{namespaceqalloc_a01158dc1896ab43737138392524e61d9}{void\+\_\+pointer}} = void $\ast$
+\item 
+using \mbox{\hyperlink{namespaceqalloc_a88ff7078fa672c6ff9de26bdcb9daeca}{const\+\_\+void\+\_\+pointer}} = const void $\ast$
+\item 
+using \mbox{\hyperlink{namespaceqalloc_a5b36ec8e13ab5c8aebd049e1b0e07574}{size\+\_\+type}} = std\+::size\+\_\+t
+\item 
+using \mbox{\hyperlink{namespaceqalloc_a3eaa567e837689805c5f4c5dda562e16}{difference\+\_\+type}} = std\+::ptrdiff\+\_\+t
+\item 
+using \mbox{\hyperlink{namespaceqalloc_a6d6f73a87b632e0151f0dd151bcc1917}{pool\+\_\+pointer}} = const \mbox{\hyperlink{classqalloc_1_1pool__t}{pool\+\_\+t}} $\ast$
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{namespaceqalloc_ae3a2d1ddce51c70146088378000a5946}{byte}} \+: unsigned char 
+\begin{DoxyCompactList}\small\item\em single byte enum type \end{DoxyCompactList}\item 
+enum class \mbox{\hyperlink{namespaceqalloc_a0c8786ebe9d96517ed824f01ecf36f2e}{index\+\_\+type}} \+: size\+\_\+type \{ \mbox{\hyperlink{namespaceqalloc_a0c8786ebe9d96517ed824f01ecf36f2ead7ed4ee1df437474d005188535f74875}{Zero}} = 0
+ \}
+\begin{DoxyCompactList}\small\item\em size\+\_\+type enum type for index \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T , bool T\+\_\+detailed, typename U , bool U\+\_\+detailed$>$ }\\constexpr bool \mbox{\hyperlink{namespaceqalloc_a62082393da7050f561c991b6180ccaaa}{operator==}} (const \mbox{\hyperlink{classqalloc_1_1allocator__base}{allocator\+\_\+base}}$<$ T, T\+\_\+detailed $>$ \&, const \mbox{\hyperlink{classqalloc_1_1allocator__base}{allocator\+\_\+base}}$<$ U, U\+\_\+detailed $>$ \&) noexcept
+\item 
+{\footnotesize template$<$typename T , bool T\+\_\+detailed, typename U , bool U\+\_\+detailed$>$ }\\constexpr bool \mbox{\hyperlink{namespaceqalloc_a5f6396d53116ae2d240a335597367f80}{operator!=}} (const \mbox{\hyperlink{classqalloc_1_1allocator__base}{allocator\+\_\+base}}$<$ T, T\+\_\+detailed $>$ \&, const \mbox{\hyperlink{classqalloc_1_1allocator__base}{allocator\+\_\+base}}$<$ U, U\+\_\+detailed $>$ \&) noexcept
+\item 
+\mbox{\hyperlink{namespaceqalloc_a01158dc1896ab43737138392524e61d9}{void\+\_\+pointer}} \mbox{\hyperlink{namespaceqalloc_a3814825bf67bbfcbb1078b176f47333e}{q\+\_\+malloc}} (\mbox{\hyperlink{namespaceqalloc_a5b36ec8e13ab5c8aebd049e1b0e07574}{size\+\_\+type}} n\+\_\+bytes)
+\item 
+std\+::ostream \& \mbox{\hyperlink{namespaceqalloc_a72bbdc6602c8378e0039a83d88e55c33}{operator$<$$<$}} (std\+::ostream \&os, \mbox{\hyperlink{namespaceqalloc_ae3a2d1ddce51c70146088378000a5946}{qalloc\+::const\+\_\+byte\+\_\+pointer}} p)
+\begin{DoxyCompactList}\small\item\em std\+::ostream input operator for constant byte pointer \end{DoxyCompactList}\item 
+constexpr \mbox{\hyperlink{namespaceqalloc_a0c8786ebe9d96517ed824f01ecf36f2e}{index\+\_\+type}} \& \mbox{\hyperlink{namespaceqalloc_afbe2e097d5f884fa7b34da384d7b1a69}{operator-\/-\/}} (\mbox{\hyperlink{namespaceqalloc_a0c8786ebe9d96517ed824f01ecf36f2e}{index\+\_\+type}} \&i)
+\begin{DoxyCompactList}\small\item\em index\+\_\+type decrement operator \end{DoxyCompactList}\item 
+constexpr \mbox{\hyperlink{namespaceqalloc_a5b36ec8e13ab5c8aebd049e1b0e07574}{size\+\_\+type}} \mbox{\hyperlink{namespaceqalloc_a8ec1582ea2955deea02a637178ab2047}{operator\char`\"{}\char`\"{}\+\_\+z}} (unsigned long long n)
+\begin{DoxyCompactList}\small\item\em size\+\_\+type literal suffix operator \end{DoxyCompactList}\item 
+constexpr \mbox{\hyperlink{namespaceqalloc_a5b36ec8e13ab5c8aebd049e1b0e07574}{size\+\_\+type}} \mbox{\hyperlink{namespaceqalloc_a9b6a3324c716b59468f390dbe4e9a1bc}{size\+\_\+cast}} (\mbox{\hyperlink{namespaceqalloc_a0c8786ebe9d96517ed824f01ecf36f2e}{index\+\_\+type}} i)
+\begin{DoxyCompactList}\small\item\em cast from index\+\_\+type to size\+\_\+type \end{DoxyCompactList}\item 
+constexpr \mbox{\hyperlink{namespaceqalloc_a5b36ec8e13ab5c8aebd049e1b0e07574}{size\+\_\+type}} \mbox{\hyperlink{namespaceqalloc_aa3991f062700899cabdea80d0d364f11}{size\+\_\+cast}} (\mbox{\hyperlink{namespaceqalloc_a3eaa567e837689805c5f4c5dda562e16}{difference\+\_\+type}} diff)
+\begin{DoxyCompactList}\small\item\em cast from difference\+\_\+type to size\+\_\+type \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceqalloc_a478fbcc6943b47af975a08e4b61e91fe}{QALLOC\+\_\+\+MALLOC\+\_\+\+FUNCTION}} (\mbox{\hyperlink{namespaceqalloc_a01158dc1896ab43737138392524e61d9}{void\+\_\+pointer}} pool\+\_\+base\+\_\+t\+::operator new(\mbox{\hyperlink{namespaceqalloc_a5b36ec8e13ab5c8aebd049e1b0e07574}{size\+\_\+type}} n\+\_\+bytes))
+\item 
+constexpr const std\+::type\+\_\+info \& \mbox{\hyperlink{namespaceqalloc_a3382e2682d1ed74cead61018bc816010}{type\+\_\+of}} (\mbox{\hyperlink{namespaceqalloc_a01158dc1896ab43737138392524e61d9}{void\+\_\+pointer}} p)
+\begin{DoxyCompactList}\small\item\em get type info of pointer. \end{DoxyCompactList}\item 
+const char $\ast$ \mbox{\hyperlink{namespaceqalloc_a69ea19642f283405929f935a82eb6bd4}{type\+\_\+name\+\_\+of}} (\mbox{\hyperlink{namespaceqalloc_a01158dc1896ab43737138392524e61d9}{void\+\_\+pointer}} p)
+\begin{DoxyCompactList}\small\item\em get raw type name of object in pointer. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{namespaceqalloc_a21ba5c580f374d43d6ae7e251f6d8c22}{demangled\+\_\+type\+\_\+name\+\_\+of}} (const char $\ast$mangled\+\_\+name)
+\begin{DoxyCompactList}\small\item\em get demangled type name from mangled type name. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{namespaceqalloc_a41443b7060594c6eacbba4ccad35efc8}{demangled\+\_\+type\+\_\+name\+\_\+of}} (\mbox{\hyperlink{namespaceqalloc_a01158dc1896ab43737138392524e61d9}{void\+\_\+pointer}} p)
+\begin{DoxyCompactList}\small\item\em get demangled type name of object in pointer. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{defs_8hpp_a0a542caf1ef757dc9777bffee9e045b9}{QALLOC\+\_\+\+MAYBE\+\_\+\+UNUSED}} T \& \mbox{\hyperlink{namespaceqalloc_a98dbfa4d3a82c020e36c40e4e22c08fe}{safe\+\_\+cast}} (\mbox{\hyperlink{namespaceqalloc_a01158dc1896ab43737138392524e61d9}{void\+\_\+pointer}} p)
+\begin{DoxyCompactList}\small\item\em cast pointer to another type with type check. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{namespaceqalloc_a2cdfac821f57c7b82ea32b5932e51a1c}\label{namespaceqalloc_a2cdfac821f57c7b82ea32b5932e51a1c}} 
+\index{qalloc@{qalloc}!allocator@{allocator}}
+\index{allocator@{allocator}!qalloc@{qalloc}}
+\doxysubsubsection{\texorpdfstring{allocator}{allocator}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+using \mbox{\hyperlink{namespaceqalloc_a2cdfac821f57c7b82ea32b5932e51a1c}{qalloc\+::allocator}} = typedef \mbox{\hyperlink{classqalloc_1_1allocator__base}{allocator\+\_\+base}}$<$T, true$>$}
+
+
+
+qalloc allocator class with typeinfo and gc support. 
+
+
+
+Definition at line \mbox{\hyperlink{allocator_8hpp_source_l00068}{68}} of file \mbox{\hyperlink{allocator_8hpp_source}{allocator.\+hpp}}.
+
+\mbox{\Hypertarget{namespaceqalloc_a15dbd90bcf32a0cda82fef6ab9189823}\label{namespaceqalloc_a15dbd90bcf32a0cda82fef6ab9189823}} 
+\index{qalloc@{qalloc}!byte\_pointer@{byte\_pointer}}
+\index{byte\_pointer@{byte\_pointer}!qalloc@{qalloc}}
+\doxysubsubsection{\texorpdfstring{byte\_pointer}{byte\_pointer}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{namespaceqalloc_ae3a2d1ddce51c70146088378000a5946}{qalloc\+::byte\+\_\+pointer}} = typedef \mbox{\hyperlink{namespaceqalloc_ae3a2d1ddce51c70146088378000a5946}{byte}}$\ast$}
+
+
+
+Definition at line \mbox{\hyperlink{pointer_8hpp_source_l00031}{31}} of file \mbox{\hyperlink{pointer_8hpp_source}{pointer.\+hpp}}.
+
+\mbox{\Hypertarget{namespaceqalloc_a0fcbf28d8aec7f6a33e6dff63b6e1357}\label{namespaceqalloc_a0fcbf28d8aec7f6a33e6dff63b6e1357}} 
+\index{qalloc@{qalloc}!const\_byte\_pointer@{const\_byte\_pointer}}
+\index{const\_byte\_pointer@{const\_byte\_pointer}!qalloc@{qalloc}}
+\doxysubsubsection{\texorpdfstring{const\_byte\_pointer}{const\_byte\_pointer}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{namespaceqalloc_ae3a2d1ddce51c70146088378000a5946}{qalloc\+::const\+\_\+byte\+\_\+pointer}} = typedef const \mbox{\hyperlink{namespaceqalloc_ae3a2d1ddce51c70146088378000a5946}{byte}}$\ast$}
+
+
+
+Definition at line \mbox{\hyperlink{pointer_8hpp_source_l00032}{32}} of file \mbox{\hyperlink{pointer_8hpp_source}{pointer.\+hpp}}.
+
+\mbox{\Hypertarget{namespaceqalloc_a88ff7078fa672c6ff9de26bdcb9daeca}\label{namespaceqalloc_a88ff7078fa672c6ff9de26bdcb9daeca}} 
+\index{qalloc@{qalloc}!const\_void\_pointer@{const\_void\_pointer}}
+\index{const\_void\_pointer@{const\_void\_pointer}!qalloc@{qalloc}}
+\doxysubsubsection{\texorpdfstring{const\_void\_pointer}{const\_void\_pointer}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{namespaceqalloc_a88ff7078fa672c6ff9de26bdcb9daeca}{qalloc\+::const\+\_\+void\+\_\+pointer}} = typedef const void$\ast$}
+
+
+
+Definition at line \mbox{\hyperlink{pointer_8hpp_source_l00034}{34}} of file \mbox{\hyperlink{pointer_8hpp_source}{pointer.\+hpp}}.
+
+\mbox{\Hypertarget{namespaceqalloc_a3eaa567e837689805c5f4c5dda562e16}\label{namespaceqalloc_a3eaa567e837689805c5f4c5dda562e16}} 
+\index{qalloc@{qalloc}!difference\_type@{difference\_type}}
+\index{difference\_type@{difference\_type}!qalloc@{qalloc}}
+\doxysubsubsection{\texorpdfstring{difference\_type}{difference\_type}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{namespaceqalloc_a3eaa567e837689805c5f4c5dda562e16}{qalloc\+::difference\+\_\+type}} = typedef std\+::ptrdiff\+\_\+t}
+
+
+
+Definition at line \mbox{\hyperlink{pointer_8hpp_source_l00036}{36}} of file \mbox{\hyperlink{pointer_8hpp_source}{pointer.\+hpp}}.
+
+\mbox{\Hypertarget{namespaceqalloc_a6d6f73a87b632e0151f0dd151bcc1917}\label{namespaceqalloc_a6d6f73a87b632e0151f0dd151bcc1917}} 
+\index{qalloc@{qalloc}!pool\_pointer@{pool\_pointer}}
+\index{pool\_pointer@{pool\_pointer}!qalloc@{qalloc}}
+\doxysubsubsection{\texorpdfstring{pool\_pointer}{pool\_pointer}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{namespaceqalloc_a6d6f73a87b632e0151f0dd151bcc1917}{qalloc\+::pool\+\_\+pointer}} = typedef const \mbox{\hyperlink{classqalloc_1_1pool__t}{pool\+\_\+t}}$\ast$}
+
+
+
+Definition at line \mbox{\hyperlink{pool_8hpp_source_l00041}{41}} of file \mbox{\hyperlink{pool_8hpp_source}{pool.\+hpp}}.
+
+\mbox{\Hypertarget{namespaceqalloc_a4b98e706108382920c6ae4b1e6703b26}\label{namespaceqalloc_a4b98e706108382920c6ae4b1e6703b26}} 
+\index{qalloc@{qalloc}!simple\_allocator@{simple\_allocator}}
+\index{simple\_allocator@{simple\_allocator}!qalloc@{qalloc}}
+\doxysubsubsection{\texorpdfstring{simple\_allocator}{simple\_allocator}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+using \mbox{\hyperlink{namespaceqalloc_a4b98e706108382920c6ae4b1e6703b26}{qalloc\+::simple\+\_\+allocator}} = typedef \mbox{\hyperlink{classqalloc_1_1allocator__base}{allocator\+\_\+base}}$<$T, false$>$}
+
+
+
+qalloc simple allocator class without typeinfo and gc support. 
+
+
+
+Definition at line \mbox{\hyperlink{allocator_8hpp_source_l00072}{72}} of file \mbox{\hyperlink{allocator_8hpp_source}{allocator.\+hpp}}.
+
+\mbox{\Hypertarget{namespaceqalloc_a5b36ec8e13ab5c8aebd049e1b0e07574}\label{namespaceqalloc_a5b36ec8e13ab5c8aebd049e1b0e07574}} 
+\index{qalloc@{qalloc}!size\_type@{size\_type}}
+\index{size\_type@{size\_type}!qalloc@{qalloc}}
+\doxysubsubsection{\texorpdfstring{size\_type}{size\_type}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{namespaceqalloc_a5b36ec8e13ab5c8aebd049e1b0e07574}{qalloc\+::size\+\_\+type}} = typedef std\+::size\+\_\+t}
+
+
+
+Definition at line \mbox{\hyperlink{pointer_8hpp_source_l00035}{35}} of file \mbox{\hyperlink{pointer_8hpp_source}{pointer.\+hpp}}.
+
+\mbox{\Hypertarget{namespaceqalloc_a01158dc1896ab43737138392524e61d9}\label{namespaceqalloc_a01158dc1896ab43737138392524e61d9}} 
+\index{qalloc@{qalloc}!void\_pointer@{void\_pointer}}
+\index{void\_pointer@{void\_pointer}!qalloc@{qalloc}}
+\doxysubsubsection{\texorpdfstring{void\_pointer}{void\_pointer}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{namespaceqalloc_a01158dc1896ab43737138392524e61d9}{qalloc\+::void\+\_\+pointer}} = typedef void$\ast$}
+
+
+
+Definition at line \mbox{\hyperlink{pointer_8hpp_source_l00033}{33}} of file \mbox{\hyperlink{pointer_8hpp_source}{pointer.\+hpp}}.
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{namespaceqalloc_ae3a2d1ddce51c70146088378000a5946}\label{namespaceqalloc_ae3a2d1ddce51c70146088378000a5946}} 
+\index{qalloc@{qalloc}!byte@{byte}}
+\index{byte@{byte}!qalloc@{qalloc}}
+\doxysubsubsection{\texorpdfstring{byte}{byte}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{namespaceqalloc_ae3a2d1ddce51c70146088378000a5946}{qalloc\+::byte}} \+: unsigned char\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+single byte enum type 
+
+
+
+Definition at line \mbox{\hyperlink{pointer_8hpp_source_l00029}{29}} of file \mbox{\hyperlink{pointer_8hpp_source}{pointer.\+hpp}}.
+
+\mbox{\Hypertarget{namespaceqalloc_a0c8786ebe9d96517ed824f01ecf36f2e}\label{namespaceqalloc_a0c8786ebe9d96517ed824f01ecf36f2e}} 
+\index{qalloc@{qalloc}!index\_type@{index\_type}}
+\index{index\_type@{index\_type}!qalloc@{qalloc}}
+\doxysubsubsection{\texorpdfstring{index\_type}{index\_type}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{namespaceqalloc_a0c8786ebe9d96517ed824f01ecf36f2e}{qalloc\+::index\+\_\+type}} \+: \mbox{\hyperlink{namespaceqalloc_a5b36ec8e13ab5c8aebd049e1b0e07574}{size\+\_\+type}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+size\+\_\+type enum type for index 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Zero@{Zero}!qalloc@{qalloc}}\index{qalloc@{qalloc}!Zero@{Zero}}}\mbox{\Hypertarget{namespaceqalloc_a0c8786ebe9d96517ed824f01ecf36f2ead7ed4ee1df437474d005188535f74875}\label{namespaceqalloc_a0c8786ebe9d96517ed824f01ecf36f2ead7ed4ee1df437474d005188535f74875}} 
+Zero&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{pointer_8hpp_source_l00039}{39}} of file \mbox{\hyperlink{pointer_8hpp_source}{pointer.\+hpp}}.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespaceqalloc_a21ba5c580f374d43d6ae7e251f6d8c22}\label{namespaceqalloc_a21ba5c580f374d43d6ae7e251f6d8c22}} 
+\index{qalloc@{qalloc}!demangled\_type\_name\_of@{demangled\_type\_name\_of}}
+\index{demangled\_type\_name\_of@{demangled\_type\_name\_of}!qalloc@{qalloc}}
+\doxysubsubsection{\texorpdfstring{demangled\_type\_name\_of()}{demangled\_type\_name\_of()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::string qalloc\+::demangled\+\_\+type\+\_\+name\+\_\+of (\begin{DoxyParamCaption}\item[{const char $\ast$}]{mangled\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+get demangled type name from mangled type name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mangled\+\_\+name} & mangled type name. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{std\+::string}} of demangled type name. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{type__info_8hpp_source_l00049}{49}} of file \mbox{\hyperlink{type__info_8hpp_source}{type\+\_\+info.\+hpp}}.
+
+\mbox{\Hypertarget{namespaceqalloc_a41443b7060594c6eacbba4ccad35efc8}\label{namespaceqalloc_a41443b7060594c6eacbba4ccad35efc8}} 
+\index{qalloc@{qalloc}!demangled\_type\_name\_of@{demangled\_type\_name\_of}}
+\index{demangled\_type\_name\_of@{demangled\_type\_name\_of}!qalloc@{qalloc}}
+\doxysubsubsection{\texorpdfstring{demangled\_type\_name\_of()}{demangled\_type\_name\_of()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::string qalloc\+::demangled\+\_\+type\+\_\+name\+\_\+of (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceqalloc_a01158dc1896ab43737138392524e61d9}{void\+\_\+pointer}}}]{p }\end{DoxyParamCaption})}
+
+
+
+get demangled type name of object in pointer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & pointer allocated from qalloc pool. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{std\+::string}} of demangled type name of object in pointer. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{type__info_8hpp_source_l00067}{67}} of file \mbox{\hyperlink{type__info_8hpp_source}{type\+\_\+info.\+hpp}}.
+
+\mbox{\Hypertarget{namespaceqalloc_a5f6396d53116ae2d240a335597367f80}\label{namespaceqalloc_a5f6396d53116ae2d240a335597367f80}} 
+\index{qalloc@{qalloc}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!qalloc@{qalloc}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily template$<$typename T , bool T\+\_\+detailed, typename U , bool U\+\_\+detailed$>$ \\
+constexpr bool qalloc\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classqalloc_1_1allocator__base}{allocator\+\_\+base}}$<$ T, T\+\_\+detailed $>$ \&}]{,  }\item[{const \mbox{\hyperlink{classqalloc_1_1allocator__base}{allocator\+\_\+base}}$<$ U, U\+\_\+detailed $>$ \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{allocator__impl_8hpp_source_l00087}{87}} of file \mbox{\hyperlink{allocator__impl_8hpp_source}{allocator\+\_\+impl.\+hpp}}.
+
+\mbox{\Hypertarget{namespaceqalloc_a8ec1582ea2955deea02a637178ab2047}\label{namespaceqalloc_a8ec1582ea2955deea02a637178ab2047}} 
+\index{qalloc@{qalloc}!operator\char`\"{}\char`\"{}\_z@{operator""""\_z}}
+\index{operator\char`\"{}\char`\"{}\_z@{operator""""\_z}!qalloc@{qalloc}}
+\doxysubsubsection{\texorpdfstring{operator""""\_z()}{operator""\_z()}}
+{\footnotesize\ttfamily constexpr \mbox{\hyperlink{namespaceqalloc_a5b36ec8e13ab5c8aebd049e1b0e07574}{size\+\_\+type}} qalloc\+::operator\char`\"{}\char`\"{}\+\_\+z (\begin{DoxyParamCaption}\item[{unsigned long long}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+size\+\_\+type literal suffix operator 
+
+\begin{DoxyReturn}{Returns}
+size\+\_\+type representation of the literal 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{pointer_8hpp_source_l00061}{61}} of file \mbox{\hyperlink{pointer_8hpp_source}{pointer.\+hpp}}.
+
+\mbox{\Hypertarget{namespaceqalloc_afbe2e097d5f884fa7b34da384d7b1a69}\label{namespaceqalloc_afbe2e097d5f884fa7b34da384d7b1a69}} 
+\index{qalloc@{qalloc}!operator-\/-\/@{operator-\/-\/}}
+\index{operator-\/-\/@{operator-\/-\/}!qalloc@{qalloc}}
+\doxysubsubsection{\texorpdfstring{operator-\/-\/()}{operator--()}}
+{\footnotesize\ttfamily constexpr \mbox{\hyperlink{namespaceqalloc_a0c8786ebe9d96517ed824f01ecf36f2e}{index\+\_\+type}} \& qalloc\+::operator-\/-\/ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceqalloc_a0c8786ebe9d96517ed824f01ecf36f2e}{index\+\_\+type}} \&}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+index\+\_\+type decrement operator 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & index\+\_\+type \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+decremented index reference 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{pointer_8hpp_source_l00055}{55}} of file \mbox{\hyperlink{pointer_8hpp_source}{pointer.\+hpp}}.
+
+\mbox{\Hypertarget{namespaceqalloc_a72bbdc6602c8378e0039a83d88e55c33}\label{namespaceqalloc_a72bbdc6602c8378e0039a83d88e55c33}} 
+\index{qalloc@{qalloc}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!qalloc@{qalloc}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily std\+::ostream \& qalloc\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{\mbox{\hyperlink{namespaceqalloc_ae3a2d1ddce51c70146088378000a5946}{qalloc\+::const\+\_\+byte\+\_\+pointer}}}]{p }\end{DoxyParamCaption})}
+
+
+
+std\+::ostream input operator for constant byte pointer 
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & std\+::ostream object \\
+\hline
+{\em p} & constant byte pointer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{os}} 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{pointer_8hpp_source_l00047}{47}} of file \mbox{\hyperlink{pointer_8hpp_source}{pointer.\+hpp}}.
+
+\mbox{\Hypertarget{namespaceqalloc_a62082393da7050f561c991b6180ccaaa}\label{namespaceqalloc_a62082393da7050f561c991b6180ccaaa}} 
+\index{qalloc@{qalloc}!operator==@{operator==}}
+\index{operator==@{operator==}!qalloc@{qalloc}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily template$<$typename T , bool T\+\_\+detailed, typename U , bool U\+\_\+detailed$>$ \\
+constexpr bool qalloc\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classqalloc_1_1allocator__base}{allocator\+\_\+base}}$<$ T, T\+\_\+detailed $>$ \&}]{,  }\item[{const \mbox{\hyperlink{classqalloc_1_1allocator__base}{allocator\+\_\+base}}$<$ U, U\+\_\+detailed $>$ \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{allocator__impl_8hpp_source_l00082}{82}} of file \mbox{\hyperlink{allocator__impl_8hpp_source}{allocator\+\_\+impl.\+hpp}}.
+
+\mbox{\Hypertarget{namespaceqalloc_a3814825bf67bbfcbb1078b176f47333e}\label{namespaceqalloc_a3814825bf67bbfcbb1078b176f47333e}} 
+\index{qalloc@{qalloc}!q\_malloc@{q\_malloc}}
+\index{q\_malloc@{q\_malloc}!qalloc@{qalloc}}
+\doxysubsubsection{\texorpdfstring{q\_malloc()}{q\_malloc()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceqalloc_a01158dc1896ab43737138392524e61d9}{void\+\_\+pointer}} qalloc\+::q\+\_\+malloc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceqalloc_a5b36ec8e13ab5c8aebd049e1b0e07574}{size\+\_\+type}}}]{n\+\_\+bytes }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{memory_8hpp_source_l00032}{32}} of file \mbox{\hyperlink{memory_8hpp_source}{memory.\+hpp}}.
+
+\mbox{\Hypertarget{namespaceqalloc_a478fbcc6943b47af975a08e4b61e91fe}\label{namespaceqalloc_a478fbcc6943b47af975a08e4b61e91fe}} 
+\index{qalloc@{qalloc}!QALLOC\_MALLOC\_FUNCTION@{QALLOC\_MALLOC\_FUNCTION}}
+\index{QALLOC\_MALLOC\_FUNCTION@{QALLOC\_MALLOC\_FUNCTION}!qalloc@{qalloc}}
+\doxysubsubsection{\texorpdfstring{QALLOC\_MALLOC\_FUNCTION()}{QALLOC\_MALLOC\_FUNCTION()}}
+{\footnotesize\ttfamily qalloc\+::\+QALLOC\+\_\+\+MALLOC\+\_\+\+FUNCTION (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceqalloc_a01158dc1896ab43737138392524e61d9}{void\+\_\+pointer}} pool\+\_\+base\+\_\+t\+::operator }]{newsize\+\_\+type n\+\_\+bytes }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{pool__base__impl_8hpp_source_l00203}{203}} of file \mbox{\hyperlink{pool__base__impl_8hpp_source}{pool\+\_\+base\+\_\+impl.\+hpp}}.
+
+\mbox{\Hypertarget{namespaceqalloc_a98dbfa4d3a82c020e36c40e4e22c08fe}\label{namespaceqalloc_a98dbfa4d3a82c020e36c40e4e22c08fe}} 
+\index{qalloc@{qalloc}!safe\_cast@{safe\_cast}}
+\index{safe\_cast@{safe\_cast}!qalloc@{qalloc}}
+\doxysubsubsection{\texorpdfstring{safe\_cast()}{safe\_cast()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{defs_8hpp_a0a542caf1ef757dc9777bffee9e045b9}{QALLOC\+\_\+\+MAYBE\+\_\+\+UNUSED}} T \& qalloc\+::safe\+\_\+cast (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceqalloc_a01158dc1896ab43737138392524e61d9}{void\+\_\+pointer}}}]{p }\end{DoxyParamCaption})}
+
+
+
+cast pointer to another type with type check. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & type to cast to. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em p} & pointer allocated from qalloc pool. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a reference to pointer of type {\bfseries{T}}. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{type__info_8hpp_source_l00076}{76}} of file \mbox{\hyperlink{type__info_8hpp_source}{type\+\_\+info.\+hpp}}.
+
+\mbox{\Hypertarget{namespaceqalloc_aa3991f062700899cabdea80d0d364f11}\label{namespaceqalloc_aa3991f062700899cabdea80d0d364f11}} 
+\index{qalloc@{qalloc}!size\_cast@{size\_cast}}
+\index{size\_cast@{size\_cast}!qalloc@{qalloc}}
+\doxysubsubsection{\texorpdfstring{size\_cast()}{size\_cast()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily constexpr \mbox{\hyperlink{namespaceqalloc_a5b36ec8e13ab5c8aebd049e1b0e07574}{size\+\_\+type}} qalloc\+::size\+\_\+cast (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceqalloc_a3eaa567e837689805c5f4c5dda562e16}{difference\+\_\+type}}}]{diff }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+cast from difference\+\_\+type to size\+\_\+type 
+
+\begin{DoxyReturn}{Returns}
+size\+\_\+type representation of the difference\+\_\+type 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{pointer_8hpp_source_l00075}{75}} of file \mbox{\hyperlink{pointer_8hpp_source}{pointer.\+hpp}}.
+
+\mbox{\Hypertarget{namespaceqalloc_a9b6a3324c716b59468f390dbe4e9a1bc}\label{namespaceqalloc_a9b6a3324c716b59468f390dbe4e9a1bc}} 
+\index{qalloc@{qalloc}!size\_cast@{size\_cast}}
+\index{size\_cast@{size\_cast}!qalloc@{qalloc}}
+\doxysubsubsection{\texorpdfstring{size\_cast()}{size\_cast()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily constexpr \mbox{\hyperlink{namespaceqalloc_a5b36ec8e13ab5c8aebd049e1b0e07574}{size\+\_\+type}} qalloc\+::size\+\_\+cast (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceqalloc_a0c8786ebe9d96517ed824f01ecf36f2e}{index\+\_\+type}}}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+cast from index\+\_\+type to size\+\_\+type 
+
+\begin{DoxyReturn}{Returns}
+size\+\_\+type representation of the index\+\_\+type 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{pointer_8hpp_source_l00069}{69}} of file \mbox{\hyperlink{pointer_8hpp_source}{pointer.\+hpp}}.
+
+\mbox{\Hypertarget{namespaceqalloc_a69ea19642f283405929f935a82eb6bd4}\label{namespaceqalloc_a69ea19642f283405929f935a82eb6bd4}} 
+\index{qalloc@{qalloc}!type\_name\_of@{type\_name\_of}}
+\index{type\_name\_of@{type\_name\_of}!qalloc@{qalloc}}
+\doxysubsubsection{\texorpdfstring{type\_name\_of()}{type\_name\_of()}}
+{\footnotesize\ttfamily const char $\ast$ qalloc\+::type\+\_\+name\+\_\+of (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceqalloc_a01158dc1896ab43737138392524e61d9}{void\+\_\+pointer}}}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get raw type name of object in pointer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & pointer allocated from qalloc pool. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{c-\/string}} of raw type name of object in pointer. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{type__info_8hpp_source_l00042}{42}} of file \mbox{\hyperlink{type__info_8hpp_source}{type\+\_\+info.\+hpp}}.
+
+\mbox{\Hypertarget{namespaceqalloc_a3382e2682d1ed74cead61018bc816010}\label{namespaceqalloc_a3382e2682d1ed74cead61018bc816010}} 
+\index{qalloc@{qalloc}!type\_of@{type\_of}}
+\index{type\_of@{type\_of}!qalloc@{qalloc}}
+\doxysubsubsection{\texorpdfstring{type\_of()}{type\_of()}}
+{\footnotesize\ttfamily constexpr const std\+::type\+\_\+info \& qalloc\+::type\+\_\+of (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceqalloc_a01158dc1896ab43737138392524e61d9}{void\+\_\+pointer}}}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+get type info of pointer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & pointer allocated from qalloc pool. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+type info of pointer. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{type__info_8hpp_source_l00035}{35}} of file \mbox{\hyperlink{type__info_8hpp_source}{type\+\_\+info.\+hpp}}.
+

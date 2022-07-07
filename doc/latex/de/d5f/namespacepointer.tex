@@ -1,0 +1,63 @@
+\hypertarget{namespacepointer}{}\doxysection{pointer Namespace Reference}
+\label{namespacepointer}\index{pointer@{pointer}}
+
+
+pointer utilities namespace  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\constexpr T $\ast$ \mbox{\hyperlink{namespacepointer_a97fe8038a91827eca44dd9703d3a4d96}{launder}} (T $\ast$p)
+\begin{DoxyCompactList}\small\item\em std\+::launder wrapper \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespacepointer_aa790b083ab4d9183b0e9a724d7aa0a6f}\label{namespacepointer_aa790b083ab4d9183b0e9a724d7aa0a6f}} 
+{\footnotesize template$<$typename Out\+Type  = byte\+\_\+pointer, typename Offset\+Type , typename In\+Type $>$ }\\constexpr Out\+Type {\bfseries add} (In\+Type ptr, Offset\+Type offset)
+\item 
+\mbox{\Hypertarget{namespacepointer_a676e907c0e3131bd3a8320724b37d111}\label{namespacepointer_a676e907c0e3131bd3a8320724b37d111}} 
+{\footnotesize template$<$typename Out\+Type  = byte\+\_\+pointer, typename Offset\+Type , typename In\+Type $>$ }\\constexpr Out\+Type {\bfseries sub} (In\+Type ptr, Offset\+Type offset)
+\item 
+\mbox{\Hypertarget{namespacepointer_ad2d6e9462cfed2e0677e95ebdd8ee31d}\label{namespacepointer_ad2d6e9462cfed2e0677e95ebdd8ee31d}} 
+{\footnotesize template$<$typename Difference\+Type  = size\+\_\+type$>$ }\\constexpr Difference\+Type {\bfseries distance} (const\+\_\+void\+\_\+pointer lhs, const\+\_\+void\+\_\+pointer rhs)
+\item 
+\mbox{\Hypertarget{namespacepointer_a6607040e7c6aa8f75dc48b403debc3aa}\label{namespacepointer_a6607040e7c6aa8f75dc48b403debc3aa}} 
+{\footnotesize template$<$typename Pointer $>$ }\\constexpr void {\bfseries advance} (Pointer \&p, size\+\_\+type n)
+\item 
+\mbox{\Hypertarget{namespacepointer_a1fc5f645e619e5844305087601c31914}\label{namespacepointer_a1fc5f645e619e5844305087601c31914}} 
+{\footnotesize template$<$typename Pointer $>$ }\\constexpr void {\bfseries retreat} (Pointer \&p, size\+\_\+type n)
+\item 
+\mbox{\Hypertarget{namespacepointer_a6ea06fec963fbf9ab0963093687b7b41}\label{namespacepointer_a6ea06fec963fbf9ab0963093687b7b41}} 
+constexpr bool {\bfseries in\+\_\+range} (const\+\_\+void\+\_\+pointer pos, const\+\_\+void\+\_\+pointer lb, const\+\_\+void\+\_\+pointer ub)
+\item 
+\mbox{\Hypertarget{namespacepointer_aa688a3c219566b9f7016f4e17808e779}\label{namespacepointer_aa688a3c219566b9f7016f4e17808e779}} 
+constexpr \mbox{\hyperlink{pointer_8hpp_a57d5661a9537aa419c8ebc24667a96e9}{byte\+\_\+pointer}} {\bfseries remove\+\_\+const} (\mbox{\hyperlink{pointer_8hpp_a57d5661a9537aa419c8ebc24667a96e9}{const\+\_\+byte\+\_\+pointer}} p)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+pointer utilities namespace 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacepointer_a97fe8038a91827eca44dd9703d3a4d96}\label{namespacepointer_a97fe8038a91827eca44dd9703d3a4d96}} 
+\index{pointer@{pointer}!launder@{launder}}
+\index{launder@{launder}!pointer@{pointer}}
+\doxysubsubsection{\texorpdfstring{launder()}{launder()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+constexpr T $\ast$ pointer\+::launder (\begin{DoxyParamCaption}\item[{T $\ast$}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+std\+::launder wrapper 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & type of the pointer \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em p} & pointer to be laundered \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+laundered pointer 
+\end{DoxyReturn}

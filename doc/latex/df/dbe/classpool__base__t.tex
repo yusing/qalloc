@@ -1,0 +1,86 @@
+\hypertarget{classpool__base__t}{}\doxysection{pool\+\_\+base\+\_\+t Class Reference}
+\label{classpool__base__t}\index{pool\_base\_t@{pool\_base\_t}}
+Inheritance diagram for pool\+\_\+base\+\_\+t\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{df/dbe/classpool__base__t}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classpool__base__t_a8986293c0b79b4bfe3684218a227f9f4}\label{classpool__base__t_a8986293c0b79b4bfe3684218a227f9f4}} 
+{\bfseries pool\+\_\+base\+\_\+t} (size\+\_\+type byte\+\_\+size)
+\item 
+\mbox{\Hypertarget{classpool__base__t_aa51b519c2c129143dd0b0d82b4a75909}\label{classpool__base__t_aa51b519c2c129143dd0b0d82b4a75909}} 
+{\bfseries pool\+\_\+base\+\_\+t} (const \mbox{\hyperlink{classpool__base__t}{pool\+\_\+base\+\_\+t}} \&)=delete
+\item 
+\mbox{\Hypertarget{classpool__base__t_afb670feb950fbc1ba8b7f90c676a344b}\label{classpool__base__t_afb670feb950fbc1ba8b7f90c676a344b}} 
+{\bfseries pool\+\_\+base\+\_\+t} (\mbox{\hyperlink{classpool__base__t}{pool\+\_\+base\+\_\+t}} \&\&)=delete
+\item 
+\mbox{\Hypertarget{classpool__base__t_a7ea281195e90be07a15319d97ec264e3}\label{classpool__base__t_a7ea281195e90be07a15319d97ec264e3}} 
+\mbox{\hyperlink{classpool__base__t}{pool\+\_\+base\+\_\+t}} \& {\bfseries operator=} (const \mbox{\hyperlink{classpool__base__t}{pool\+\_\+base\+\_\+t}} \&)=delete
+\item 
+\mbox{\Hypertarget{classpool__base__t_a7257eaf9aadbbe9bc3757172b01f6a4f}\label{classpool__base__t_a7257eaf9aadbbe9bc3757172b01f6a4f}} 
+\mbox{\hyperlink{classpool__base__t}{pool\+\_\+base\+\_\+t}} \& {\bfseries operator=} (\mbox{\hyperlink{classpool__base__t}{pool\+\_\+base\+\_\+t}} \&\&)=delete
+\item 
+\mbox{\Hypertarget{classpool__base__t_a7bf1bcca35ff98c293b50188bee630cc}\label{classpool__base__t_a7bf1bcca35ff98c293b50188bee630cc}} 
+\mbox{\hyperlink{pointer_8hpp_a57d5661a9537aa419c8ebc24667a96e9}{byte\+\_\+pointer}} {\bfseries allocate} (size\+\_\+type n\+\_\+bytes) const
+\item 
+\mbox{\Hypertarget{classpool__base__t_a4f8163a229152f276a07ccba4b9f13da}\label{classpool__base__t_a4f8163a229152f276a07ccba4b9f13da}} 
+{\footnotesize template$<$bool merge = true$>$ }\\void {\bfseries deallocate} (\mbox{\hyperlink{pointer_8hpp_a57d5661a9537aa419c8ebc24667a96e9}{byte\+\_\+pointer}} p, size\+\_\+type n\+\_\+bytes) const
+\item 
+\mbox{\Hypertarget{classpool__base__t_a1ab1ec0244eb10b965130fd5a90475be}\label{classpool__base__t_a1ab1ec0244eb10b965130fd5a90475be}} 
+void {\bfseries add\+\_\+subpool} (size\+\_\+type n\+\_\+bytes) const
+\item 
+\mbox{\Hypertarget{classpool__base__t_a6b9fc587fcb31ecdcf0a49407b397b06}\label{classpool__base__t_a6b9fc587fcb31ecdcf0a49407b397b06}} 
+constexpr bool {\bfseries can\+\_\+allocate} (size\+\_\+type n\+\_\+bytes) const noexcept
+\item 
+\mbox{\Hypertarget{classpool__base__t_ac9dc2cbe97fc24837de0b389548efdc7}\label{classpool__base__t_ac9dc2cbe97fc24837de0b389548efdc7}} 
+constexpr size\+\_\+type {\bfseries pool\+\_\+size} () const noexcept
+\item 
+\mbox{\Hypertarget{classpool__base__t_a6dcc9b9321243e90d50a3aefa0f11e25}\label{classpool__base__t_a6dcc9b9321243e90d50a3aefa0f11e25}} 
+size\+\_\+type {\bfseries bytes\+\_\+used} () const noexcept
+\item 
+\mbox{\Hypertarget{classpool__base__t_ac52a8694fc6f3e705e2b665b30bd4004}\label{classpool__base__t_ac52a8694fc6f3e705e2b665b30bd4004}} 
+{\bfseries QALLOC\+\_\+\+MALLOC\+\_\+\+FUNCTION} (void\+\_\+pointer operator new(size\+\_\+type))
+\item 
+\mbox{\Hypertarget{classpool__base__t_ab0e72b787ed69a5d456ac3524685a5f8}\label{classpool__base__t_ab0e72b787ed69a5d456ac3524685a5f8}} 
+void {\bfseries operator delete} (QALLOC\+\_\+\+RESTRICT void\+\_\+pointer p)
+\item 
+\mbox{\Hypertarget{classpool__base__t_aa5da27140138b139c10211b7a80086b1}\label{classpool__base__t_aa5da27140138b139c10211b7a80086b1}} 
+void {\bfseries print\+\_\+info} (bool usage\+\_\+only=false) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classpool__base__t_a8aa34d7fb47a811b22f8396ab19ce0c8}\label{classpool__base__t_a8aa34d7fb47a811b22f8396ab19ce0c8}} 
+static \mbox{\hyperlink{structsubpool__t}{subpool\+\_\+t}} {\bfseries new\+\_\+subpool} (size\+\_\+type n\+\_\+bytes)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classpool__base__t_a71db985e226e100e2847fe234ec5f138}\label{classpool__base__t_a71db985e226e100e2847fe234ec5f138}} 
+bool {\bfseries is\+\_\+valid} (void\+\_\+pointer p) const noexcept
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classpool__base__t_a90e862d54c2845b258c5c280f77394a9}\label{classpool__base__t_a90e862d54c2845b258c5c280f77394a9}} 
+std\+::vector$<$ \mbox{\hyperlink{structsubpool__t}{subpool\+\_\+t}} $>$ {\bfseries m\+\_\+subpools}
+\item 
+\mbox{\Hypertarget{classpool__base__t_a5944bddc847f4c5ff22bc62e876b47e0}\label{classpool__base__t_a5944bddc847f4c5ff22bc62e876b47e0}} 
+\mbox{\hyperlink{structsubpool__t}{subpool\+\_\+t}} $\ast$ {\bfseries m\+\_\+cur\+\_\+subpool}
+\item 
+\mbox{\Hypertarget{classpool__base__t_a40da52f079851414dcb8f7cac2c0d61b}\label{classpool__base__t_a40da52f079851414dcb8f7cac2c0d61b}} 
+std\+::vector$<$ \mbox{\hyperlink{structfreed__block__t}{freed\+\_\+block\+\_\+t}} $>$ {\bfseries m\+\_\+freed\+\_\+blocks}
+\item 
+\mbox{\Hypertarget{classpool__base__t_afc0897b2ab435386406c4f909d9fe52f}\label{classpool__base__t_afc0897b2ab435386406c4f909d9fe52f}} 
+size\+\_\+type {\bfseries m\+\_\+pool\+\_\+total}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/qalloc/internal/\mbox{\hyperlink{pool__base_8hpp}{pool\+\_\+base.\+hpp}}\item 
+include/qalloc/internal/\mbox{\hyperlink{pool__base__impl_8hpp}{pool\+\_\+base\+\_\+impl.\+hpp}}\end{DoxyCompactItemize}

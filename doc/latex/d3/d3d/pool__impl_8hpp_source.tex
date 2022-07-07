@@ -1,0 +1,85 @@
+\hypertarget{pool__impl_8hpp_source}{}\doxysection{pool\+\_\+impl.\+hpp}
+\label{pool__impl_8hpp_source}\index{F:/Documents/Projects/qalloc/include/qalloc/internal/pool\_impl.hpp@{F:/Documents/Projects/qalloc/include/qalloc/internal/pool\_impl.hpp}}
+\mbox{\hyperlink{pool__impl_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{pool__impl_8hpp_source_l00001}00001 \textcolor{comment}{// Copyright 2022 yusing. All rights reserved.}}
+\DoxyCodeLine{\Hypertarget{pool__impl_8hpp_source_l00002}00002 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{pool__impl_8hpp_source_l00003}00003 \textcolor{comment}{// Licensed under the Apache License, Version 2.0 (the "{}License"{});}}
+\DoxyCodeLine{\Hypertarget{pool__impl_8hpp_source_l00004}00004 \textcolor{comment}{// you may not use this file except in compliance with the License.}}
+\DoxyCodeLine{\Hypertarget{pool__impl_8hpp_source_l00005}00005 \textcolor{comment}{// You may obtain a copy of the License at}}
+\DoxyCodeLine{\Hypertarget{pool__impl_8hpp_source_l00006}00006 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{pool__impl_8hpp_source_l00007}00007 \textcolor{comment}{//     http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{\Hypertarget{pool__impl_8hpp_source_l00008}00008 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{pool__impl_8hpp_source_l00009}00009 \textcolor{comment}{// Unless required by applicable law or agreed to in writing, software}}
+\DoxyCodeLine{\Hypertarget{pool__impl_8hpp_source_l00010}00010 \textcolor{comment}{// distributed under the License is distributed on an "{}AS IS"{} BASIS,}}
+\DoxyCodeLine{\Hypertarget{pool__impl_8hpp_source_l00011}00011 \textcolor{comment}{// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.}}
+\DoxyCodeLine{\Hypertarget{pool__impl_8hpp_source_l00012}00012 \textcolor{comment}{// See the License for the specific language governing permissions and}}
+\DoxyCodeLine{\Hypertarget{pool__impl_8hpp_source_l00013}00013 \textcolor{comment}{// limitations under the License.}}
+\DoxyCodeLine{\Hypertarget{pool__impl_8hpp_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{pool__impl_8hpp_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{pool__impl_8hpp_source_l00020}00020 \textcolor{preprocessor}{\#ifndef QALLOC\_POOL\_IMPL\_HPP}}
+\DoxyCodeLine{\Hypertarget{pool__impl_8hpp_source_l00021}00021 \textcolor{preprocessor}{\#define QALLOC\_POOL\_IMPL\_HPP}}
+\DoxyCodeLine{\Hypertarget{pool__impl_8hpp_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{pool__impl_8hpp_source_l00023}00023 \textcolor{preprocessor}{\#include <algorithm>} \textcolor{comment}{// std::remove\_if}}
+\DoxyCodeLine{\Hypertarget{pool__impl_8hpp_source_l00024}00024 \textcolor{preprocessor}{\#include <stdexcept>} \textcolor{comment}{// std::bad\_alloc}}
+\DoxyCodeLine{\Hypertarget{pool__impl_8hpp_source_l00025}00025 \textcolor{preprocessor}{\#include <iostream>} \textcolor{comment}{// std::cout, std::endl}}
+\DoxyCodeLine{\Hypertarget{pool__impl_8hpp_source_l00026}00026 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{pool__base_8hpp}{qalloc/internal/pool\_base.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{pool__impl_8hpp_source_l00027}00027 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{debug__log_8hpp}{qalloc/internal/debug\_log.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{pool__impl_8hpp_source_l00028}00028 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{memory_8hpp}{qalloc/internal/memory.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{pool__impl_8hpp_source_l00029}00029 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{defs_8hpp}{qalloc/internal/defs.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{pool__impl_8hpp_source_l00030}00030 }
+\DoxyCodeLine{\Hypertarget{pool__impl_8hpp_source_l00031}00031 \mbox{\hyperlink{defs_8hpp_a0c5e46377ecf7e33c016739291f04c75}{QALLOC\_BEGIN}}}
+\DoxyCodeLine{\Hypertarget{pool__impl_8hpp_source_l00032}00032 }
+\DoxyCodeLine{\Hypertarget{pool__impl_8hpp_source_l00033}00033 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{\Hypertarget{pool__impl_8hpp_source_l00034}\mbox{\hyperlink{classqalloc_1_1pool__t_abb2be648d55f33e536904f25564eb5da}{00034}} \mbox{\hyperlink{namespaceqalloc_ae3a2d1ddce51c70146088378000a5946}{byte\_pointer}} pool\_t::detailed\_allocate(\mbox{\hyperlink{namespaceqalloc_a5b36ec8e13ab5c8aebd049e1b0e07574}{size\_type}} n\_bytes\_requested)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{pool__impl_8hpp_source_l00035}00035     \mbox{\hyperlink{namespaceqalloc_ae3a2d1ddce51c70146088378000a5946}{byte\_pointer}} ptr = pool\_base\_t::allocate(n\_bytes\_requested + \textcolor{keyword}{sizeof}(\mbox{\hyperlink{structqalloc_1_1block__info__t}{block\_info\_t}}));}
+\DoxyCodeLine{\Hypertarget{pool__impl_8hpp_source_l00036}00036     \textcolor{keyword}{new} (\mbox{\hyperlink{namespaceqalloc_1_1pointer_a595422cf79a1a54d0b8665423d6f717d}{pointer::launder}}(ptr)) \mbox{\hyperlink{structqalloc_1_1block__info__t}{block\_info\_t}}\{\&\textcolor{keyword}{typeid}(T), \mbox{\hyperlink{namespaceqalloc_a0c8786ebe9d96517ed824f01ecf36f2e}{index\_type}}(m\_subpools.size() -\/ 1)\};}
+\DoxyCodeLine{\Hypertarget{pool__impl_8hpp_source_l00037}00037     \textcolor{keywordflow}{return} ptr + \textcolor{keyword}{sizeof}(\mbox{\hyperlink{structqalloc_1_1block__info__t}{block\_info\_t}});}
+\DoxyCodeLine{\Hypertarget{pool__impl_8hpp_source_l00038}00038 \}}
+\DoxyCodeLine{\Hypertarget{pool__impl_8hpp_source_l00039}00039 }
+\DoxyCodeLine{\Hypertarget{pool__impl_8hpp_source_l00040}00040 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{\Hypertarget{pool__impl_8hpp_source_l00041}\mbox{\hyperlink{classqalloc_1_1pool__t_ab5eec8b8cd16f54a9e8b13cf4dc40f06}{00041}} \textcolor{keywordtype}{void} pool\_t::detailed\_deallocate(\mbox{\hyperlink{namespaceqalloc_ae3a2d1ddce51c70146088378000a5946}{byte\_pointer}} p, \mbox{\hyperlink{namespaceqalloc_a5b36ec8e13ab5c8aebd049e1b0e07574}{size\_type}} n\_bytes\_requested)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{pool__impl_8hpp_source_l00042}00042     \mbox{\hyperlink{defs_8hpp_a92e808d95e376699a51e80dba29f5c16}{QALLOC\_DEBUG\_STATEMENT}}(}
+\DoxyCodeLine{\Hypertarget{pool__impl_8hpp_source_l00043}00043         \textcolor{keyword}{auto}\& block = *block\_info\_t::of(p);}
+\DoxyCodeLine{\Hypertarget{pool__impl_8hpp_source_l00044}00044         \mbox{\hyperlink{defs_8hpp_a9be58a357a6e5331cf1ea72c7a65f315}{QALLOC\_ASSERT}}(\mbox{\hyperlink{namespaceqalloc_a9b6a3324c716b59468f390dbe4e9a1bc}{size\_cast}}(block.subpool\_index) < m\_subpools.size());}
+\DoxyCodeLine{\Hypertarget{pool__impl_8hpp_source_l00045}00045         \mbox{\hyperlink{defs_8hpp_a9be58a357a6e5331cf1ea72c7a65f315}{QALLOC\_ASSERT}}(*block.type\_info == \textcolor{keyword}{typeid}(T));}
+\DoxyCodeLine{\Hypertarget{pool__impl_8hpp_source_l00046}00046     )}
+\DoxyCodeLine{\Hypertarget{pool__impl_8hpp_source_l00047}00047     pool\_base\_t::deallocate(\mbox{\hyperlink{namespaceqalloc_1_1pointer_a595422cf79a1a54d0b8665423d6f717d}{pointer::launder}}(p -\/ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{structqalloc_1_1block__info__t}{block\_info\_t}})), n\_bytes\_requested + \textcolor{keyword}{sizeof}(\mbox{\hyperlink{structqalloc_1_1block__info__t}{block\_info\_t}}));}
+\DoxyCodeLine{\Hypertarget{pool__impl_8hpp_source_l00048}00048 \}}
+\DoxyCodeLine{\Hypertarget{pool__impl_8hpp_source_l00049}00049 }
+\DoxyCodeLine{\Hypertarget{pool__impl_8hpp_source_l00050}00050 \mbox{\hyperlink{defs_8hpp_a0a542caf1ef757dc9777bffee9e045b9}{QALLOC\_MAYBE\_UNUSED}}}
+\DoxyCodeLine{\Hypertarget{pool__impl_8hpp_source_l00051}\mbox{\hyperlink{classqalloc_1_1pool__t_ac80a374f77ee7924702a4418f0bc637d}{00051}} \mbox{\hyperlink{namespaceqalloc_a5b36ec8e13ab5c8aebd049e1b0e07574}{size\_type}} pool\_t::gc()\textcolor{keyword}{ const }\{ \textcolor{comment}{// TODO: fix this, not gc triggers}}
+\DoxyCodeLine{\Hypertarget{pool__impl_8hpp_source_l00052}00052     \mbox{\hyperlink{namespaceqalloc_a5b36ec8e13ab5c8aebd049e1b0e07574}{size\_type}} memory\_freed = 0;}
+\DoxyCodeLine{\Hypertarget{pool__impl_8hpp_source_l00053}00053     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} it = m\_freed\_blocks.begin(); it != m\_freed\_blocks.end();) \{}
+\DoxyCodeLine{\Hypertarget{pool__impl_8hpp_source_l00054}00054         \textcolor{keyword}{auto}\& block = *it;}
+\DoxyCodeLine{\Hypertarget{pool__impl_8hpp_source_l00055}00055         \mbox{\hyperlink{structqalloc_1_1block__info__t}{block\_info\_t}}* block\_info = block\_info\_t::at(block.address);}
+\DoxyCodeLine{\Hypertarget{pool__impl_8hpp_source_l00056}00056         \textcolor{keywordflow}{if} (\mbox{\hyperlink{namespaceqalloc_a9b6a3324c716b59468f390dbe4e9a1bc}{size\_cast}}(block\_info-\/>\mbox{\hyperlink{structqalloc_1_1block__info__t_ac32c826c5ff96a29f3e800af90b330f3}{subpool\_index}}) >= m\_subpools.size()) \{}
+\DoxyCodeLine{\Hypertarget{pool__impl_8hpp_source_l00057}00057             \textcolor{comment}{// the header of the block maybe overwritten by a reuse of block}}
+\DoxyCodeLine{\Hypertarget{pool__impl_8hpp_source_l00058}00058             \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{pool__impl_8hpp_source_l00059}00059         \}}
+\DoxyCodeLine{\Hypertarget{pool__impl_8hpp_source_l00060}00060         \mbox{\hyperlink{structqalloc_1_1subpool__t}{subpool\_t}}\& owner = m\_subpools[\mbox{\hyperlink{namespaceqalloc_a9b6a3324c716b59468f390dbe4e9a1bc}{size\_cast}}(block\_info-\/>\mbox{\hyperlink{structqalloc_1_1block__info__t_ac32c826c5ff96a29f3e800af90b330f3}{subpool\_index}})];}
+\DoxyCodeLine{\Hypertarget{pool__impl_8hpp_source_l00061}00061         \textcolor{keywordflow}{if} (block.n\_bytes == owner.\mbox{\hyperlink{structqalloc_1_1subpool__t_acc3caad8aab7ccaad8c495c7f009ea26}{size}}) \{ \textcolor{comment}{// whole subpool is freed}}
+\DoxyCodeLine{\Hypertarget{pool__impl_8hpp_source_l00062}00062             \textcolor{comment}{// To ensure the subpool index in all blocks are valid}}
+\DoxyCodeLine{\Hypertarget{pool__impl_8hpp_source_l00063}00063             \textcolor{comment}{// do not erase the released subpool}}
+\DoxyCodeLine{\Hypertarget{pool__impl_8hpp_source_l00064}00064             \mbox{\hyperlink{debug__log_8hpp_afde3f42696113719c9ae35507125ee6e}{debug\_log}}(\textcolor{stringliteral}{"{}[gc]: subpool \%zu released (\%zu bytes)\(\backslash\)n"{}}, \mbox{\hyperlink{namespaceqalloc_a9b6a3324c716b59468f390dbe4e9a1bc}{size\_cast}}(block\_info-\/>\mbox{\hyperlink{structqalloc_1_1block__info__t_ac32c826c5ff96a29f3e800af90b330f3}{subpool\_index}}) + 1, owner.\mbox{\hyperlink{structqalloc_1_1subpool__t_acc3caad8aab7ccaad8c495c7f009ea26}{size}});}
+\DoxyCodeLine{\Hypertarget{pool__impl_8hpp_source_l00065}00065             memory\_freed += owner.\mbox{\hyperlink{structqalloc_1_1subpool__t_acc3caad8aab7ccaad8c495c7f009ea26}{size}};}
+\DoxyCodeLine{\Hypertarget{pool__impl_8hpp_source_l00066}00066             \textcolor{comment}{// release the subpool}}
+\DoxyCodeLine{\Hypertarget{pool__impl_8hpp_source_l00067}00067             \mbox{\hyperlink{memory_8hpp_a3dd12bc4507909ad9e011d4cb70d9ce2}{q\_free}}(\mbox{\hyperlink{namespaceqalloc_1_1pointer_ab3e62123693cfbbc5b22ce054e388e7a}{pointer::remove\_const}}(owner.\mbox{\hyperlink{structqalloc_1_1subpool__t_aaa4c8aa1caae4457b3ae5e9d41516e83}{begin}})); \textcolor{comment}{// TODO: reuse the memory}}
+\DoxyCodeLine{\Hypertarget{pool__impl_8hpp_source_l00068}00068             \textcolor{comment}{// update total pool size}}
+\DoxyCodeLine{\Hypertarget{pool__impl_8hpp_source_l00069}00069             this-\/>m\_pool\_total -\/= owner.\mbox{\hyperlink{structqalloc_1_1subpool__t_acc3caad8aab7ccaad8c495c7f009ea26}{size}};}
+\DoxyCodeLine{\Hypertarget{pool__impl_8hpp_source_l00070}00070             \textcolor{comment}{// reset the subpool to ZEROs/NULLs}}
+\DoxyCodeLine{\Hypertarget{pool__impl_8hpp_source_l00071}00071             owner = \{\};}
+\DoxyCodeLine{\Hypertarget{pool__impl_8hpp_source_l00072}00072             \textcolor{comment}{// remove the freed block from the list}}
+\DoxyCodeLine{\Hypertarget{pool__impl_8hpp_source_l00073}00073             it = m\_freed\_blocks.erase(it);}
+\DoxyCodeLine{\Hypertarget{pool__impl_8hpp_source_l00074}00074         \}}
+\DoxyCodeLine{\Hypertarget{pool__impl_8hpp_source_l00075}00075         \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{pool__impl_8hpp_source_l00076}00076             ++it;}
+\DoxyCodeLine{\Hypertarget{pool__impl_8hpp_source_l00077}00077         \}}
+\DoxyCodeLine{\Hypertarget{pool__impl_8hpp_source_l00078}00078     \}}
+\DoxyCodeLine{\Hypertarget{pool__impl_8hpp_source_l00079}00079     \textcolor{keywordflow}{return} memory\_freed;}
+\DoxyCodeLine{\Hypertarget{pool__impl_8hpp_source_l00080}00080 \}}
+\DoxyCodeLine{\Hypertarget{pool__impl_8hpp_source_l00081}00081 \mbox{\hyperlink{defs_8hpp_ae6074cc5b731bee29a970dd996470029}{QALLOC\_END}}}
+\DoxyCodeLine{\Hypertarget{pool__impl_8hpp_source_l00082}00082 }
+\DoxyCodeLine{\Hypertarget{pool__impl_8hpp_source_l00083}00083 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

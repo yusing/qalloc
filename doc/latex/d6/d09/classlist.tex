@@ -1,0 +1,320 @@
+\hypertarget{classlist}{}\doxysection{list\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\label{classlist}\index{list$<$ T $>$@{list$<$ T $>$}}
+
+
+{\ttfamily \#include $<$list.\+hpp$>$}
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structlist_1_1node__type}{node\+\_\+type}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{classlist_a5ffaef9da769a6b3096566a09f604aa3}{value\+\_\+type}} = T
+\item 
+using \mbox{\hyperlink{classlist_ac197334f7ed09443afde8762ba66f2fc}{pointer}} = T $\ast$
+\item 
+using \mbox{\hyperlink{classlist_a47a1e85cdc07b45cc1f01f097cb026c7}{QALLOC\+\_\+\+MAYBE\+\_\+\+UNUSED}} = const T $\ast$
+\item 
+using \mbox{\hyperlink{classlist_a86f834f49e74ceef827ad2d5c4bf7a6d}{QALLOC\+\_\+\+MAYBE\+\_\+\+UNUSED}} = const T \&
+\item 
+using \mbox{\hyperlink{classlist_aa599046dd4380c33212aff6442390c07}{reference}} = T \&
+\item 
+using \mbox{\hyperlink{classlist_af9d1ec1b9a42f0695ade276e6c63cf81}{node\+\_\+pointer}} = \mbox{\hyperlink{structlist_1_1node__type}{node\+\_\+type}} $\ast$
+\item 
+using \mbox{\hyperlink{classlist_a9144dfe69aa68a685deebd72e3fb77fc}{iterator}} = list\+\_\+iterator \+:public qalloc\+::internal\+::iterator$<$ \mbox{\hyperlink{structlist_1_1node__type}{node\+\_\+type}} $>$ \{ public\+:using iterator\+\_\+category \mbox{\hyperlink{classlist_a47a1e85cdc07b45cc1f01f097cb026c7}{QALLOC\+\_\+\+MAYBE\+\_\+\+UNUSED}}=std\+::forward\+\_\+iterator\+\_\+tag
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+list\+\_\+iterator \& \mbox{\hyperlink{classlist_afd5a1a7cd60aa72485a6ef6a9beedab5}{operator++}} ()
+\item 
+list\+\_\+iterator \mbox{\hyperlink{classlist_ab9f373bae9a79c98868fdee511e9033e}{operator++}} (int)
+\item 
+\mbox{\hyperlink{classlist_a0ce0895c9beaa2f4093909ab61144c27}{list}} ()=delete
+\item 
+\mbox{\hyperlink{classlist_a05d44a091f3df8233771967a1b6750e4}{list}} (const \mbox{\hyperlink{classlist}{list}} \&)=delete
+\item 
+\mbox{\hyperlink{classlist_ac937d8a7058f1a0e109d7e3d6428cbab}{list}} (\mbox{\hyperlink{classlist}{list}} \&\&)=delete
+\item 
+\mbox{\hyperlink{classlist}{list}} \& \mbox{\hyperlink{classlist_aceaf5f41346b4212e429973de48b2674}{operator=}} (const \mbox{\hyperlink{classlist}{list}} \&)=delete
+\item 
+\mbox{\hyperlink{classlist}{list}} \& \mbox{\hyperlink{classlist_af92bc948b122af91ed04db7ee9bb9e8f}{operator=}} (\mbox{\hyperlink{classlist}{list}} \&\&)=delete
+\item 
+\mbox{\hyperlink{classlist_ab9723088fc4531e82c8eb5dd2f51367d}{list}} (size\+\_\+type, \mbox{\hyperlink{classlist_a5ffaef9da769a6b3096566a09f604aa3}{value\+\_\+type}} \&\&first)
+\item 
+\mbox{\hyperlink{classlist_adf352cf28624c0811f4f9b160062a88c}{$\sim$list}} ()
+\item 
+{\footnotesize template$<$typename ... Args$>$ }\\void \mbox{\hyperlink{classlist_ae9124bd39665f16f351fa412618eb872}{emplace\+\_\+back}} (Args \&\&...args)
+\item 
+\mbox{\hyperlink{defs_8hpp_ade58da4f1b86dde2aa39f11a2578a19e}{QALLOC\+\_\+\+NODISCARD}} \mbox{\hyperlink{classlist_aa599046dd4380c33212aff6442390c07}{reference}} \mbox{\hyperlink{classlist_ae4c3d72af1e507190d17ad7fd9e63aeb}{front}} () const
+\item 
+\mbox{\hyperlink{defs_8hpp_ade58da4f1b86dde2aa39f11a2578a19e}{QALLOC\+\_\+\+NODISCARD}} \mbox{\hyperlink{classlist_aa599046dd4380c33212aff6442390c07}{reference}} \mbox{\hyperlink{classlist_a11e188b22eae8af2e4721922f4e663a1}{back}} () const
+\item 
+\mbox{\hyperlink{defs_8hpp_ade58da4f1b86dde2aa39f11a2578a19e}{QALLOC\+\_\+\+NODISCARD}} constexpr bool \mbox{\hyperlink{classlist_aa97cf7ffa23102b26fb9d263c6e093ac}{empty}} () const noexcept
+\item 
+\mbox{\hyperlink{defs_8hpp_ade58da4f1b86dde2aa39f11a2578a19e}{QALLOC\+\_\+\+NODISCARD}} constexpr size\+\_\+type \mbox{\hyperlink{classlist_a0f5bd85766647da6cb5ca4c72791042b}{size}} () const noexcept
+\item 
+\mbox{\hyperlink{classlist_a9144dfe69aa68a685deebd72e3fb77fc}{iterator}} \mbox{\hyperlink{classlist_a254beaef0a23d76871212c8af2f6118c}{begin}} ()
+\item 
+\mbox{\hyperlink{classlist_a9144dfe69aa68a685deebd72e3fb77fc}{iterator}} \mbox{\hyperlink{classlist_a0a0fb2870706f1a5c96500edc5fa8d51}{end}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\newline
+class list$<$ T $>$}
+
+
+Definition at line \mbox{\hyperlink{list_8hpp_source_l00033}{33}} of file \mbox{\hyperlink{list_8hpp_source}{list.\+hpp}}.
+
+
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classlist_a9144dfe69aa68a685deebd72e3fb77fc}\label{classlist_a9144dfe69aa68a685deebd72e3fb77fc}} 
+\index{list$<$ T $>$@{list$<$ T $>$}!iterator@{iterator}}
+\index{iterator@{iterator}!list$<$ T $>$@{list$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{iterator}{iterator}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+using \mbox{\hyperlink{classlist}{list}}$<$ T $>$\mbox{\hyperlink{classiterator}{\+::iterator}} =  list\+\_\+iterator \+: public qalloc\+::internal\+::iterator$<$\mbox{\hyperlink{structlist_1_1node__type}{node\+\_\+type}}$>$ \{ public\+: using iterator\+\_\+category \mbox{\hyperlink{classlist_a47a1e85cdc07b45cc1f01f097cb026c7}{QALLOC\+\_\+\+MAYBE\+\_\+\+UNUSED}} = std\+::forward\+\_\+iterator\+\_\+tag}
+
+
+
+Definition at line \mbox{\hyperlink{list_8hpp_source_l00054}{54}} of file \mbox{\hyperlink{list_8hpp_source}{list.\+hpp}}.
+
+\mbox{\Hypertarget{classlist_af9d1ec1b9a42f0695ade276e6c63cf81}\label{classlist_af9d1ec1b9a42f0695ade276e6c63cf81}} 
+\index{list$<$ T $>$@{list$<$ T $>$}!node\_pointer@{node\_pointer}}
+\index{node\_pointer@{node\_pointer}!list$<$ T $>$@{list$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{node\_pointer}{node\_pointer}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+using \mbox{\hyperlink{classlist}{list}}$<$ T $>$\+::node\+\_\+pointer =  \mbox{\hyperlink{structlist_1_1node__type}{node\+\_\+type}}$\ast$}
+
+
+
+Definition at line \mbox{\hyperlink{list_8hpp_source_l00052}{52}} of file \mbox{\hyperlink{list_8hpp_source}{list.\+hpp}}.
+
+\mbox{\Hypertarget{classlist_ac197334f7ed09443afde8762ba66f2fc}\label{classlist_ac197334f7ed09443afde8762ba66f2fc}} 
+\index{list$<$ T $>$@{list$<$ T $>$}!pointer@{pointer}}
+\index{pointer@{pointer}!list$<$ T $>$@{list$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{pointer}{pointer}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+using \mbox{\hyperlink{classlist}{list}}$<$ T $>$\+::pointer =  T$\ast$}
+
+
+
+Definition at line \mbox{\hyperlink{list_8hpp_source_l00036}{36}} of file \mbox{\hyperlink{list_8hpp_source}{list.\+hpp}}.
+
+\mbox{\Hypertarget{classlist_a47a1e85cdc07b45cc1f01f097cb026c7}\label{classlist_a47a1e85cdc07b45cc1f01f097cb026c7}} 
+\index{list$<$ T $>$@{list$<$ T $>$}!QALLOC\_MAYBE\_UNUSED@{QALLOC\_MAYBE\_UNUSED}}
+\index{QALLOC\_MAYBE\_UNUSED@{QALLOC\_MAYBE\_UNUSED}!list$<$ T $>$@{list$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{QALLOC\_MAYBE\_UNUSED}{QALLOC\_MAYBE\_UNUSED}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+using \mbox{\hyperlink{classlist}{list}}$<$ T $>$\+::\+QALLOC\+\_\+\+MAYBE\+\_\+\+UNUSED =  const T$\ast$}
+
+
+
+Definition at line \mbox{\hyperlink{list_8hpp_source_l00037}{37}} of file \mbox{\hyperlink{list_8hpp_source}{list.\+hpp}}.
+
+\mbox{\Hypertarget{classlist_a86f834f49e74ceef827ad2d5c4bf7a6d}\label{classlist_a86f834f49e74ceef827ad2d5c4bf7a6d}} 
+\index{list$<$ T $>$@{list$<$ T $>$}!QALLOC\_MAYBE\_UNUSED@{QALLOC\_MAYBE\_UNUSED}}
+\index{QALLOC\_MAYBE\_UNUSED@{QALLOC\_MAYBE\_UNUSED}!list$<$ T $>$@{list$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{QALLOC\_MAYBE\_UNUSED}{QALLOC\_MAYBE\_UNUSED}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+using \mbox{\hyperlink{classlist}{list}}$<$ T $>$\+::\+QALLOC\+\_\+\+MAYBE\+\_\+\+UNUSED =  const T\&}
+
+
+
+Definition at line \mbox{\hyperlink{list_8hpp_source_l00038}{38}} of file \mbox{\hyperlink{list_8hpp_source}{list.\+hpp}}.
+
+\mbox{\Hypertarget{classlist_aa599046dd4380c33212aff6442390c07}\label{classlist_aa599046dd4380c33212aff6442390c07}} 
+\index{list$<$ T $>$@{list$<$ T $>$}!reference@{reference}}
+\index{reference@{reference}!list$<$ T $>$@{list$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{reference}{reference}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+using \mbox{\hyperlink{classlist}{list}}$<$ T $>$\+::reference =  T\&}
+
+
+
+Definition at line \mbox{\hyperlink{list_8hpp_source_l00039}{39}} of file \mbox{\hyperlink{list_8hpp_source}{list.\+hpp}}.
+
+\mbox{\Hypertarget{classlist_a5ffaef9da769a6b3096566a09f604aa3}\label{classlist_a5ffaef9da769a6b3096566a09f604aa3}} 
+\index{list$<$ T $>$@{list$<$ T $>$}!value\_type@{value\_type}}
+\index{value\_type@{value\_type}!list$<$ T $>$@{list$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{value\_type}{value\_type}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+using \mbox{\hyperlink{classlist}{list}}$<$ T $>$\+::value\+\_\+type =  T}
+
+
+
+Definition at line \mbox{\hyperlink{list_8hpp_source_l00035}{35}} of file \mbox{\hyperlink{list_8hpp_source}{list.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classlist_a0ce0895c9beaa2f4093909ab61144c27}\label{classlist_a0ce0895c9beaa2f4093909ab61144c27}} 
+\index{list$<$ T $>$@{list$<$ T $>$}!list@{list}}
+\index{list@{list}!list$<$ T $>$@{list$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{list()}{list()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classlist}{list}}$<$ T $>$\mbox{\hyperlink{classlist}{\+::list}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{classlist_a05d44a091f3df8233771967a1b6750e4}\label{classlist_a05d44a091f3df8233771967a1b6750e4}} 
+\index{list$<$ T $>$@{list$<$ T $>$}!list@{list}}
+\index{list@{list}!list$<$ T $>$@{list$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{list()}{list()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classlist}{list}}$<$ T $>$\mbox{\hyperlink{classlist}{\+::list}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlist}{list}}$<$ T $>$ \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{classlist_ac937d8a7058f1a0e109d7e3d6428cbab}\label{classlist_ac937d8a7058f1a0e109d7e3d6428cbab}} 
+\index{list$<$ T $>$@{list$<$ T $>$}!list@{list}}
+\index{list@{list}!list$<$ T $>$@{list$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{list()}{list()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classlist}{list}}$<$ T $>$\mbox{\hyperlink{classlist}{\+::list}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlist}{list}}$<$ T $>$ \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{classlist_ab9723088fc4531e82c8eb5dd2f51367d}\label{classlist_ab9723088fc4531e82c8eb5dd2f51367d}} 
+\index{list$<$ T $>$@{list$<$ T $>$}!list@{list}}
+\index{list@{list}!list$<$ T $>$@{list$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{list()}{list()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classlist}{list}}$<$ T $>$\mbox{\hyperlink{classlist}{\+::list}} (\begin{DoxyParamCaption}\item[{size\+\_\+type}]{,  }\item[{\mbox{\hyperlink{classlist_a5ffaef9da769a6b3096566a09f604aa3}{value\+\_\+type}} \&\&}]{first }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{list_8hpp_source_l00076}{76}} of file \mbox{\hyperlink{list_8hpp_source}{list.\+hpp}}.
+
+\mbox{\Hypertarget{classlist_adf352cf28624c0811f4f9b160062a88c}\label{classlist_adf352cf28624c0811f4f9b160062a88c}} 
+\index{list$<$ T $>$@{list$<$ T $>$}!````~list@{$\sim$list}}
+\index{````~list@{$\sim$list}!list$<$ T $>$@{list$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{$\sim$list()}{~list()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classlist}{list}}$<$ T $>$\+::$\sim$\mbox{\hyperlink{classlist}{list}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{list_8hpp_source_l00086}{86}} of file \mbox{\hyperlink{list_8hpp_source}{list.\+hpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classlist_a11e188b22eae8af2e4721922f4e663a1}\label{classlist_a11e188b22eae8af2e4721922f4e663a1}} 
+\index{list$<$ T $>$@{list$<$ T $>$}!back@{back}}
+\index{back@{back}!list$<$ T $>$@{list$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{back()}{back()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{defs_8hpp_ade58da4f1b86dde2aa39f11a2578a19e}{QALLOC\+\_\+\+NODISCARD}} \mbox{\hyperlink{classlist_aa599046dd4380c33212aff6442390c07}{reference}} \mbox{\hyperlink{classlist}{list}}$<$ T $>$\+::back (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{list_8hpp_source_l00106}{106}} of file \mbox{\hyperlink{list_8hpp_source}{list.\+hpp}}.
+
+\mbox{\Hypertarget{classlist_a254beaef0a23d76871212c8af2f6118c}\label{classlist_a254beaef0a23d76871212c8af2f6118c}} 
+\index{list$<$ T $>$@{list$<$ T $>$}!begin@{begin}}
+\index{begin@{begin}!list$<$ T $>$@{list$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classlist_a9144dfe69aa68a685deebd72e3fb77fc}{iterator}} \mbox{\hyperlink{classlist}{list}}$<$ T $>$\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{list_8hpp_source_l00117}{117}} of file \mbox{\hyperlink{list_8hpp_source}{list.\+hpp}}.
+
+\mbox{\Hypertarget{classlist_ae9124bd39665f16f351fa412618eb872}\label{classlist_ae9124bd39665f16f351fa412618eb872}} 
+\index{list$<$ T $>$@{list$<$ T $>$}!emplace\_back@{emplace\_back}}
+\index{emplace\_back@{emplace\_back}!list$<$ T $>$@{list$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{emplace\_back()}{emplace\_back()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+template$<$typename ... Args$>$ \\
+void \mbox{\hyperlink{classlist}{list}}$<$ T $>$\+::emplace\+\_\+back (\begin{DoxyParamCaption}\item[{Args \&\&...}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{list_8hpp_source_l00095}{95}} of file \mbox{\hyperlink{list_8hpp_source}{list.\+hpp}}.
+
+\mbox{\Hypertarget{classlist_aa97cf7ffa23102b26fb9d263c6e093ac}\label{classlist_aa97cf7ffa23102b26fb9d263c6e093ac}} 
+\index{list$<$ T $>$@{list$<$ T $>$}!empty@{empty}}
+\index{empty@{empty}!list$<$ T $>$@{list$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{empty()}{empty()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{defs_8hpp_ade58da4f1b86dde2aa39f11a2578a19e}{QALLOC\+\_\+\+NODISCARD}} constexpr bool \mbox{\hyperlink{classlist}{list}}$<$ T $>$\+::empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{list_8hpp_source_l00110}{110}} of file \mbox{\hyperlink{list_8hpp_source}{list.\+hpp}}.
+
+\mbox{\Hypertarget{classlist_a0a0fb2870706f1a5c96500edc5fa8d51}\label{classlist_a0a0fb2870706f1a5c96500edc5fa8d51}} 
+\index{list$<$ T $>$@{list$<$ T $>$}!end@{end}}
+\index{end@{end}!list$<$ T $>$@{list$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{end()}{end()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classlist_a9144dfe69aa68a685deebd72e3fb77fc}{iterator}} \mbox{\hyperlink{classlist}{list}}$<$ T $>$\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{list_8hpp_source_l00121}{121}} of file \mbox{\hyperlink{list_8hpp_source}{list.\+hpp}}.
+
+\mbox{\Hypertarget{classlist_ae4c3d72af1e507190d17ad7fd9e63aeb}\label{classlist_ae4c3d72af1e507190d17ad7fd9e63aeb}} 
+\index{list$<$ T $>$@{list$<$ T $>$}!front@{front}}
+\index{front@{front}!list$<$ T $>$@{list$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{front()}{front()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{defs_8hpp_ade58da4f1b86dde2aa39f11a2578a19e}{QALLOC\+\_\+\+NODISCARD}} \mbox{\hyperlink{classlist_aa599046dd4380c33212aff6442390c07}{reference}} \mbox{\hyperlink{classlist}{list}}$<$ T $>$\+::front (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{list_8hpp_source_l00102}{102}} of file \mbox{\hyperlink{list_8hpp_source}{list.\+hpp}}.
+
+\mbox{\Hypertarget{classlist_afd5a1a7cd60aa72485a6ef6a9beedab5}\label{classlist_afd5a1a7cd60aa72485a6ef6a9beedab5}} 
+\index{list$<$ T $>$@{list$<$ T $>$}!operator++@{operator++}}
+\index{operator++@{operator++}!list$<$ T $>$@{list$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator++()}{operator++()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+list\+\_\+iterator \& \mbox{\hyperlink{classlist}{list}}$<$ T $>$\+::operator++ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{list_8hpp_source_l00058}{58}} of file \mbox{\hyperlink{list_8hpp_source}{list.\+hpp}}.
+
+\mbox{\Hypertarget{classlist_ab9f373bae9a79c98868fdee511e9033e}\label{classlist_ab9f373bae9a79c98868fdee511e9033e}} 
+\index{list$<$ T $>$@{list$<$ T $>$}!operator++@{operator++}}
+\index{operator++@{operator++}!list$<$ T $>$@{list$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator++()}{operator++()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+list\+\_\+iterator \mbox{\hyperlink{classlist}{list}}$<$ T $>$\+::operator++ (\begin{DoxyParamCaption}\item[{int}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{list_8hpp_source_l00063}{63}} of file \mbox{\hyperlink{list_8hpp_source}{list.\+hpp}}.
+
+\mbox{\Hypertarget{classlist_aceaf5f41346b4212e429973de48b2674}\label{classlist_aceaf5f41346b4212e429973de48b2674}} 
+\index{list$<$ T $>$@{list$<$ T $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!list$<$ T $>$@{list$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classlist}{list}} \& \mbox{\hyperlink{classlist}{list}}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlist}{list}}$<$ T $>$ \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{classlist_af92bc948b122af91ed04db7ee9bb9e8f}\label{classlist_af92bc948b122af91ed04db7ee9bb9e8f}} 
+\index{list$<$ T $>$@{list$<$ T $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!list$<$ T $>$@{list$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classlist}{list}} \& \mbox{\hyperlink{classlist}{list}}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlist}{list}}$<$ T $>$ \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{classlist_a0f5bd85766647da6cb5ca4c72791042b}\label{classlist_a0f5bd85766647da6cb5ca4c72791042b}} 
+\index{list$<$ T $>$@{list$<$ T $>$}!size@{size}}
+\index{size@{size}!list$<$ T $>$@{list$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{defs_8hpp_ade58da4f1b86dde2aa39f11a2578a19e}{QALLOC\+\_\+\+NODISCARD}} constexpr size\+\_\+type \mbox{\hyperlink{classlist}{list}}$<$ T $>$\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{list_8hpp_source_l00113}{113}} of file \mbox{\hyperlink{list_8hpp_source}{list.\+hpp}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+F\+:/\+Documents/\+Projects/qalloc/include/qalloc/internal/experimental/\mbox{\hyperlink{list_8hpp}{list.\+hpp}}\end{DoxyCompactItemize}

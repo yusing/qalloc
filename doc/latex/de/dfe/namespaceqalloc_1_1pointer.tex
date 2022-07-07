@@ -1,0 +1,96 @@
+\hypertarget{namespaceqalloc_1_1pointer}{}\doxysection{qalloc\+::pointer Namespace Reference}
+\label{namespaceqalloc_1_1pointer}\index{qalloc::pointer@{qalloc::pointer}}
+
+
+pointer utilities namespace  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\constexpr T $\ast$ \mbox{\hyperlink{namespaceqalloc_1_1pointer_a595422cf79a1a54d0b8665423d6f717d}{launder}} (T $\ast$p)
+\begin{DoxyCompactList}\small\item\em std\+::launder wrapper \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Out\+Type  = byte\+\_\+pointer, typename Offset\+Type , typename In\+Type $>$ }\\constexpr Out\+Type \mbox{\hyperlink{namespaceqalloc_1_1pointer_a860d064389a2399eeb0cf0622dc4ebcc}{add}} (In\+Type ptr, Offset\+Type offset)
+\item 
+{\footnotesize template$<$typename Out\+Type  = byte\+\_\+pointer, typename Offset\+Type , typename In\+Type $>$ }\\constexpr Out\+Type \mbox{\hyperlink{namespaceqalloc_1_1pointer_a93a3b0837a830c6e18aeb56a344215e6}{sub}} (In\+Type ptr, Offset\+Type offset)
+\item 
+constexpr bool \mbox{\hyperlink{namespaceqalloc_1_1pointer_a77189b59b856e89a0da009483fdb0eaa}{in\+\_\+range}} (\mbox{\hyperlink{namespaceqalloc_a88ff7078fa672c6ff9de26bdcb9daeca}{const\+\_\+void\+\_\+pointer}} pos, \mbox{\hyperlink{namespaceqalloc_a88ff7078fa672c6ff9de26bdcb9daeca}{const\+\_\+void\+\_\+pointer}} lb, \mbox{\hyperlink{namespaceqalloc_a88ff7078fa672c6ff9de26bdcb9daeca}{const\+\_\+void\+\_\+pointer}} ub)
+\item 
+constexpr \mbox{\hyperlink{namespaceqalloc_ae3a2d1ddce51c70146088378000a5946}{byte\+\_\+pointer}} \mbox{\hyperlink{namespaceqalloc_1_1pointer_ab3e62123693cfbbc5b22ce054e388e7a}{remove\+\_\+const}} (\mbox{\hyperlink{namespaceqalloc_ae3a2d1ddce51c70146088378000a5946}{const\+\_\+byte\+\_\+pointer}} p)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+pointer utilities namespace 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespaceqalloc_1_1pointer_a860d064389a2399eeb0cf0622dc4ebcc}\label{namespaceqalloc_1_1pointer_a860d064389a2399eeb0cf0622dc4ebcc}} 
+\index{qalloc::pointer@{qalloc::pointer}!add@{add}}
+\index{add@{add}!qalloc::pointer@{qalloc::pointer}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily template$<$typename Out\+Type  = byte\+\_\+pointer, typename Offset\+Type , typename In\+Type $>$ \\
+constexpr Out\+Type qalloc\+::pointer\+::add (\begin{DoxyParamCaption}\item[{In\+Type}]{ptr,  }\item[{Offset\+Type}]{offset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{pointer_8hpp_source_l00099}{99}} of file \mbox{\hyperlink{pointer_8hpp_source}{pointer.\+hpp}}.
+
+\mbox{\Hypertarget{namespaceqalloc_1_1pointer_a77189b59b856e89a0da009483fdb0eaa}\label{namespaceqalloc_1_1pointer_a77189b59b856e89a0da009483fdb0eaa}} 
+\index{qalloc::pointer@{qalloc::pointer}!in\_range@{in\_range}}
+\index{in\_range@{in\_range}!qalloc::pointer@{qalloc::pointer}}
+\doxysubsubsection{\texorpdfstring{in\_range()}{in\_range()}}
+{\footnotesize\ttfamily constexpr bool qalloc\+::pointer\+::in\+\_\+range (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceqalloc_a88ff7078fa672c6ff9de26bdcb9daeca}{const\+\_\+void\+\_\+pointer}}}]{pos,  }\item[{\mbox{\hyperlink{namespaceqalloc_a88ff7078fa672c6ff9de26bdcb9daeca}{const\+\_\+void\+\_\+pointer}}}]{lb,  }\item[{\mbox{\hyperlink{namespaceqalloc_a88ff7078fa672c6ff9de26bdcb9daeca}{const\+\_\+void\+\_\+pointer}}}]{ub }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{pointer_8hpp_source_l00130}{130}} of file \mbox{\hyperlink{pointer_8hpp_source}{pointer.\+hpp}}.
+
+\mbox{\Hypertarget{namespaceqalloc_1_1pointer_a595422cf79a1a54d0b8665423d6f717d}\label{namespaceqalloc_1_1pointer_a595422cf79a1a54d0b8665423d6f717d}} 
+\index{qalloc::pointer@{qalloc::pointer}!launder@{launder}}
+\index{launder@{launder}!qalloc::pointer@{qalloc::pointer}}
+\doxysubsubsection{\texorpdfstring{launder()}{launder()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+constexpr T $\ast$ qalloc\+::pointer\+::launder (\begin{DoxyParamCaption}\item[{T $\ast$}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+std\+::launder wrapper 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & type of the pointer \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em p} & pointer to be laundered \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+laundered pointer 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{pointer_8hpp_source_l00087}{87}} of file \mbox{\hyperlink{pointer_8hpp_source}{pointer.\+hpp}}.
+
+\mbox{\Hypertarget{namespaceqalloc_1_1pointer_ab3e62123693cfbbc5b22ce054e388e7a}\label{namespaceqalloc_1_1pointer_ab3e62123693cfbbc5b22ce054e388e7a}} 
+\index{qalloc::pointer@{qalloc::pointer}!remove\_const@{remove\_const}}
+\index{remove\_const@{remove\_const}!qalloc::pointer@{qalloc::pointer}}
+\doxysubsubsection{\texorpdfstring{remove\_const()}{remove\_const()}}
+{\footnotesize\ttfamily constexpr \mbox{\hyperlink{namespaceqalloc_ae3a2d1ddce51c70146088378000a5946}{byte\+\_\+pointer}} qalloc\+::pointer\+::remove\+\_\+const (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceqalloc_ae3a2d1ddce51c70146088378000a5946}{const\+\_\+byte\+\_\+pointer}}}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{pointer_8hpp_source_l00134}{134}} of file \mbox{\hyperlink{pointer_8hpp_source}{pointer.\+hpp}}.
+
+\mbox{\Hypertarget{namespaceqalloc_1_1pointer_a93a3b0837a830c6e18aeb56a344215e6}\label{namespaceqalloc_1_1pointer_a93a3b0837a830c6e18aeb56a344215e6}} 
+\index{qalloc::pointer@{qalloc::pointer}!sub@{sub}}
+\index{sub@{sub}!qalloc::pointer@{qalloc::pointer}}
+\doxysubsubsection{\texorpdfstring{sub()}{sub()}}
+{\footnotesize\ttfamily template$<$typename Out\+Type  = byte\+\_\+pointer, typename Offset\+Type , typename In\+Type $>$ \\
+constexpr Out\+Type qalloc\+::pointer\+::sub (\begin{DoxyParamCaption}\item[{In\+Type}]{ptr,  }\item[{Offset\+Type}]{offset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{pointer_8hpp_source_l00115}{115}} of file \mbox{\hyperlink{pointer_8hpp_source}{pointer.\+hpp}}.
+

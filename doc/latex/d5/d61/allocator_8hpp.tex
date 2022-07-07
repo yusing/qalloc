@@ -1,0 +1,43 @@
+\hypertarget{allocator_8hpp}{}\doxysection{F\+:/\+Documents/\+Projects/qalloc/include/qalloc/internal/allocator.hpp File Reference}
+\label{allocator_8hpp}\index{F:/Documents/Projects/qalloc/include/qalloc/internal/allocator.hpp@{F:/Documents/Projects/qalloc/include/qalloc/internal/allocator.hpp}}
+
+
+qalloc allocator class header file.  
+
+
+{\ttfamily \#include $<$cstddef$>$}\newline
+{\ttfamily \#include $<$qalloc/internal/pool.\+hpp$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classqalloc_1_1allocator__base}{qalloc\+::allocator\+\_\+base$<$ T, detailed $>$}}
+\begin{DoxyCompactList}\small\item\em qalloc allocator base class. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classqalloc_1_1allocator__base_1_1rebind}{qalloc\+::allocator\+\_\+base$<$ T, detailed $>$\+::rebind$<$ U $>$}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceqalloc}{qalloc}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\using \mbox{\hyperlink{namespaceqalloc_a2cdfac821f57c7b82ea32b5932e51a1c}{qalloc\+::allocator}} = allocator\+\_\+base$<$ T, true $>$
+\begin{DoxyCompactList}\small\item\em qalloc allocator class with typeinfo and gc support. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\using \mbox{\hyperlink{namespaceqalloc_a4b98e706108382920c6ae4b1e6703b26}{qalloc\+::simple\+\_\+allocator}} = allocator\+\_\+base$<$ T, false $>$
+\begin{DoxyCompactList}\small\item\em qalloc simple allocator class without typeinfo and gc support. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+qalloc allocator class header file. 
+
+\begin{DoxyAuthor}{Author}
+yusing 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2022-\/07-\/02 
+\end{DoxyDate}
+
+
+Definition in file \mbox{\hyperlink{allocator_8hpp_source}{allocator.\+hpp}}.
+

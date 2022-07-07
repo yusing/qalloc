@@ -1,0 +1,108 @@
+\hypertarget{stl_8hpp_source}{}\doxysection{stl.\+hpp}
+\label{stl_8hpp_source}\index{F:/Documents/Projects/qalloc/include/qalloc/internal/stl.hpp@{F:/Documents/Projects/qalloc/include/qalloc/internal/stl.hpp}}
+\mbox{\hyperlink{stl_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00001}00001 \textcolor{comment}{// Copyright 2022 yusing. All rights reserved.}}
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00002}00002 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00003}00003 \textcolor{comment}{// Licensed under the Apache License, Version 2.0 (the "{}License"{});}}
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00004}00004 \textcolor{comment}{// you may not use this file except in compliance with the License.}}
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00005}00005 \textcolor{comment}{// You may obtain a copy of the License at}}
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00006}00006 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00007}00007 \textcolor{comment}{//     http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00008}00008 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00009}00009 \textcolor{comment}{// Unless required by applicable law or agreed to in writing, software}}
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00010}00010 \textcolor{comment}{// distributed under the License is distributed on an "{}AS IS"{} BASIS,}}
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00011}00011 \textcolor{comment}{// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.}}
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00012}00012 \textcolor{comment}{// See the License for the specific language governing permissions and}}
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00013}00013 \textcolor{comment}{// limitations under the License.}}
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00020}00020 \textcolor{preprocessor}{\#ifndef QALLOC\_STL\_HPP}}
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00021}00021 \textcolor{preprocessor}{\#define QALLOC\_STL\_HPP}}
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00023}00023 \textcolor{preprocessor}{\#include <list>}}
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00024}00024 \textcolor{preprocessor}{\#include <deque>}}
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00025}00025 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00026}00026 \textcolor{preprocessor}{\#include <set>}}
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00027}00027 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00028}00028 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00029}00029 \textcolor{preprocessor}{\#include <sstream>}}
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00030}00030 \textcolor{preprocessor}{\#include <unordered\_map>}}
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00031}00031 \textcolor{preprocessor}{\#include <unordered\_set>}}
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00032}00032 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{allocator_8hpp}{qalloc/internal/allocator.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00033}00033 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{defs_8hpp}{qalloc/internal/defs.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00034}00034 }
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00035}00035 \mbox{\hyperlink{defs_8hpp_a0c5e46377ecf7e33c016739291f04c75}{QALLOC\_BEGIN}}}
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00036}00036 }
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00038}\mbox{\hyperlink{namespaceqalloc_1_1stl}{00038}} \textcolor{keyword}{namespace }stl \{}
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00039}00039 }
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00040}00040 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, \textcolor{keyword}{typename} TAllocator = qalloc::allocator<T>>}
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00041}\mbox{\hyperlink{namespaceqalloc_1_1stl_aa02723ef5e6244157ebdec75794b7eb2}{00041}} \textcolor{keyword}{using }\mbox{\hyperlink{namespaceqalloc_1_1stl_aa02723ef5e6244157ebdec75794b7eb2}{vector}} = std::vector<T, TAllocator>;}
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00042}00042 }
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00043}00043 \textcolor{keyword}{template} <\textcolor{keyword}{typename} TKey, \textcolor{keyword}{typename} TValue, \textcolor{keyword}{typename} TLess = std::less<TKey>, \textcolor{keyword}{typename} TAllocator = qalloc::allocator<std::pair<const TKey, TValue>>>}
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00044}\mbox{\hyperlink{namespaceqalloc_1_1stl_acdb8cf52685dc98801ab9b2fd9592495}{00044}} \textcolor{keyword}{using }\mbox{\hyperlink{namespaceqalloc_1_1stl_acdb8cf52685dc98801ab9b2fd9592495}{map}} = std::map<TKey, TValue, TLess, TAllocator>;}
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00045}00045 }
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00046}00046 \textcolor{keyword}{template} <\textcolor{keyword}{typename} TKey, \textcolor{keyword}{typename} TValue, \textcolor{keyword}{typename} THash = std::hash<TKey>, \textcolor{keyword}{typename} TEqualTo = std::equal\_to<TKey>, \textcolor{keyword}{typename} TAllocator = qalloc::allocator<std::pair<const TKey, TValue>>>}
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00047}\mbox{\hyperlink{namespaceqalloc_1_1stl_a9280c9ac8a4e541abef11f1ad3317440}{00047}} \textcolor{keyword}{using }\mbox{\hyperlink{namespaceqalloc_1_1stl_a9280c9ac8a4e541abef11f1ad3317440}{unordered\_map}} = std::unordered\_map<TKey, TValue, THash, TEqualTo, TAllocator>;}
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00048}00048 }
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00049}00049 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, \textcolor{keyword}{typename} TLess = std::less<T>, \textcolor{keyword}{typename} TAllocator = qalloc::allocator<T>>}
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00050}\mbox{\hyperlink{namespaceqalloc_1_1stl_a212d5ebac3a8391b43ffe6b1ba2d8a96}{00050}} \textcolor{keyword}{using }\mbox{\hyperlink{namespaceqalloc_1_1stl_a212d5ebac3a8391b43ffe6b1ba2d8a96}{set}} = std::set<T, TLess, TAllocator>;}
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00051}00051 }
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00052}00052 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, \textcolor{keyword}{typename} THash = std::hash<T>, \textcolor{keyword}{typename} TEqualTo = std::equal\_to<T>, \textcolor{keyword}{typename} TAllocator = qalloc::allocator<T>>}
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00053}\mbox{\hyperlink{namespaceqalloc_1_1stl_a87bab6aea9a43cc5111c58b77bed0007}{00053}} \textcolor{keyword}{using }\mbox{\hyperlink{namespaceqalloc_1_1stl_a87bab6aea9a43cc5111c58b77bed0007}{unordered\_set}} = std::unordered\_set<T, THash, TEqualTo, TAllocator>;}
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00054}00054 }
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00055}00055 \textcolor{keyword}{template} <\textcolor{keyword}{typename} TChar = \textcolor{keywordtype}{char}, \textcolor{keyword}{typename} TCharTraits = std::\textcolor{keywordtype}{char}\_traits<TChar>, \textcolor{keyword}{typename} TAllocator = qalloc::allocator<TChar>>}
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00056}\mbox{\hyperlink{namespaceqalloc_1_1stl_ae28b0dc62764023abfa6a227be0caaf5}{00056}} \textcolor{keyword}{using }\mbox{\hyperlink{namespaceqalloc_1_1stl_ae28b0dc62764023abfa6a227be0caaf5}{basic\_string}} = std::basic\_string<TChar, TCharTraits, TAllocator>;}
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00057}\mbox{\hyperlink{namespaceqalloc_1_1stl_a10f8c4d7d0fd543c309c1aa7e9d477ef}{00057}} \textcolor{keyword}{using }\mbox{\hyperlink{namespaceqalloc_1_1stl_a10f8c4d7d0fd543c309c1aa7e9d477ef}{string}} = \mbox{\hyperlink{namespaceqalloc_1_1stl_ae28b0dc62764023abfa6a227be0caaf5}{qalloc::stl::basic\_string<char>}};}
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00058}00058 }
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00059}00059 \textcolor{keyword}{template} <\textcolor{keyword}{typename} TChar = \textcolor{keywordtype}{char}, \textcolor{keyword}{typename} TCharTraits = std::\textcolor{keywordtype}{char}\_traits<TChar>, \textcolor{keyword}{typename} TAllocator = qalloc::allocator<TChar>>}
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00060}\mbox{\hyperlink{namespaceqalloc_1_1stl_a8d40f247dccea68c25d77fae796ec4fa}{00060}} \textcolor{keyword}{using }\mbox{\hyperlink{namespaceqalloc_1_1stl_a8d40f247dccea68c25d77fae796ec4fa}{basic\_stringstream}} = std::basic\_stringstream<TChar, TCharTraits, TAllocator>;}
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00061}\mbox{\hyperlink{namespaceqalloc_1_1stl_a4afce0a1aa0ecc92281ff1fdcff16804}{00061}} \textcolor{keyword}{using }\mbox{\hyperlink{namespaceqalloc_1_1stl_a4afce0a1aa0ecc92281ff1fdcff16804}{stringstream}} = \mbox{\hyperlink{namespaceqalloc_1_1stl_a8d40f247dccea68c25d77fae796ec4fa}{qalloc::stl::basic\_stringstream<char>}};}
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00062}00062 }
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00063}00063 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, \textcolor{keyword}{typename} TAllocator = qalloc::allocator<T>>}
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00064}\mbox{\hyperlink{namespaceqalloc_1_1stl_afc432e183ed6e8f61ec1685e00861eff}{00064}} \textcolor{keyword}{using }\mbox{\hyperlink{namespaceqalloc_1_1stl_afc432e183ed6e8f61ec1685e00861eff}{list}} = std::list<T, TAllocator>;}
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00065}00065 }
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00066}00066 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, \textcolor{keyword}{typename} TAllocator = qalloc::allocator<T>>}
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00067}\mbox{\hyperlink{namespaceqalloc_1_1stl_adbac8f5b8c8d8ee74823bd204808499b}{00067}} \textcolor{keyword}{using }\mbox{\hyperlink{namespaceqalloc_1_1stl_adbac8f5b8c8d8ee74823bd204808499b}{deque}} = std::deque<T, TAllocator>;}
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00068}00068 }
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00069}00069 \}}
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00070}00070 }
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00072}\mbox{\hyperlink{namespaceqalloc_1_1simple}{00072}} \textcolor{keyword}{namespace }simple \{}
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00073}00073 }
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00074}00074 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, \textcolor{keyword}{typename} TAllocator = qalloc::simple\_allocator<T>>}
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00075}\mbox{\hyperlink{namespaceqalloc_1_1simple_a4b103f371722ec569fe6db4996a11213}{00075}} \textcolor{keyword}{using }\mbox{\hyperlink{namespaceqalloc_1_1simple_a4b103f371722ec569fe6db4996a11213}{vector}} = std::vector<T, TAllocator>;}
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00076}00076 }
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00077}00077 \textcolor{keyword}{template} <\textcolor{keyword}{typename} TKey, \textcolor{keyword}{typename} TValue, \textcolor{keyword}{typename} TLess = std::less<TKey>, \textcolor{keyword}{typename} TAllocator = qalloc::simple\_allocator<std::pair<const TKey, TValue>>>}
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00078}\mbox{\hyperlink{namespaceqalloc_1_1simple_a453134acb124ae2f239d05a908a00843}{00078}} \textcolor{keyword}{using }\mbox{\hyperlink{namespaceqalloc_1_1simple_a453134acb124ae2f239d05a908a00843}{map}} = std::map<TKey, TValue, TLess, TAllocator>;}
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00079}00079 }
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00080}00080 \textcolor{keyword}{template} <\textcolor{keyword}{typename} TKey, \textcolor{keyword}{typename} TValue, \textcolor{keyword}{typename} THash = std::hash<TKey>, \textcolor{keyword}{typename} TEqualTo = std::equal\_to<TKey>, \textcolor{keyword}{typename} TAllocator = qalloc::simple\_allocator<std::pair<const TKey, TValue>>>}
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00081}\mbox{\hyperlink{namespaceqalloc_1_1simple_a9d13df214cdb7a10103626372f30d0fa}{00081}} \textcolor{keyword}{using }\mbox{\hyperlink{namespaceqalloc_1_1simple_a9d13df214cdb7a10103626372f30d0fa}{unordered\_map}} = std::unordered\_map<TKey, TValue, THash, TEqualTo, TAllocator>;}
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00082}00082 }
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00083}00083 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, \textcolor{keyword}{typename} TLess = std::less<T>, \textcolor{keyword}{typename} TAllocator = qalloc::simple\_allocator<T>>}
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00084}\mbox{\hyperlink{namespaceqalloc_1_1simple_a5173c956d098360e1750f8dca41c42c8}{00084}} \textcolor{keyword}{using }\mbox{\hyperlink{namespaceqalloc_1_1simple_a5173c956d098360e1750f8dca41c42c8}{set}} = std::set<T, TLess, TAllocator>;}
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00085}00085 }
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00086}00086 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, \textcolor{keyword}{typename} THash = std::hash<T>, \textcolor{keyword}{typename} TEqualTo = std::equal\_to<T>, \textcolor{keyword}{typename} TAllocator = qalloc::simple\_allocator<T>>}
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00087}\mbox{\hyperlink{namespaceqalloc_1_1simple_aa46b199a409d748466eaa6f6d4601b07}{00087}} \textcolor{keyword}{using }\mbox{\hyperlink{namespaceqalloc_1_1simple_aa46b199a409d748466eaa6f6d4601b07}{unordered\_set}} = std::unordered\_set<T, THash, TEqualTo, TAllocator>;}
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00088}00088 }
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00089}00089 \textcolor{keyword}{template} <\textcolor{keyword}{typename} TChar = \textcolor{keywordtype}{char}, \textcolor{keyword}{typename} TCharTraits = std::\textcolor{keywordtype}{char}\_traits<TChar>, \textcolor{keyword}{typename} TAllocator = qalloc::simple\_allocator<TChar>>}
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00090}\mbox{\hyperlink{namespaceqalloc_1_1simple_a9da66fff3823d24d7c5da27b3bd2a573}{00090}} \textcolor{keyword}{using }\mbox{\hyperlink{namespaceqalloc_1_1simple_a9da66fff3823d24d7c5da27b3bd2a573}{basic\_string}} = std::basic\_string<TChar, TCharTraits, TAllocator>;}
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00091}\mbox{\hyperlink{namespaceqalloc_1_1simple_a0f04bc2bde0599f57a6cc715097349b1}{00091}} \textcolor{keyword}{using }\mbox{\hyperlink{namespaceqalloc_1_1simple_a0f04bc2bde0599f57a6cc715097349b1}{string}} = \mbox{\hyperlink{namespaceqalloc_1_1simple_a9da66fff3823d24d7c5da27b3bd2a573}{qalloc::simple::basic\_string<char>}};}
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00092}00092 }
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00093}00093 \textcolor{keyword}{template} <\textcolor{keyword}{typename} TChar = \textcolor{keywordtype}{char}, \textcolor{keyword}{typename} TCharTraits = std::\textcolor{keywordtype}{char}\_traits<TChar>, \textcolor{keyword}{typename} TAllocator = qalloc::simple\_allocator<TChar>>}
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00094}\mbox{\hyperlink{namespaceqalloc_1_1simple_a6075d6a8064da817dc60df156e7c375b}{00094}} \textcolor{keyword}{using }\mbox{\hyperlink{namespaceqalloc_1_1simple_a6075d6a8064da817dc60df156e7c375b}{basic\_stringstream}} = std::basic\_stringstream<TChar, TCharTraits, TAllocator>;}
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00095}\mbox{\hyperlink{namespaceqalloc_1_1simple_a6d3cb0eb6a0ea1fe3c62f38935ea62a6}{00095}} \textcolor{keyword}{using }\mbox{\hyperlink{namespaceqalloc_1_1simple_a6d3cb0eb6a0ea1fe3c62f38935ea62a6}{stringstream}} = \mbox{\hyperlink{namespaceqalloc_1_1simple_a6075d6a8064da817dc60df156e7c375b}{qalloc::simple::basic\_stringstream<char>}};}
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00096}00096 }
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00097}00097 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, \textcolor{keyword}{typename} TAllocator = qalloc::simple\_allocator<T>>}
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00098}\mbox{\hyperlink{namespaceqalloc_1_1simple_aed0dbcfb344c2403a3440d46b54b58fa}{00098}} \textcolor{keyword}{using }\mbox{\hyperlink{namespaceqalloc_1_1simple_aed0dbcfb344c2403a3440d46b54b58fa}{list}} = std::list<T, TAllocator>;}
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00099}00099 }
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00100}00100 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, \textcolor{keyword}{typename} TAllocator = qalloc::simple\_allocator<T>>}
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00101}\mbox{\hyperlink{namespaceqalloc_1_1simple_a39946471bb3032b187901cf415a4f50b}{00101}} \textcolor{keyword}{using }\mbox{\hyperlink{namespaceqalloc_1_1simple_a39946471bb3032b187901cf415a4f50b}{deque}} = std::deque<T, TAllocator>;}
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00102}00102 }
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00103}00103 \} \textcolor{comment}{// namespace simple}}
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00104}00104 }
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00105}00105 \textcolor{keyword}{using namespace }stl;}
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00106}00106 }
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00107}00107 \mbox{\hyperlink{defs_8hpp_ae6074cc5b731bee29a970dd996470029}{QALLOC\_END}}}
+\DoxyCodeLine{\Hypertarget{stl_8hpp_source_l00108}00108 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// QALLOC\_STL\_HPP}}
+
+\end{DoxyCode}

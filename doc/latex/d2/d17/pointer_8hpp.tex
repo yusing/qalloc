@@ -1,0 +1,78 @@
+\hypertarget{pointer_8hpp}{}\doxysection{F\+:/\+Documents/\+Projects/qalloc/include/qalloc/internal/pointer.hpp File Reference}
+\label{pointer_8hpp}\index{F:/Documents/Projects/qalloc/include/qalloc/internal/pointer.hpp@{F:/Documents/Projects/qalloc/include/qalloc/internal/pointer.hpp}}
+
+
+qalloc pointer utilities header file.  
+
+
+{\ttfamily \#include $<$ostream$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include $<$qalloc/internal/defs.\+hpp$>$}\newline
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceqalloc}{qalloc}}
+\item 
+namespace \mbox{\hyperlink{namespaceqalloc_1_1pointer}{qalloc\+::pointer}}
+\begin{DoxyCompactList}\small\item\em pointer utilities namespace \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{namespaceqalloc_a15dbd90bcf32a0cda82fef6ab9189823}{qalloc\+::byte\+\_\+pointer}} = byte $\ast$
+\item 
+using \mbox{\hyperlink{namespaceqalloc_a0fcbf28d8aec7f6a33e6dff63b6e1357}{qalloc\+::const\+\_\+byte\+\_\+pointer}} = const byte $\ast$
+\item 
+using \mbox{\hyperlink{namespaceqalloc_a01158dc1896ab43737138392524e61d9}{qalloc\+::void\+\_\+pointer}} = void $\ast$
+\item 
+using \mbox{\hyperlink{namespaceqalloc_a88ff7078fa672c6ff9de26bdcb9daeca}{qalloc\+::const\+\_\+void\+\_\+pointer}} = const void $\ast$
+\item 
+using \mbox{\hyperlink{namespaceqalloc_a5b36ec8e13ab5c8aebd049e1b0e07574}{qalloc\+::size\+\_\+type}} = std\+::size\+\_\+t
+\item 
+using \mbox{\hyperlink{namespaceqalloc_a3eaa567e837689805c5f4c5dda562e16}{qalloc\+::difference\+\_\+type}} = std\+::ptrdiff\+\_\+t
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{namespaceqalloc_ae3a2d1ddce51c70146088378000a5946}{qalloc\+::byte}} \+: unsigned char 
+\begin{DoxyCompactList}\small\item\em single byte enum type \end{DoxyCompactList}\item 
+enum class \mbox{\hyperlink{namespaceqalloc_a0c8786ebe9d96517ed824f01ecf36f2e}{qalloc\+::index\+\_\+type}} \+: size\+\_\+type \{ \mbox{\hyperlink{namespaceqalloc_a0c8786ebe9d96517ed824f01ecf36f2ead7ed4ee1df437474d005188535f74875}{qalloc\+::\+Zero}} = 0
+ \}
+\begin{DoxyCompactList}\small\item\em size\+\_\+type enum type for index \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{namespaceqalloc_a72bbdc6602c8378e0039a83d88e55c33}{qalloc\+::operator$<$$<$}} (std\+::ostream \&os, \mbox{\hyperlink{namespaceqalloc_ae3a2d1ddce51c70146088378000a5946}{qalloc\+::const\+\_\+byte\+\_\+pointer}} p)
+\begin{DoxyCompactList}\small\item\em std\+::ostream input operator for constant byte pointer \end{DoxyCompactList}\item 
+constexpr index\+\_\+type \& \mbox{\hyperlink{namespaceqalloc_afbe2e097d5f884fa7b34da384d7b1a69}{qalloc\+::operator-\/-\/}} (index\+\_\+type \&i)
+\begin{DoxyCompactList}\small\item\em index\+\_\+type decrement operator \end{DoxyCompactList}\item 
+constexpr size\+\_\+type \mbox{\hyperlink{namespaceqalloc_a8ec1582ea2955deea02a637178ab2047}{qalloc\+::operator\char`\"{}\char`\"{}\+\_\+z}} (unsigned long long n)
+\begin{DoxyCompactList}\small\item\em size\+\_\+type literal suffix operator \end{DoxyCompactList}\item 
+constexpr size\+\_\+type \mbox{\hyperlink{namespaceqalloc_a9b6a3324c716b59468f390dbe4e9a1bc}{qalloc\+::size\+\_\+cast}} (index\+\_\+type i)
+\begin{DoxyCompactList}\small\item\em cast from index\+\_\+type to size\+\_\+type \end{DoxyCompactList}\item 
+constexpr size\+\_\+type \mbox{\hyperlink{namespaceqalloc_aa3991f062700899cabdea80d0d364f11}{qalloc\+::size\+\_\+cast}} (difference\+\_\+type diff)
+\begin{DoxyCompactList}\small\item\em cast from difference\+\_\+type to size\+\_\+type \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\constexpr T $\ast$ \mbox{\hyperlink{namespaceqalloc_1_1pointer_a595422cf79a1a54d0b8665423d6f717d}{qalloc\+::pointer\+::launder}} (T $\ast$p)
+\begin{DoxyCompactList}\small\item\em std\+::launder wrapper \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Out\+Type  = byte\+\_\+pointer, typename Offset\+Type , typename In\+Type $>$ }\\constexpr Out\+Type \mbox{\hyperlink{namespaceqalloc_1_1pointer_a860d064389a2399eeb0cf0622dc4ebcc}{qalloc\+::pointer\+::add}} (In\+Type ptr, Offset\+Type offset)
+\item 
+{\footnotesize template$<$typename Out\+Type  = byte\+\_\+pointer, typename Offset\+Type , typename In\+Type $>$ }\\constexpr Out\+Type \mbox{\hyperlink{namespaceqalloc_1_1pointer_a93a3b0837a830c6e18aeb56a344215e6}{qalloc\+::pointer\+::sub}} (In\+Type ptr, Offset\+Type offset)
+\item 
+constexpr bool \mbox{\hyperlink{namespaceqalloc_1_1pointer_a77189b59b856e89a0da009483fdb0eaa}{qalloc\+::pointer\+::in\+\_\+range}} (const\+\_\+void\+\_\+pointer pos, const\+\_\+void\+\_\+pointer lb, const\+\_\+void\+\_\+pointer ub)
+\item 
+constexpr byte\+\_\+pointer \mbox{\hyperlink{namespaceqalloc_1_1pointer_ab3e62123693cfbbc5b22ce054e388e7a}{qalloc\+::pointer\+::remove\+\_\+const}} (const\+\_\+byte\+\_\+pointer p)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+qalloc pointer utilities header file. 
+
+\begin{DoxyAuthor}{Author}
+yusing 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2022-\/07-\/02 
+\end{DoxyDate}
+
+
+Definition in file \mbox{\hyperlink{pointer_8hpp_source}{pointer.\+hpp}}.
+

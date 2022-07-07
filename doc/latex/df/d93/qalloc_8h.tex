@@ -1,0 +1,101 @@
+\hypertarget{qalloc_8h}{}\doxysection{F\+:/\+Documents/\+Projects/qalloc/include/qalloc/qalloc.h File Reference}
+\label{qalloc_8h}\index{F:/Documents/Projects/qalloc/include/qalloc/qalloc.h@{F:/Documents/Projects/qalloc/include/qalloc/qalloc.h}}
+
+
+qalloc c wrapper library header file.  
+
+
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{qalloc_8h_a0ddb9e954e406905dae8bb4acd8d519a}{QALLOC\+\_\+\+EXPORT}}~\+\_\+\+\_\+attribute\+\_\+\+\_\+((visibility(\char`\"{}default\char`\"{}))) \+\_\+\+\_\+attribute\+\_\+\+\_\+((used))
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{qalloc_8h_a0ddb9e954e406905dae8bb4acd8d519a}{QALLOC\+\_\+\+EXPORT}} void $\ast$ \mbox{\hyperlink{qalloc_8h_a5135bc6c817886c5154dffdc727f0104}{q\+\_\+allocate}} (size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em allocates memory from the global pool. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{qalloc_8h_a0ddb9e954e406905dae8bb4acd8d519a}{QALLOC\+\_\+\+EXPORT}} void \mbox{\hyperlink{qalloc_8h_abb21525478d51d54c3c91eb287a8187c}{q\+\_\+deallocate}} (void $\ast$ptr)
+\begin{DoxyCompactList}\small\item\em deallocates memory from the global pool. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{qalloc_8h_a0ddb9e954e406905dae8bb4acd8d519a}{QALLOC\+\_\+\+EXPORT}} size\+\_\+t \mbox{\hyperlink{qalloc_8h_a3b41eda9a53bc59447cfacf9520684d2}{q\+\_\+garbage\+\_\+collect}} ()
+\begin{DoxyCompactList}\small\item\em garbage collects the global pool. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+qalloc c wrapper library header file. 
+
+\begin{DoxyAuthor}{Author}
+yusing 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2022-\/07-\/07 
+\end{DoxyDate}
+
+
+Definition in file \mbox{\hyperlink{qalloc_8h_source}{qalloc.\+h}}.
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{qalloc_8h_a0ddb9e954e406905dae8bb4acd8d519a}\label{qalloc_8h_a0ddb9e954e406905dae8bb4acd8d519a}} 
+\index{qalloc.h@{qalloc.h}!QALLOC\_EXPORT@{QALLOC\_EXPORT}}
+\index{QALLOC\_EXPORT@{QALLOC\_EXPORT}!qalloc.h@{qalloc.h}}
+\doxysubsubsection{\texorpdfstring{QALLOC\_EXPORT}{QALLOC\_EXPORT}}
+{\footnotesize\ttfamily \#define QALLOC\+\_\+\+EXPORT~\+\_\+\+\_\+attribute\+\_\+\+\_\+((visibility(\char`\"{}default\char`\"{}))) \+\_\+\+\_\+attribute\+\_\+\+\_\+((used))}
+
+
+
+Definition at line \mbox{\hyperlink{qalloc_8h_source_l00023}{23}} of file \mbox{\hyperlink{qalloc_8h_source}{qalloc.\+h}}.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{qalloc_8h_a5135bc6c817886c5154dffdc727f0104}\label{qalloc_8h_a5135bc6c817886c5154dffdc727f0104}} 
+\index{qalloc.h@{qalloc.h}!q\_allocate@{q\_allocate}}
+\index{q\_allocate@{q\_allocate}!qalloc.h@{qalloc.h}}
+\doxysubsubsection{\texorpdfstring{q\_allocate()}{q\_allocate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{qalloc_8h_a0ddb9e954e406905dae8bb4acd8d519a}{QALLOC\+\_\+\+EXPORT}} void $\ast$ q\+\_\+allocate (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+
+
+allocates memory from the global pool. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & the size of the memory to allocate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pointer to the allocated memory. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{qalloc_8h_abb21525478d51d54c3c91eb287a8187c}\label{qalloc_8h_abb21525478d51d54c3c91eb287a8187c}} 
+\index{qalloc.h@{qalloc.h}!q\_deallocate@{q\_deallocate}}
+\index{q\_deallocate@{q\_deallocate}!qalloc.h@{qalloc.h}}
+\doxysubsubsection{\texorpdfstring{q\_deallocate()}{q\_deallocate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{qalloc_8h_a0ddb9e954e406905dae8bb4acd8d519a}{QALLOC\+\_\+\+EXPORT}} void q\+\_\+deallocate (\begin{DoxyParamCaption}\item[{void $\ast$}]{ptr }\end{DoxyParamCaption})}
+
+
+
+deallocates memory from the global pool. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ptr} & the pointer to the memory to deallocate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{qalloc_8h_a3b41eda9a53bc59447cfacf9520684d2}\label{qalloc_8h_a3b41eda9a53bc59447cfacf9520684d2}} 
+\index{qalloc.h@{qalloc.h}!q\_garbage\_collect@{q\_garbage\_collect}}
+\index{q\_garbage\_collect@{q\_garbage\_collect}!qalloc.h@{qalloc.h}}
+\doxysubsubsection{\texorpdfstring{q\_garbage\_collect()}{q\_garbage\_collect()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{qalloc_8h_a0ddb9e954e406905dae8bb4acd8d519a}{QALLOC\+\_\+\+EXPORT}} size\+\_\+t q\+\_\+garbage\+\_\+collect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+garbage collects the global pool. 
+
+\begin{DoxyReturn}{Returns}
+the number of bytes freed. 
+\end{DoxyReturn}

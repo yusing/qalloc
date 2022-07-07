@@ -1,0 +1,157 @@
+\hypertarget{namespaceqalloc_1_1stl}{}\doxysection{qalloc\+::stl Namespace Reference}
+\label{namespaceqalloc_1_1stl}\index{qalloc::stl@{qalloc::stl}}
+
+
+STL container types with type info and gc support.  
+
+
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T , typename TAllocator  = qalloc\+::allocator$<$\+T$>$$>$ }\\using \mbox{\hyperlink{namespaceqalloc_1_1stl_aa02723ef5e6244157ebdec75794b7eb2}{vector}} = std\+::vector$<$ T, TAllocator $>$
+\item 
+{\footnotesize template$<$typename TKey , typename TValue , typename TLess  = std\+::less$<$\+TKey$>$, typename TAllocator  = qalloc\+::allocator$<$std\+::pair$<$const TKey, TValue$>$$>$$>$ }\\using \mbox{\hyperlink{namespaceqalloc_1_1stl_acdb8cf52685dc98801ab9b2fd9592495}{map}} = std\+::map$<$ TKey, TValue, TLess, TAllocator $>$
+\item 
+{\footnotesize template$<$typename TKey , typename TValue , typename THash  = std\+::hash$<$\+TKey$>$, typename TEqual\+To  = std\+::equal\+\_\+to$<$\+TKey$>$, typename TAllocator  = qalloc\+::allocator$<$std\+::pair$<$const TKey, TValue$>$$>$$>$ }\\using \mbox{\hyperlink{namespaceqalloc_1_1stl_a9280c9ac8a4e541abef11f1ad3317440}{unordered\+\_\+map}} = std\+::unordered\+\_\+map$<$ TKey, TValue, THash, TEqual\+To, TAllocator $>$
+\item 
+{\footnotesize template$<$typename T , typename TLess  = std\+::less$<$\+T$>$, typename TAllocator  = qalloc\+::allocator$<$\+T$>$$>$ }\\using \mbox{\hyperlink{namespaceqalloc_1_1stl_a212d5ebac3a8391b43ffe6b1ba2d8a96}{set}} = std\+::set$<$ T, TLess, TAllocator $>$
+\item 
+{\footnotesize template$<$typename T , typename THash  = std\+::hash$<$\+T$>$, typename TEqual\+To  = std\+::equal\+\_\+to$<$\+T$>$, typename TAllocator  = qalloc\+::allocator$<$\+T$>$$>$ }\\using \mbox{\hyperlink{namespaceqalloc_1_1stl_a87bab6aea9a43cc5111c58b77bed0007}{unordered\+\_\+set}} = std\+::unordered\+\_\+set$<$ T, THash, TEqual\+To, TAllocator $>$
+\item 
+{\footnotesize template$<$typename TChar  = char, typename TChar\+Traits  = std\+::char\+\_\+traits$<$\+TChar$>$, typename TAllocator  = qalloc\+::allocator$<$\+TChar$>$$>$ }\\using \mbox{\hyperlink{namespaceqalloc_1_1stl_ae28b0dc62764023abfa6a227be0caaf5}{basic\+\_\+string}} = std\+::basic\+\_\+string$<$ TChar, TChar\+Traits, TAllocator $>$
+\item 
+using \mbox{\hyperlink{namespaceqalloc_1_1stl_a10f8c4d7d0fd543c309c1aa7e9d477ef}{string}} = \mbox{\hyperlink{namespaceqalloc_1_1stl_ae28b0dc62764023abfa6a227be0caaf5}{qalloc\+::stl\+::basic\+\_\+string}}$<$ char $>$
+\item 
+{\footnotesize template$<$typename TChar  = char, typename TChar\+Traits  = std\+::char\+\_\+traits$<$\+TChar$>$, typename TAllocator  = qalloc\+::allocator$<$\+TChar$>$$>$ }\\using \mbox{\hyperlink{namespaceqalloc_1_1stl_a8d40f247dccea68c25d77fae796ec4fa}{basic\+\_\+stringstream}} = std\+::basic\+\_\+stringstream$<$ TChar, TChar\+Traits, TAllocator $>$
+\item 
+using \mbox{\hyperlink{namespaceqalloc_1_1stl_a4afce0a1aa0ecc92281ff1fdcff16804}{stringstream}} = \mbox{\hyperlink{namespaceqalloc_1_1stl_a8d40f247dccea68c25d77fae796ec4fa}{qalloc\+::stl\+::basic\+\_\+stringstream}}$<$ char $>$
+\item 
+{\footnotesize template$<$typename T , typename TAllocator  = qalloc\+::allocator$<$\+T$>$$>$ }\\using \mbox{\hyperlink{namespaceqalloc_1_1stl_afc432e183ed6e8f61ec1685e00861eff}{list}} = std\+::list$<$ T, TAllocator $>$
+\item 
+{\footnotesize template$<$typename T , typename TAllocator  = qalloc\+::allocator$<$\+T$>$$>$ }\\using \mbox{\hyperlink{namespaceqalloc_1_1stl_adbac8f5b8c8d8ee74823bd204808499b}{deque}} = std\+::deque$<$ T, TAllocator $>$
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+STL container types with type info and gc support. 
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{namespaceqalloc_1_1stl_ae28b0dc62764023abfa6a227be0caaf5}\label{namespaceqalloc_1_1stl_ae28b0dc62764023abfa6a227be0caaf5}} 
+\index{qalloc::stl@{qalloc::stl}!basic\_string@{basic\_string}}
+\index{basic\_string@{basic\_string}!qalloc::stl@{qalloc::stl}}
+\doxysubsubsection{\texorpdfstring{basic\_string}{basic\_string}}
+{\footnotesize\ttfamily template$<$typename TChar  = char, typename TChar\+Traits  = std\+::char\+\_\+traits$<$\+TChar$>$, typename TAllocator  = qalloc\+::allocator$<$\+TChar$>$$>$ \\
+using \mbox{\hyperlink{namespaceqalloc_1_1stl_ae28b0dc62764023abfa6a227be0caaf5}{qalloc\+::stl\+::basic\+\_\+string}} = typedef std\+::basic\+\_\+string$<$TChar, TChar\+Traits, TAllocator$>$}
+
+
+
+Definition at line \mbox{\hyperlink{stl_8hpp_source_l00056}{56}} of file \mbox{\hyperlink{stl_8hpp_source}{stl.\+hpp}}.
+
+\mbox{\Hypertarget{namespaceqalloc_1_1stl_a8d40f247dccea68c25d77fae796ec4fa}\label{namespaceqalloc_1_1stl_a8d40f247dccea68c25d77fae796ec4fa}} 
+\index{qalloc::stl@{qalloc::stl}!basic\_stringstream@{basic\_stringstream}}
+\index{basic\_stringstream@{basic\_stringstream}!qalloc::stl@{qalloc::stl}}
+\doxysubsubsection{\texorpdfstring{basic\_stringstream}{basic\_stringstream}}
+{\footnotesize\ttfamily template$<$typename TChar  = char, typename TChar\+Traits  = std\+::char\+\_\+traits$<$\+TChar$>$, typename TAllocator  = qalloc\+::allocator$<$\+TChar$>$$>$ \\
+using \mbox{\hyperlink{namespaceqalloc_1_1stl_a8d40f247dccea68c25d77fae796ec4fa}{qalloc\+::stl\+::basic\+\_\+stringstream}} = typedef std\+::basic\+\_\+stringstream$<$TChar, TChar\+Traits, TAllocator$>$}
+
+
+
+Definition at line \mbox{\hyperlink{stl_8hpp_source_l00060}{60}} of file \mbox{\hyperlink{stl_8hpp_source}{stl.\+hpp}}.
+
+\mbox{\Hypertarget{namespaceqalloc_1_1stl_adbac8f5b8c8d8ee74823bd204808499b}\label{namespaceqalloc_1_1stl_adbac8f5b8c8d8ee74823bd204808499b}} 
+\index{qalloc::stl@{qalloc::stl}!deque@{deque}}
+\index{deque@{deque}!qalloc::stl@{qalloc::stl}}
+\doxysubsubsection{\texorpdfstring{deque}{deque}}
+{\footnotesize\ttfamily template$<$typename T , typename TAllocator  = qalloc\+::allocator$<$\+T$>$$>$ \\
+using \mbox{\hyperlink{namespaceqalloc_1_1stl_adbac8f5b8c8d8ee74823bd204808499b}{qalloc\+::stl\+::deque}} = typedef std\+::deque$<$T, TAllocator$>$}
+
+
+
+Definition at line \mbox{\hyperlink{stl_8hpp_source_l00067}{67}} of file \mbox{\hyperlink{stl_8hpp_source}{stl.\+hpp}}.
+
+\mbox{\Hypertarget{namespaceqalloc_1_1stl_afc432e183ed6e8f61ec1685e00861eff}\label{namespaceqalloc_1_1stl_afc432e183ed6e8f61ec1685e00861eff}} 
+\index{qalloc::stl@{qalloc::stl}!list@{list}}
+\index{list@{list}!qalloc::stl@{qalloc::stl}}
+\doxysubsubsection{\texorpdfstring{list}{list}}
+{\footnotesize\ttfamily template$<$typename T , typename TAllocator  = qalloc\+::allocator$<$\+T$>$$>$ \\
+using \mbox{\hyperlink{namespaceqalloc_1_1stl_afc432e183ed6e8f61ec1685e00861eff}{qalloc\+::stl\+::list}} = typedef std\+::list$<$T, TAllocator$>$}
+
+
+
+Definition at line \mbox{\hyperlink{stl_8hpp_source_l00064}{64}} of file \mbox{\hyperlink{stl_8hpp_source}{stl.\+hpp}}.
+
+\mbox{\Hypertarget{namespaceqalloc_1_1stl_acdb8cf52685dc98801ab9b2fd9592495}\label{namespaceqalloc_1_1stl_acdb8cf52685dc98801ab9b2fd9592495}} 
+\index{qalloc::stl@{qalloc::stl}!map@{map}}
+\index{map@{map}!qalloc::stl@{qalloc::stl}}
+\doxysubsubsection{\texorpdfstring{map}{map}}
+{\footnotesize\ttfamily template$<$typename TKey , typename TValue , typename TLess  = std\+::less$<$\+TKey$>$, typename TAllocator  = qalloc\+::allocator$<$std\+::pair$<$const TKey, TValue$>$$>$$>$ \\
+using \mbox{\hyperlink{namespaceqalloc_1_1stl_acdb8cf52685dc98801ab9b2fd9592495}{qalloc\+::stl\+::map}} = typedef std\+::map$<$TKey, TValue, TLess, TAllocator$>$}
+
+
+
+Definition at line \mbox{\hyperlink{stl_8hpp_source_l00044}{44}} of file \mbox{\hyperlink{stl_8hpp_source}{stl.\+hpp}}.
+
+\mbox{\Hypertarget{namespaceqalloc_1_1stl_a212d5ebac3a8391b43ffe6b1ba2d8a96}\label{namespaceqalloc_1_1stl_a212d5ebac3a8391b43ffe6b1ba2d8a96}} 
+\index{qalloc::stl@{qalloc::stl}!set@{set}}
+\index{set@{set}!qalloc::stl@{qalloc::stl}}
+\doxysubsubsection{\texorpdfstring{set}{set}}
+{\footnotesize\ttfamily template$<$typename T , typename TLess  = std\+::less$<$\+T$>$, typename TAllocator  = qalloc\+::allocator$<$\+T$>$$>$ \\
+using \mbox{\hyperlink{namespaceqalloc_1_1stl_a212d5ebac3a8391b43ffe6b1ba2d8a96}{qalloc\+::stl\+::set}} = typedef std\+::set$<$T, TLess, TAllocator$>$}
+
+
+
+Definition at line \mbox{\hyperlink{stl_8hpp_source_l00050}{50}} of file \mbox{\hyperlink{stl_8hpp_source}{stl.\+hpp}}.
+
+\mbox{\Hypertarget{namespaceqalloc_1_1stl_a10f8c4d7d0fd543c309c1aa7e9d477ef}\label{namespaceqalloc_1_1stl_a10f8c4d7d0fd543c309c1aa7e9d477ef}} 
+\index{qalloc::stl@{qalloc::stl}!string@{string}}
+\index{string@{string}!qalloc::stl@{qalloc::stl}}
+\doxysubsubsection{\texorpdfstring{string}{string}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{namespaceqalloc_1_1stl_a10f8c4d7d0fd543c309c1aa7e9d477ef}{qalloc\+::stl\+::string}} = typedef \mbox{\hyperlink{namespaceqalloc_1_1stl_ae28b0dc62764023abfa6a227be0caaf5}{qalloc\+::stl\+::basic\+\_\+string}}$<$char$>$}
+
+
+
+Definition at line \mbox{\hyperlink{stl_8hpp_source_l00057}{57}} of file \mbox{\hyperlink{stl_8hpp_source}{stl.\+hpp}}.
+
+\mbox{\Hypertarget{namespaceqalloc_1_1stl_a4afce0a1aa0ecc92281ff1fdcff16804}\label{namespaceqalloc_1_1stl_a4afce0a1aa0ecc92281ff1fdcff16804}} 
+\index{qalloc::stl@{qalloc::stl}!stringstream@{stringstream}}
+\index{stringstream@{stringstream}!qalloc::stl@{qalloc::stl}}
+\doxysubsubsection{\texorpdfstring{stringstream}{stringstream}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{namespaceqalloc_1_1stl_a4afce0a1aa0ecc92281ff1fdcff16804}{qalloc\+::stl\+::stringstream}} = typedef \mbox{\hyperlink{namespaceqalloc_1_1stl_a8d40f247dccea68c25d77fae796ec4fa}{qalloc\+::stl\+::basic\+\_\+stringstream}}$<$char$>$}
+
+
+
+Definition at line \mbox{\hyperlink{stl_8hpp_source_l00061}{61}} of file \mbox{\hyperlink{stl_8hpp_source}{stl.\+hpp}}.
+
+\mbox{\Hypertarget{namespaceqalloc_1_1stl_a9280c9ac8a4e541abef11f1ad3317440}\label{namespaceqalloc_1_1stl_a9280c9ac8a4e541abef11f1ad3317440}} 
+\index{qalloc::stl@{qalloc::stl}!unordered\_map@{unordered\_map}}
+\index{unordered\_map@{unordered\_map}!qalloc::stl@{qalloc::stl}}
+\doxysubsubsection{\texorpdfstring{unordered\_map}{unordered\_map}}
+{\footnotesize\ttfamily template$<$typename TKey , typename TValue , typename THash  = std\+::hash$<$\+TKey$>$, typename TEqual\+To  = std\+::equal\+\_\+to$<$\+TKey$>$, typename TAllocator  = qalloc\+::allocator$<$std\+::pair$<$const TKey, TValue$>$$>$$>$ \\
+using \mbox{\hyperlink{namespaceqalloc_1_1stl_a9280c9ac8a4e541abef11f1ad3317440}{qalloc\+::stl\+::unordered\+\_\+map}} = typedef std\+::unordered\+\_\+map$<$TKey, TValue, THash, TEqual\+To, TAllocator$>$}
+
+
+
+Definition at line \mbox{\hyperlink{stl_8hpp_source_l00047}{47}} of file \mbox{\hyperlink{stl_8hpp_source}{stl.\+hpp}}.
+
+\mbox{\Hypertarget{namespaceqalloc_1_1stl_a87bab6aea9a43cc5111c58b77bed0007}\label{namespaceqalloc_1_1stl_a87bab6aea9a43cc5111c58b77bed0007}} 
+\index{qalloc::stl@{qalloc::stl}!unordered\_set@{unordered\_set}}
+\index{unordered\_set@{unordered\_set}!qalloc::stl@{qalloc::stl}}
+\doxysubsubsection{\texorpdfstring{unordered\_set}{unordered\_set}}
+{\footnotesize\ttfamily template$<$typename T , typename THash  = std\+::hash$<$\+T$>$, typename TEqual\+To  = std\+::equal\+\_\+to$<$\+T$>$, typename TAllocator  = qalloc\+::allocator$<$\+T$>$$>$ \\
+using \mbox{\hyperlink{namespaceqalloc_1_1stl_a87bab6aea9a43cc5111c58b77bed0007}{qalloc\+::stl\+::unordered\+\_\+set}} = typedef std\+::unordered\+\_\+set$<$T, THash, TEqual\+To, TAllocator$>$}
+
+
+
+Definition at line \mbox{\hyperlink{stl_8hpp_source_l00053}{53}} of file \mbox{\hyperlink{stl_8hpp_source}{stl.\+hpp}}.
+
+\mbox{\Hypertarget{namespaceqalloc_1_1stl_aa02723ef5e6244157ebdec75794b7eb2}\label{namespaceqalloc_1_1stl_aa02723ef5e6244157ebdec75794b7eb2}} 
+\index{qalloc::stl@{qalloc::stl}!vector@{vector}}
+\index{vector@{vector}!qalloc::stl@{qalloc::stl}}
+\doxysubsubsection{\texorpdfstring{vector}{vector}}
+{\footnotesize\ttfamily template$<$typename T , typename TAllocator  = qalloc\+::allocator$<$\+T$>$$>$ \\
+using \mbox{\hyperlink{namespaceqalloc_1_1stl_aa02723ef5e6244157ebdec75794b7eb2}{qalloc\+::stl\+::vector}} = typedef std\+::vector$<$T, TAllocator$>$}
+
+
+
+Definition at line \mbox{\hyperlink{stl_8hpp_source_l00041}{41}} of file \mbox{\hyperlink{stl_8hpp_source}{stl.\+hpp}}.
+

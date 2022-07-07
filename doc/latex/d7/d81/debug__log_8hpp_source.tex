@@ -1,0 +1,58 @@
+\hypertarget{debug__log_8hpp_source}{}\doxysection{debug\+\_\+log.\+hpp}
+\label{debug__log_8hpp_source}\index{F:/Documents/Projects/qalloc/include/qalloc/internal/debug\_log.hpp@{F:/Documents/Projects/qalloc/include/qalloc/internal/debug\_log.hpp}}
+\mbox{\hyperlink{debug__log_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{debug__log_8hpp_source_l00001}00001 \textcolor{comment}{// Copyright 2022 yusing. All rights reserved.}}
+\DoxyCodeLine{\Hypertarget{debug__log_8hpp_source_l00002}00002 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{debug__log_8hpp_source_l00003}00003 \textcolor{comment}{// Licensed under the Apache License, Version 2.0 (the "{}License"{});}}
+\DoxyCodeLine{\Hypertarget{debug__log_8hpp_source_l00004}00004 \textcolor{comment}{// you may not use this file except in compliance with the License.}}
+\DoxyCodeLine{\Hypertarget{debug__log_8hpp_source_l00005}00005 \textcolor{comment}{// You may obtain a copy of the License at}}
+\DoxyCodeLine{\Hypertarget{debug__log_8hpp_source_l00006}00006 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{debug__log_8hpp_source_l00007}00007 \textcolor{comment}{//     http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{\Hypertarget{debug__log_8hpp_source_l00008}00008 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{debug__log_8hpp_source_l00009}00009 \textcolor{comment}{// Unless required by applicable law or agreed to in writing, software}}
+\DoxyCodeLine{\Hypertarget{debug__log_8hpp_source_l00010}00010 \textcolor{comment}{// distributed under the License is distributed on an "{}AS IS"{} BASIS,}}
+\DoxyCodeLine{\Hypertarget{debug__log_8hpp_source_l00011}00011 \textcolor{comment}{// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.}}
+\DoxyCodeLine{\Hypertarget{debug__log_8hpp_source_l00012}00012 \textcolor{comment}{// See the License for the specific language governing permissions and}}
+\DoxyCodeLine{\Hypertarget{debug__log_8hpp_source_l00013}00013 \textcolor{comment}{// limitations under the License.}}
+\DoxyCodeLine{\Hypertarget{debug__log_8hpp_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{debug__log_8hpp_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{debug__log_8hpp_source_l00020}00020 \textcolor{preprocessor}{\#ifndef QALLOC\_DEBUG\_LOG\_HPP}}
+\DoxyCodeLine{\Hypertarget{debug__log_8hpp_source_l00021}00021 \textcolor{preprocessor}{\#define QALLOC\_DEBUG\_LOG\_HPP}}
+\DoxyCodeLine{\Hypertarget{debug__log_8hpp_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{debug__log_8hpp_source_l00023}00023 \textcolor{preprocessor}{\#include <cstdio>}  \textcolor{comment}{// std::printf}}
+\DoxyCodeLine{\Hypertarget{debug__log_8hpp_source_l00024}00024 \textcolor{preprocessor}{\#include <cstddef>} \textcolor{comment}{// std::size\_t}}
+\DoxyCodeLine{\Hypertarget{debug__log_8hpp_source_l00025}00025 \textcolor{preprocessor}{\#include <atomic>}  \textcolor{comment}{// std::atomic}}
+\DoxyCodeLine{\Hypertarget{debug__log_8hpp_source_l00026}00026 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{defs_8hpp}{qalloc/internal/defs.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{debug__log_8hpp_source_l00027}00027 }
+\DoxyCodeLine{\Hypertarget{debug__log_8hpp_source_l00028}00028 \textcolor{preprocessor}{\#if QALLOC\_DEBUG}}
+\DoxyCodeLine{\Hypertarget{debug__log_8hpp_source_l00029}00029 \mbox{\hyperlink{defs_8hpp_a0c5e46377ecf7e33c016739291f04c75}{QALLOC\_BEGIN}}}
+\DoxyCodeLine{\Hypertarget{debug__log_8hpp_source_l00030}00030 \textcolor{keyword}{static} FILE* log\_file = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{debug__log_8hpp_source_l00031}00031 }
+\DoxyCodeLine{\Hypertarget{debug__log_8hpp_source_l00032}00032 \textcolor{keyword}{template} <\textcolor{keyword}{typename} ...Args>}
+\DoxyCodeLine{\Hypertarget{debug__log_8hpp_source_l00033}00033 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{debug__log_8hpp_afde3f42696113719c9ae35507125ee6e}{debug\_log}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* format, Args\&\&... args) \{}
+\DoxyCodeLine{\Hypertarget{debug__log_8hpp_source_l00034}00034     \mbox{\hyperlink{defs_8hpp_afa317ae078e3aa6464f612d9d5c3cda1}{QALLOC\_PRINTF}}(format, args...);}
+\DoxyCodeLine{\Hypertarget{debug__log_8hpp_source_l00035}00035     \textcolor{keywordflow}{if} (log\_file == \textcolor{keyword}{nullptr}) \{}
+\DoxyCodeLine{\Hypertarget{debug__log_8hpp_source_l00036}00036         \mbox{\hyperlink{defs_8hpp_a6aeac36a4662f302351fb5558b6bfa28}{QALLOC\_FOPEN}}(\&log\_file, \textcolor{stringliteral}{"{}qalloc.log"{}}, \textcolor{stringliteral}{"{}w"{}});}
+\DoxyCodeLine{\Hypertarget{debug__log_8hpp_source_l00037}00037     \}}
+\DoxyCodeLine{\Hypertarget{debug__log_8hpp_source_l00038}00038     \textcolor{keywordflow}{if} (log\_file == \textcolor{keyword}{nullptr}) \{}
+\DoxyCodeLine{\Hypertarget{debug__log_8hpp_source_l00039}00039         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{debug__log_8hpp_source_l00040}00040     \}}
+\DoxyCodeLine{\Hypertarget{debug__log_8hpp_source_l00041}00041     \mbox{\hyperlink{defs_8hpp_afa317ae078e3aa6464f612d9d5c3cda1}{QALLOC\_PRINTF}}(format, std::forward<Args>(args)...);}
+\DoxyCodeLine{\Hypertarget{debug__log_8hpp_source_l00042}00042     \mbox{\hyperlink{defs_8hpp_a3b2d4cc752a36a4a7ba6d736d45ff36b}{QALLOC\_FPRINTF}}(log\_file, format, std::forward<Args>(args)...);}
+\DoxyCodeLine{\Hypertarget{debug__log_8hpp_source_l00043}00043 \}}
+\DoxyCodeLine{\Hypertarget{debug__log_8hpp_source_l00044}00044 }
+\DoxyCodeLine{\Hypertarget{debug__log_8hpp_source_l00045}00045 \textcolor{keyword}{static} std::atomic<std::size\_t> thread\_counter = 0;}
+\DoxyCodeLine{\Hypertarget{debug__log_8hpp_source_l00046}00046 }
+\DoxyCodeLine{\Hypertarget{debug__log_8hpp_source_l00047}00047 \textcolor{keyword}{inline} std::size\_t thread\_id() \{}
+\DoxyCodeLine{\Hypertarget{debug__log_8hpp_source_l00048}00048     \textcolor{keyword}{thread\_local} std::size\_t tid = thread\_counter++;}
+\DoxyCodeLine{\Hypertarget{debug__log_8hpp_source_l00049}00049     \textcolor{keywordflow}{return} tid;}
+\DoxyCodeLine{\Hypertarget{debug__log_8hpp_source_l00050}00050 \}}
+\DoxyCodeLine{\Hypertarget{debug__log_8hpp_source_l00051}00051 \mbox{\hyperlink{defs_8hpp_ae6074cc5b731bee29a970dd996470029}{QALLOC\_END}}}
+\DoxyCodeLine{\Hypertarget{debug__log_8hpp_source_l00052}00052 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{debug__log_8hpp_source_l00053}\mbox{\hyperlink{debug__log_8hpp_afde3f42696113719c9ae35507125ee6e}{00053}} \textcolor{preprocessor}{    \#define debug\_log(...) (void)0}}
+\DoxyCodeLine{\Hypertarget{debug__log_8hpp_source_l00054}00054 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// QALLOC\_DEBUG}}
+\DoxyCodeLine{\Hypertarget{debug__log_8hpp_source_l00055}00055 }
+\DoxyCodeLine{\Hypertarget{debug__log_8hpp_source_l00056}00056 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// QALLOC\_DEBUG\_LOG\_HPP}}
+
+\end{DoxyCode}
