@@ -26,6 +26,29 @@ var NAVTREE =
 [
   [ "QAlloc", "index.html", [
     [ "Namespaces", "namespaces.html", [
+      [ "About The Project", "index.html#autotoc_md0", [
+        [ "Features:", "index.html#autotoc_md1", null ],
+        [ "Requirements", "index.html#autotoc_md2", null ]
+      ] ],
+      [ "Getting Started", "index.html#autotoc_md3", [
+        [ "Prerequisites", "index.html#autotoc_md4", null ],
+        [ "Installation", "index.html#autotoc_md5", null ]
+      ] ],
+      [ "Usage", "index.html#autotoc_md6", null ],
+      [ "Benchmark Results", "index.html#autotoc_md7", [
+        [ "Running Platform:", "index.html#autotoc_md8", [
+          [ "String vector emplace and reset", "index.html#autotoc_md9", null ],
+          [ "Int vector emplace and reset", "index.html#autotoc_md10", null ],
+          [ "String creation", "index.html#autotoc_md11", null ],
+          [ "String append and reset", "index.html#autotoc_md12", null ],
+          [ "unordered_map<int, int> insert and reset", "index.html#autotoc_md13", null ],
+          [ "list<double> emplace and reset", "index.html#autotoc_md14", null ]
+        ] ]
+      ] ],
+      [ "Roadmap", "index.html#autotoc_md15", null ],
+      [ "Contributing", "index.html#autotoc_md16", null ],
+      [ "License", "index.html#autotoc_md17", null ],
+      [ "Contact", "index.html#autotoc_md18", null ],
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
         [ "All", "namespacemembers.html", null ],
