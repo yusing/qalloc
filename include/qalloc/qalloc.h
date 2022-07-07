@@ -20,7 +20,11 @@
 #ifndef QALLOC_QALLOC_H
 #define QALLOC_QALLOC_H
 
-#define QALLOC_EXPORT __attribute__((visibility("default"))) __attribute__((used))
+#ifdef _MSC_VER
+    #define QALLOC_EXPORT __declspec(dllexport)
+#else
+    #define QALLOC_EXPORT __attribute__((visibility("default"))) __attribute__((used))
+#endif
 
 /// @brief allocates memory from the global pool.
 /// @param size the size of the memory to allocate.
