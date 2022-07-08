@@ -21,7 +21,11 @@
 #define QALLOC_QALLOC_H
 
 /// @brief <qalloc_export.h> is CMake generated header file.
-#include <qalloc_export.h>
+#if __has_include(<qalloc_export.h>)
+    #include <qalloc_export.h>
+#else
+    #define QALLOC_EXPORT
+#endif
 
 #ifdef __cplusplus /* If this is a C++ compiler, use C linkage */
 extern "C" {
