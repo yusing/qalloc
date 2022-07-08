@@ -89,7 +89,9 @@ constexpr T* launder(T* p) {
     if constexpr(!std::is_void_v<T>) {
         return std::launder(p);
     }
-    return p;
+    else {
+        return p;
+    }
 #else
     return p;
 #endif
@@ -105,7 +107,7 @@ constexpr OutType add(InType ptr, OffsetType offset) {
     return static_cast<OutType>(
         static_cast<void_pointer>(
             static_cast<byte_pointer>(
-                static_cast<void_pointer>(launder(ptr))
+                static_cast<void_pointer>(ptr)
             ) + offset
         )
     );
@@ -121,7 +123,7 @@ constexpr OutType sub(InType ptr, OffsetType offset) {
     return static_cast<OutType>(
         static_cast<void_pointer>(
             static_cast<byte_pointer>(
-                static_cast<void_pointer>(launder(ptr))
+                static_cast<void_pointer>(ptr)
             ) - offset
         )
     );
@@ -132,7 +134,7 @@ constexpr bool in_range(const_void_pointer pos, const_void_pointer lb, const_voi
 }
 
 constexpr byte_pointer remove_const(const_byte_pointer p) {
-    return const_cast<byte_pointer>(launder(p));
+    return const_cast<byte_pointer>(p);
 }
 
 } // namespace pointer

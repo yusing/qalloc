@@ -99,9 +99,10 @@ inline byte_pointer pool_base_t::allocate(size_type n_bytes) const {
     }
 
     byte_pointer address = pointer::launder(m_cur_subpool->pos);
+    QALLOC_ASSERT(address != nullptr);
+
     // move the current pointer
     m_cur_subpool->pos += n_bytes;
-    QALLOC_ASSERT(address != nullptr);
 
     debug_log("[allocate] allocated %zu bytes @ %p (Thread %zu Subpool %zu)\n", n_bytes, address, thread_id(),
               m_subpools.size());

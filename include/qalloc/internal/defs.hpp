@@ -28,7 +28,7 @@
     #ifdef _MSVC_LANG
         #define QALLOC_CPP_STANDARD _MSVC_LANG
     #else
-        #error "C++ standard not defined"
+        #error "C++ standard not defined or unsupported"
     #endif // _MSVC_LANG
 #else // !defined(__cplusplus) || __cplusplus == 199711L
     #define QALLOC_CPP_STANDARD __cplusplus
@@ -71,13 +71,6 @@
     #define QALLOC_IF_CONSTEXPR if
     #define QALLOC_CXX_17 0
 #endif // QALLOC_CPP_STANDARD >= 201703L
-
-#if defined(_WIN32) || defined(_WIN64)
-    #ifndef NOMINMAX
-        #define NOMINMAX
-    #endif // NOMINMAX
-    #include <Windows.h>
-#endif // defined(_WIN32) || defined(_WIN64)
 
 #ifdef _MSVC_LANG
     #define QALLOC_RESTRICT __restrict

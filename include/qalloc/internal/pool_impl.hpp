@@ -48,7 +48,7 @@ void pool_t::detailed_deallocate(byte_pointer p, size_type n_bytes_requested) co
 }
 
 QALLOC_MAYBE_UNUSED
-size_type pool_t::gc() const { // TODO: fix this, not gc triggers
+size_type pool_t::gc() const {
     size_type memory_freed = 0;
     for (auto it = m_freed_blocks.begin(); it != m_freed_blocks.end();) {
         auto& block = *it;

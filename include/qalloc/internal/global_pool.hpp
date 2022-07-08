@@ -63,16 +63,16 @@ inline pool_pointer initialize_pool_if_needed(std::atomic<pool_pointer>& pool_at
     pool_pointer get_pool() {
 #if QALLOC_DEBUG
         // use shared pool for debug mode
-        return initialize_pool_if_needed<256>(g_pool_shared);
+        return initialize_pool_if_needed<128>(g_pool_shared);
 #else // QALLOC_DEBUG
-        return initialize_pool_if_needed<sizeof(T) * 16>(g_pool_unique<T>); // the initial size does not affect performance much, just keep it small
+        return initialize_pool_if_needed<sizeof(T) * 16_z>(g_pool_unique<T>); // the initial size does not affect performance much, just keep it small
 #endif // QALLOC_DEBUG
     }
 #else // QALLOC_CXX_14
     // use ahared pool for all types in C++11 or earlier, since variable templates is not supported
     template <typename>
     pool_pointer get_pool() {
-        return initialize_pool_if_needed<256>(g_pool_shared);
+        return initialize_pool_if_needed<128_z>(g_pool_shared);
     }
 #endif // QALLOC_CXX_14
 
