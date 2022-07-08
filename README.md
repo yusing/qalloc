@@ -66,6 +66,7 @@
 ## About The Project
 
 The project is a simple, fast, and memory-efficient pool allocator for c and c++.
+**It is still underdevelopment and not production ready. More testing is needed to ensure it works in general cases.**
 
 ### Features:
 * Header only
@@ -172,9 +173,13 @@ _See [benchmark.cpp](https://github.com/yusing/qalloc/blob/main/src/benchmark/be
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] c++20 constexpr
+- [ ] Diagrams on how it works internally
+- [ ] More tests on different memory patterns
+- [ ] Compare to other pool allocators
+- [ ] Better benchmark cases
 - [ ] Full documentation
 - [ ] Full multi-thread support
+- [ ] c++20 constexpr
 - [ ] Memory allocation visualization
 
 See the [open issues](https://github.com/yusing/qalloc/issues) for a full list of proposed features (and known issues).
