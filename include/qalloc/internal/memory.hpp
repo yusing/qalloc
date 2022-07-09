@@ -26,15 +26,33 @@
 #include <qalloc/internal/defs.hpp>
 #include <qalloc/internal/pointer.hpp>
 
-#define q_free(PTR) std::free(PTR)
-
 QALLOC_BEGIN
-void_pointer q_malloc(size_type n_bytes) {
-    QALLOC_RESTRICT void_pointer p = std::malloc(n_bytes);
-    if (p == nullptr) {
-        throw std::bad_alloc();
+#ifdef QALLOC_WINDOWS
+    void_pointer q_malloc(size_type n_bytes) {
+        return VirtualAlloc(nullptr, n_bytes, MEM_COMMIT, PAGE_READWRITE);
     }
-    return p;
-}
+    void_pointer q_realloc(void_pointer p, size_type n_bytes) {
+        return VirtualAlloc(p, n_bytes, MEM_COMMIT, PAGE_READWRITE);
+    }
+    void q_free(void_pointer p) {
+        VirtualFree(p, 0, MEM_RELEASE);
+    }
+#else // QALLOC_WINDOWS
+    #define q_free std::free
+    void_pointer q_malloc(size_type n_bytes) {
+        QALLOC_RESTRICT void_pointer p = std::malloc(n_bytes);
+        if (p == nullptr) {
+            throw std::bad_alloc();
+        }
+        return p;
+    }
+    void_pointer q_realloc(void_pointer p, size_type n_bytes) {
+        QALLOC_RESTRICT void_pointer q = std::realloc(p, n_bytes);
+        if (q == nullptr) {
+            throw std::bad_alloc();
+        }
+        return q;
+    }
+#endif // QALLOC_WINDOWS
 QALLOC_END
-#endif
+#endif //QALLOC_MEMORY_HPP

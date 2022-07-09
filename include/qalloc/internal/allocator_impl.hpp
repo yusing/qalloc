@@ -23,14 +23,13 @@
 #include <qalloc/internal/allocator.hpp>
 #include <qalloc/internal/defs.hpp>
 #include <qalloc/internal/pool.hpp>
-#include <qalloc/internal/global_pool.hpp>
 #include <qalloc/internal/pointer.hpp>
 
 QALLOC_BEGIN
 
 template <typename T, bool detailed> allocator_base<T, detailed>::
 allocator_base() noexcept
-    : m_pool_ptr(internal::get_pool<T>()) {}
+    : m_pool_ptr(&pool_t::get_instance<T>()) {}
 
 template <typename T, bool detailed> allocator_base<T, detailed>::
 allocator_base(pool_pointer p_pool) noexcept

@@ -78,6 +78,39 @@ size_type pool_t::gc() const {
     }
     return memory_freed;
 }
+
+/// @brief Get an instance of pool_t for each type.
+/// @tparam T The type of the pool.
+/// @return Pointer to the instance of pool_t of type T.
+template <typename T>
+pool_t& pool_t::get_instance() {
+//
+// Using different pool for different type can reduce memory fragmentation.
+// Might slightly improve performance.
+//
+    thread_local std::atomic<pool_t*> instance{nullptr};
+    thread_local struct ThreadExitDeleter {
+        ~ThreadExitDeleter() {
+            if (instance.load()) {
+                delete instance.load();
+            }
+        }
+    } thread_exit_deleter;
+    pool_t* pool_ptr = instance.load(std::memory_order_relaxed);
+    std::atomic_thread_fence(std::memory_order_acquire);
+    if (pool_ptr == nullptr) {
+        static std::mutex mutex;
+        QALLOC_LOCK_GUARD(mutex);
+        pool_ptr = instance.load(std::memory_order_relaxed);
+        if (pool_ptr == nullptr) { // double-check
+            pool_ptr = new pool_t(128_z);
+            atomic_thread_fence(std::memory_order_release);
+            instance.store(pool_ptr, std::memory_order_relaxed);
+        }
+    }
+    return *pool_ptr;
+}
+
 QALLOC_END
 
 #endif

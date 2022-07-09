@@ -20,6 +20,7 @@
 #ifndef QALLOC_POOL_HPP
 #define QALLOC_POOL_HPP
 
+#include <mutex>
 #include <qalloc/internal/pool_base.hpp>
 #include <qalloc/internal/defs.hpp>
 
@@ -36,6 +37,8 @@ public:
     template <class T>
     void detailed_deallocate(byte_pointer p, size_type n_bytes_requested) const;
     size_type gc() const;
+    template <typename T>
+    static pool_t& get_instance();
 }; // class pool_t
 
 using pool_pointer = const pool_t*;

@@ -53,8 +53,8 @@ public:
     explicit allocator_base(const allocator_base<U, U_detailed>&) noexcept;
     allocator_base& operator=(const allocator_base&) noexcept;
 
-    virtual pointer allocate(size_type n_elements);
-    virtual void deallocate(pointer p, size_type n_elements);
+    pointer allocate(size_type n_elements);
+    void deallocate(pointer p, size_type n_elements);
 
     QALLOC_NODISCARD
     constexpr pool_pointer pool() const noexcept;

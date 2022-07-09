@@ -89,7 +89,7 @@ static void test_list(ElementDelegate element_at) {
 }
 
 static int emplace_index(std::size_t i) {
-    return i;
+    return static_cast<int>(i);
 }
 
 

@@ -99,7 +99,7 @@ static void QAlloc_Vector_Int_Emplace_Reset(benchmark::State& state) {
 }
 
 static void Std_String_Creation(benchmark::State& state) {
-    std::string s = "Hello";
+    std::string s(256, 'A'); // 256 characters
     for (auto _ : state) {
         std::string copy(s);
         (void)copy;
@@ -107,7 +107,7 @@ static void Std_String_Creation(benchmark::State& state) {
 }
 
 static void QAlloc_String_Creation(benchmark::State& state) {
-    qalloc::string s;
+    qalloc::string s(256, 'A'); // 256 characters
     for (auto _ : state) {
         qalloc::string copy(s);
         (void)copy;

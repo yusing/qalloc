@@ -55,9 +55,10 @@ protected:
     mutable subpool_t*                  m_cur_subpool;    // pointer to current subpool
     mutable std::vector<freed_block_t>  m_freed_blocks;   // vector of freed blocks
     mutable size_type                   m_pool_total;     // sum of all subpools' sizes
-    bool is_valid(void_pointer p) const noexcept;
     static subpool_t new_subpool(size_type n_bytes) ; // n_bytes >= 1
+    bool is_valid(void_pointer p) const noexcept;
     void add_subpool(size_type n_bytes) const;
+
     constexpr bool can_allocate(size_type n_bytes) const noexcept;
 }; // class pool_base_t
 QALLOC_END

@@ -40,7 +40,7 @@ inline pool_base_t::pool_base_t(size_type byte_size)
     debug_log("[pool] pool of %zu bytes constructed\n", byte_size);
 }
 
-inline pool_base_t::~pool_base_t() { // TODO: fix, never triggers, but does not affect program behavior
+inline pool_base_t::~pool_base_t() {
     debug_log("%s\n", "[pool] pool destructed");
     QALLOC_DEBUG_STATEMENT(print_info(true);)
     for (const auto& subpool : m_subpools) {
@@ -52,10 +52,10 @@ inline subpool_t pool_base_t::new_subpool(size_type n_bytes) {
     QALLOC_RESTRICT byte_pointer begin = static_cast<byte_pointer>(q_malloc(n_bytes)); // NOLINT(modernize-use-auto)
     QALLOC_RESTRICT byte_pointer end   = begin + n_bytes;
     return subpool_t{
-        begin,  // .begin
-        end,    // .end
-        begin,  // .current
-        n_bytes // .size
+        begin,
+        end,
+        begin,  // current position
+        n_bytes // subpool size
     };
 }
 
@@ -73,6 +73,7 @@ inline byte_pointer pool_base_t::allocate(size_type n_bytes) const {
                 }
         );
         if (it != m_freed_blocks.end()) { // found a block with enough space
+
             QALLOC_ASSERT(it->n_bytes != 0);
             QALLOC_ASSERT(it->address != nullptr);
             freed_block_t reused_block = *it;
@@ -103,7 +104,6 @@ inline byte_pointer pool_base_t::allocate(size_type n_bytes) const {
 
     // move the current pointer
     m_cur_subpool->pos += n_bytes;
-
     debug_log("[allocate] allocated %zu bytes @ %p (Thread %zu Subpool %zu)\n", n_bytes, address, thread_id(),
               m_subpools.size());
     return address;
@@ -122,10 +122,13 @@ inline void pool_base_t::deallocate(byte_pointer p, size_type n_bytes) const {
         freed_block_t freed_block{n_bytes, p};
         // make sure the freed block is sorted by address in ascending order (in order to merge blocks)
         auto insert_pos = std::lower_bound(m_freed_blocks.begin(), m_freed_blocks.end(), freed_block, freed_block_t::less);
-        QALLOC_IF_CONSTEXPR(merge) {
-            if (insert_pos != m_freed_blocks.end() && freed_block.is_adjacent_to(*insert_pos)) { // is adjacent to the next block
+        QALLOC_IF_CONSTEXPR(merge) { // if merge allowed
+            if (insert_pos != m_freed_blocks.end() && // cannot dereference end()
+                freed_block.is_adjacent_to(*insert_pos)) { // is adjacent to the next block
+
                 debug_log("[deallocate] merged %p (%zu bytes) and %p (%zu bytes) into %zu bytes (Thread %zu)\n", p, n_bytes,
                         insert_pos->address, insert_pos->n_bytes, insert_pos->n_bytes + n_bytes, thread_id());
+
                 // merge with the next block
                 insert_pos->n_bytes += n_bytes;
                 insert_pos->address = p;
@@ -133,14 +136,16 @@ inline void pool_base_t::deallocate(byte_pointer p, size_type n_bytes) const {
                 if (m_freed_blocks.size() > 1_z) {
                     // iterate from the second block
                     insert_pos = m_freed_blocks.begin() + 1;
-                    while (insert_pos != m_freed_blocks.end()) { // is adjacent to the previous block
+                    while (insert_pos != m_freed_blocks.end()) {
                         auto prev = insert_pos - 1;
+                        // if its adjacent to the previous block
                         if (prev->is_adjacent_to(*insert_pos)) {
                             debug_log("[deallocate] merged %p (%zu bytes) and %p (%zu bytes) into %zu bytes (Thread %zu)\n",
                                     prev->address, prev->n_bytes, insert_pos->address, insert_pos->n_bytes,
                                     prev->n_bytes + insert_pos->n_bytes, thread_id());
                             // merge with the previous block
                             prev->n_bytes += insert_pos->n_bytes;
+                            // remove the current block
                             insert_pos = m_freed_blocks.erase(insert_pos);
                         }
                         else {
@@ -170,7 +175,9 @@ inline void pool_base_t::add_subpool(size_type n_bytes) const {
     }
     // add new subpool
     m_subpools.emplace_back(new_subpool(n_bytes));
+    // update current subpool
     m_cur_subpool = &m_subpools.back();
+    // update total pool size
     m_pool_total += n_bytes;
 }
 
@@ -179,10 +186,12 @@ constexpr bool pool_base_t::can_allocate(size_type n_bytes) const noexcept {
 }
 
 size_type pool_base_t::bytes_used() const noexcept {
+    // take total pool size and subtract each size of freed blocks
     size_t bytes_used = m_pool_total;
     for (const auto& block : m_freed_blocks) {
         bytes_used -= block.n_bytes;
     }
+    // and also subtract the unused bytes in current subpool
     bytes_used -= size_cast(m_cur_subpool->end - m_cur_subpool->pos);
     return bytes_used;
 }
@@ -192,6 +201,7 @@ constexpr size_type pool_base_t::pool_size() const noexcept {
 }
 
 bool pool_base_t::is_valid(void_pointer p) const noexcept {
+    // check if the pointer is in range of any subpool
     return std::any_of(
         m_subpools.begin(),
         m_subpools.end(),
@@ -201,8 +211,8 @@ bool pool_base_t::is_valid(void_pointer p) const noexcept {
     );
 }
 
-QALLOC_MALLOC_FUNCTION(
-        void_pointer pool_base_t::operator new(size_type n_bytes)) {
+QALLOC_MALLOC_FUNCTION(void_pointer
+pool_base_t::operator new(size_type n_bytes)) {
     return q_malloc(n_bytes);
 }
 
@@ -210,21 +220,21 @@ void pool_base_t::operator delete(QALLOC_RESTRICT void_pointer p) {
     q_free(p);
 }
 
-// debug
+/// @brief to print out all subpools and freed blocks
 inline void pool_base_t::print_info(bool usage_only) const {
-    QALLOC_PRINTF("Memory Pool:");
+    QALLOC_PRINT("Memory Pool:");
     size_type bytes_used = this->bytes_used();
     QALLOC_PRINTF("  Usage: %zu of %zu bytes", bytes_used, pool_size());
     if (pool_size() != 0_z) {
         QALLOC_PRINTF(" (%zu%%)\n", bytes_used * 100 / pool_size());
     }
     else {
-        QALLOC_PRINTF("\n");
+        QALLOC_PRINTLN("");
     }
     if (usage_only) {
         return;
     }
-    QALLOC_PRINTF("  Subpools: \n");
+    QALLOC_PRINTLN("  Subpools: ");
     int i = 1;
     for (const auto& pool : m_subpools) {
         if (pool.begin == nullptr) {
@@ -240,7 +250,7 @@ inline void pool_base_t::print_info(bool usage_only) const {
     if (last_subpool.pos != last_subpool.end) {
         QALLOC_PRINTF("      %zu bytes unused\n", size_cast(last_subpool.end - last_subpool.pos));
     }
-    QALLOC_PRINTF("\n  Deallocated blocks:\n");
+    QALLOC_PRINTLN("\n  Deallocated blocks:");
     for (const auto& block : m_freed_blocks) {
         auto allocated_block = block_info_t::at(block.address);
         QALLOC_PRINTF("    %p: %zu bytes\n", block.address, block.n_bytes);
@@ -248,17 +258,17 @@ inline void pool_base_t::print_info(bool usage_only) const {
             QALLOC_PRINTF("      Subpool: %zu, type: ", size_cast(allocated_block->subpool_index) + 1);
             if (allocated_block->is_valid()) {
                 auto type_name = demangled_type_name_of(allocated_block->type_info->name());
-                QALLOC_PRINTF("%s\n", type_name.c_str());
+                QALLOC_PRINT(type_name.c_str());
             }
             else {
-                QALLOC_PRINTF("N/A\n");
+                QALLOC_PRINTLN("N/A");
             }
         }
         else {
-            QALLOC_PRINTF("      Subpool: N/A, type: N/A\n");
+            QALLOC_PRINTLN("      Subpool: N/A, type: N/A");
         }
     }
-    QALLOC_PRINTF("\n");
+    QALLOC_PRINTLN("");
 }
 
 QALLOC_END

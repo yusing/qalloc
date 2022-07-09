@@ -17,7 +17,7 @@
 /// @author yusing
 /// @date 2022-07-07
 
-#define QALLOC_C_GLOBAL_POOL (qalloc::internal::get_pool<int>())
+#define QALLOC_POOL_INSTANCE (qalloc::pool_t::get_instance<int>())
 #define _Py_IS_ALIGNED(p, a) (!((uintptr_t)(p) & (uintptr_t)((a) - 1)))
 
 #include <utility>
@@ -26,7 +26,6 @@
 #include <qalloc/internal/pool.hpp>
 #include <qalloc/internal/pool_impl.hpp>
 #include <qalloc/internal/pool_base_impl.hpp>
-#include <qalloc/internal/global_pool.hpp>
 #include <qalloc/internal/pointer.hpp>
 
 extern "C" {
@@ -47,7 +46,7 @@ using qalloc::operator ""_z;
 QALLOC_EXPORT void* q_allocate(size_t size) {
     constexpr size_t SIZE_LONG = sizeof(long);
     size_t allocated_size = size + sizeof(size_t) + SIZE_LONG + sizeof(uint8_t);
-    byte* p = QALLOC_C_GLOBAL_POOL->detailed_allocate<void>(allocated_size );
+    byte* p = QALLOC_POOL_INSTANCE.detailed_allocate<void>(allocated_size );
     byte* origin = p;
     if (p == nullptr) {
         return nullptr;
@@ -87,7 +86,7 @@ QALLOC_EXPORT void q_deallocate(void* ptr) {
     uint8_t& padding_len = *sub<uint8_t*>(ptr, sizeof(uint8_t));
     size_t&  data_size   = *sub<size_t*>(&padding_len, padding_len + sizeof(size_t));
     size_t   before_data = sizeof(size_t) + padding_len + sizeof(uint8_t);
-    QALLOC_C_GLOBAL_POOL->detailed_deallocate<void>(
+    QALLOC_POOL_INSTANCE.detailed_deallocate<void>(
             reinterpret_cast<byte *>(&data_size),
         before_data + data_size
     );
@@ -101,7 +100,7 @@ QALLOC_EXPORT void* q_reallocate(void* ptr, size_t new_size) {
     size_t&  old_size    = *sub<size_t*>(&padding_len, padding_len + sizeof(size_t));
     size_t   before_data = sizeof(size_t) + padding_len + sizeof(uint8_t);
     void*    new_data    = std::memcpy(q_allocate(new_size), ptr, std::min(old_size, new_size));
-    QALLOC_C_GLOBAL_POOL->detailed_deallocate<void>(
+    QALLOC_POOL_INSTANCE.detailed_deallocate<void>(
             reinterpret_cast<byte *>(&old_size),
             before_data + old_size
     );
@@ -109,7 +108,7 @@ QALLOC_EXPORT void* q_reallocate(void* ptr, size_t new_size) {
 }
 
 QALLOC_EXPORT size_t q_garbage_collect() {
-    return QALLOC_C_GLOBAL_POOL->gc();
+    return QALLOC_POOL_INSTANCE.gc();
 }
 
 }

@@ -82,6 +82,16 @@
     #define QALLOC_FOPEN(PTR, FILENAME, MODE) (*PTR) = fopen((FILENAME), (MODE))
 #endif // _MSVC_LANG
 
+#ifdef _WIN32
+    #define QALLOC_WINDOWS 1
+    #ifndef NOMINMAX
+        #define NOMINMAX
+    #endif // NOMINMAX
+    #include <Windows.h>
+#else // _WIN32
+    #define QALLOC_WINDOWS 0
+#endif // _WIN32
+
 #if defined(DEBUG) || defined(_DEBUG) || !defined(NDEBUG)
     #include <cassert>
     #define QALLOC_DEBUG 1
@@ -112,7 +122,12 @@
 #define QALLOC_END }
 #define QALLOC_INTERNAL_BEGIN QALLOC_BEGIN namespace internal {
 #define QALLOC_INTERNAL_END } QALLOC_END
+#define QALLOC_PRINT(MSG) (void) std::printf("%s", (MSG))
+#define QALLOC_PRINTLN(MSG) (void) std::printf("%s\n", (MSG))
 #define QALLOC_PRINTF (void) std::printf
+#define QALLOC_FPRINT(PTR, MSG) (void) fprintf((PTR), "%s", (MSG))
+#define QALLOC_FPRINTLN(PTR, MSG) (void) fprintf((PTR), "%s\n", (MSG))
 #define QALLOC_FPRINTF (void) std::fprintf
+#define QALLOC_LOCK_GUARD(MUTEX) std::lock_guard<std::mutex> lock_guard(MUTEX)
 
 #endif // QALLOC_DEFS_HPP
