@@ -32,7 +32,7 @@ allocator_base() noexcept
     : m_pool_ptr(&pool_t::get_instance<T>()) {}
 
 template <typename T, bool detailed> allocator_base<T, detailed>::
-allocator_base(pool_pointer p_pool) noexcept
+allocator_base(pool_ptr_t p_pool) noexcept
     : m_pool_ptr(p_pool) {}
 
 template <typename T, bool detailed> allocator_base<T, detailed>::
@@ -55,9 +55,9 @@ template <typename T, bool detailed> typename allocator_base<T, detailed>::point
 allocate(size_type n_elements) {
     QALLOC_ASSERT(n_elements > 0);
     QALLOC_IF_CONSTEXPR(detailed) {
-        return reinterpret_cast<pointer>(m_pool_ptr->template detailed_allocate<T>(n_elements * sizeof(T)));
+        return reinterpret_cast<T*>(m_pool_ptr->template detailed_allocate<T>(n_elements * sizeof(T)));
     }
-    return reinterpret_cast<pointer>(m_pool_ptr->allocate(n_elements * sizeof(T)));
+    return reinterpret_cast<T*>(m_pool_ptr->allocate(n_elements * sizeof(T)));
 }
 
 template <typename T, bool detailed> void allocator_base<T, detailed>::
@@ -65,15 +65,15 @@ deallocate(pointer p, size_type n_elements) {
     QALLOC_ASSERT(n_elements > 0);
     if (p == nullptr) return;
     QALLOC_IF_CONSTEXPR(detailed) {
-        m_pool_ptr->template detailed_deallocate<T>(qalloc::pointer::launder(reinterpret_cast<byte_pointer>(p)), n_elements * sizeof(T));
+        m_pool_ptr->template detailed_deallocate<T>(qalloc::pointer::launder(reinterpret_cast<byte_ptr_t>(p)), n_elements * sizeof(T));
     }
     else {
-        m_pool_ptr->deallocate(qalloc::pointer::launder(reinterpret_cast<byte_pointer>(p)), n_elements * sizeof(T));
+        m_pool_ptr->deallocate(qalloc::pointer::launder(reinterpret_cast<byte_ptr_t>(p)), n_elements * sizeof(T));
     }
 }
 
 template <typename T, bool detailed>
-constexpr pool_pointer allocator_base<T, detailed>::pool() const noexcept {
+constexpr pool_ptr_t allocator_base<T, detailed>::pool() const noexcept {
     return m_pool_ptr;
 }
 

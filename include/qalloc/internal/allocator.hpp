@@ -22,6 +22,7 @@
 
 #include <cstddef> // std::ptrdiff_t
 #include <qalloc/internal/pool.hpp>
+#include <qalloc/internal/pointer.hpp>
 
 QALLOC_BEGIN
 
@@ -36,7 +37,7 @@ public:
     using const_pointer    = const T*;
     using reference        = T&;
     using const_reference  = const T&;
-    using size_type        = qalloc::size_type;
+    using size_type        = std::size_t;
     using difference_type  = std::ptrdiff_t;
     using is_always_equal  = std::false_type;
 
@@ -47,20 +48,29 @@ public:
     };
 
     allocator_base() noexcept;
-    explicit allocator_base(pool_pointer) noexcept;
+
+    explicit
+    allocator_base(pool_ptr_t) noexcept;
+
     allocator_base(const allocator_base&) noexcept;
-    template <typename U, bool U_detailed>
-    explicit allocator_base(const allocator_base<U, U_detailed>&) noexcept;
-    allocator_base& operator=(const allocator_base&) noexcept;
 
-    pointer allocate(size_type n_elements);
-    void deallocate(pointer p, size_type n_elements);
+    template <typename U, bool U_detailed> explicit
+    allocator_base(const allocator_base<U, U_detailed>&) noexcept;
 
-    QALLOC_NODISCARD
-    constexpr pool_pointer pool() const noexcept;
+    allocator_base&
+    operator=(const allocator_base&) noexcept;
+
+    QALLOC_NODISCARD pointer
+    allocate(size_type n_elements);
+
+    void
+    deallocate(pointer p, size_type n_elements);
+
+    QALLOC_NODISCARD constexpr pool_ptr_t
+    pool() const noexcept;
 
 private:
-    pool_pointer m_pool_ptr;
+    pool_ptr_t m_pool_ptr;
 }; // class allocator
 
 /// @brief qalloc allocator class with typeinfo and gc support.

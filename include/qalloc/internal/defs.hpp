@@ -128,6 +128,5 @@
 #define QALLOC_FPRINT(PTR, MSG) (void) fprintf((PTR), "%s", (MSG))
 #define QALLOC_FPRINTLN(PTR, MSG) (void) fprintf((PTR), "%s\n", (MSG))
 #define QALLOC_FPRINTF (void) std::fprintf
-#define QALLOC_LOCK_GUARD(MUTEX) std::lock_guard<std::mutex> lock_guard(MUTEX)
 
 #endif // QALLOC_DEFS_HPP

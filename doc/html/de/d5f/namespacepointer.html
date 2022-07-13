@@ -79,16 +79,16 @@ Functions</h2></td></tr>
 <tr class="memdesc:a97fe8038a91827eca44dd9703d3a4d96"><td class="mdescLeft">&#160;</td><td class="mdescRight">std::launder wrapper  <a href="../../de/d5f/namespacepointer.html#a97fe8038a91827eca44dd9703d3a4d96">More...</a><br /></td></tr>
 <tr class="separator:a97fe8038a91827eca44dd9703d3a4d96"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa790b083ab4d9183b0e9a724d7aa0a6f"><td class="memTemplParams" colspan="2"><a id="aa790b083ab4d9183b0e9a724d7aa0a6f" name="aa790b083ab4d9183b0e9a724d7aa0a6f"></a>
-template&lt;typename OutType  = byte_pointer, typename OffsetType , typename InType &gt; </td></tr>
+template&lt;typename OutType  = byte_ptr_t, typename OffsetType , typename InType &gt; </td></tr>
 <tr class="memitem:aa790b083ab4d9183b0e9a724d7aa0a6f"><td class="memTemplItemLeft" align="right" valign="top">constexpr OutType&#160;</td><td class="memTemplItemRight" valign="bottom"><b>add</b> (InType ptr, OffsetType offset)</td></tr>
 <tr class="separator:aa790b083ab4d9183b0e9a724d7aa0a6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a676e907c0e3131bd3a8320724b37d111"><td class="memTemplParams" colspan="2"><a id="a676e907c0e3131bd3a8320724b37d111" name="a676e907c0e3131bd3a8320724b37d111"></a>
-template&lt;typename OutType  = byte_pointer, typename OffsetType , typename InType &gt; </td></tr>
+template&lt;typename OutType  = byte_ptr_t, typename OffsetType , typename InType &gt; </td></tr>
 <tr class="memitem:a676e907c0e3131bd3a8320724b37d111"><td class="memTemplItemLeft" align="right" valign="top">constexpr OutType&#160;</td><td class="memTemplItemRight" valign="bottom"><b>sub</b> (InType ptr, OffsetType offset)</td></tr>
 <tr class="separator:a676e907c0e3131bd3a8320724b37d111"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad2d6e9462cfed2e0677e95ebdd8ee31d"><td class="memTemplParams" colspan="2"><a id="ad2d6e9462cfed2e0677e95ebdd8ee31d" name="ad2d6e9462cfed2e0677e95ebdd8ee31d"></a>
 template&lt;typename DifferenceType  = size_type&gt; </td></tr>
-<tr class="memitem:ad2d6e9462cfed2e0677e95ebdd8ee31d"><td class="memTemplItemLeft" align="right" valign="top">constexpr DifferenceType&#160;</td><td class="memTemplItemRight" valign="bottom"><b>distance</b> (const_void_pointer lhs, const_void_pointer rhs)</td></tr>
+<tr class="memitem:ad2d6e9462cfed2e0677e95ebdd8ee31d"><td class="memTemplItemLeft" align="right" valign="top">constexpr DifferenceType&#160;</td><td class="memTemplItemRight" valign="bottom"><b>distance</b> (const_void_ptr_t lhs, const_void_ptr_t rhs)</td></tr>
 <tr class="separator:ad2d6e9462cfed2e0677e95ebdd8ee31d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6607040e7c6aa8f75dc48b403debc3aa"><td class="memTemplParams" colspan="2"><a id="a6607040e7c6aa8f75dc48b403debc3aa" name="a6607040e7c6aa8f75dc48b403debc3aa"></a>
 template&lt;typename Pointer &gt; </td></tr>
@@ -99,10 +99,10 @@ template&lt;typename Pointer &gt; </td></tr>
 <tr class="memitem:a1fc5f645e619e5844305087601c31914"><td class="memTemplItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>retreat</b> (Pointer &amp;p, size_type n)</td></tr>
 <tr class="separator:a1fc5f645e619e5844305087601c31914"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6ea06fec963fbf9ab0963093687b7b41"><td class="memItemLeft" align="right" valign="top"><a id="a6ea06fec963fbf9ab0963093687b7b41" name="a6ea06fec963fbf9ab0963093687b7b41"></a>
-constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><b>in_range</b> (const_void_pointer pos, const_void_pointer lb, const_void_pointer ub)</td></tr>
+constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><b>in_range</b> (const_void_ptr_t pos, const_void_ptr_t lb, const_void_ptr_t ub)</td></tr>
 <tr class="separator:a6ea06fec963fbf9ab0963093687b7b41"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa688a3c219566b9f7016f4e17808e779"><td class="memItemLeft" align="right" valign="top"><a id="aa688a3c219566b9f7016f4e17808e779" name="aa688a3c219566b9f7016f4e17808e779"></a>
-constexpr <a class="el" href="../../d2/d17/pointer_8hpp.html#a57d5661a9537aa419c8ebc24667a96e9">byte_pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><b>remove_const</b> (<a class="el" href="../../d2/d17/pointer_8hpp.html#a57d5661a9537aa419c8ebc24667a96e9">const_byte_pointer</a> p)</td></tr>
+constexpr <a class="el" href="../../d2/d17/pointer_8hpp.html#a57d5661a9537aa419c8ebc24667a96e9">byte_ptr_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>remove_const</b> (<a class="el" href="../../d2/d17/pointer_8hpp.html#a57d5661a9537aa419c8ebc24667a96e9">const_byte_ptr_t</a> p)</td></tr>
 <tr class="separator:aa688a3c219566b9f7016f4e17808e779"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>

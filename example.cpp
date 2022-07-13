@@ -29,30 +29,30 @@ int main() {
     for (int i = 0; i < 10; i++) {
         v.push_back("hi");
     }
-    void_pointer p_v = v.data();
+    void_ptr_t p_v = v.data();
     std::cout << demangled_type_name_of(p_v) << std::endl; // std::basic_string<char, std::char_traits<char>, allocator<char>>
 
     // Example 2: use qalloc:pool_t
-    constexpr size_type TEST_SIZE = 10_z;
+    constexpr size_t TEST_SIZE = 10_z;
     std::default_random_engine generator(1000_z); // NOLINT(cert-msc51-cpp)
-    std::uniform_int_distribution<size_type> distribution(1_z,TEST_SIZE);
+    std::uniform_int_distribution<size_t> distribution(1_z,TEST_SIZE);
 
     auto* new_pool = new pool_t(128_z); // allocate a new pool of 128 bytes
     allocator<int> allocator(new_pool); // use the new pool as allocator
 
-    std::vector<std::pair<int*, size_type>> allocated_pairs;
+    std::vector<std::pair<typename qalloc::allocator<int>::pointer, size_t>> allocated_pairs;
 
-    for (size_type i = 0; i < TEST_SIZE; i++) { // emplace some elements
-        size_type n_bytes = distribution(generator);
+    for (size_t i = 0; i < TEST_SIZE; i++) { // emplace some elements
+        size_t n_bytes = distribution(generator);
         (void)allocated_pairs.emplace_back(allocator.allocate(n_bytes), n_bytes);
     }
-    for (size_type i = 0; i < TEST_SIZE; i++) { // deallocate all elements
-        size_type idx = distribution(generator) % allocated_pairs.size();
+    for (size_t i = 0; i < TEST_SIZE; i++) { // deallocate all elements
+        size_t idx = distribution(generator) % allocated_pairs.size();
         auto& pair = allocated_pairs[idx];
         allocator.deallocate(pair.first, pair.second);
         allocated_pairs.erase(allocated_pairs.begin() + idx);
     }
-    size_type mem_freed = new_pool->gc(); // garbage collect the pool
+    size_t mem_freed = new_pool->gc(); // garbage collect the pool
     std::cout << "mem_freed: " << mem_freed << " bytes" << std::endl;
     new_pool->print_info(); // print pool info
     (void)new_pool->allocate(16_z); // allocate 16 bytes from gc-ed pool
@@ -70,6 +70,25 @@ int main() {
     }
     std::cout << std::endl;
     d_pool->print_info(); // print pool info
+
+    // Example 4: multi-threaded allocation
+    std::vector<std::thread> threads;
+    auto* i_pool = new pool_t(128_z); // allocate a new pool of 128 bytes
+    qalloc::allocator<int> i_allocator(i_pool); // use the new pool as allocator
+    int* int_array[16];
+    int i = 0;
+    for (auto & ele : int_array) {
+        threads.emplace_back([&ele, &i_allocator, &i]() {
+            ele = i_allocator.allocate(1);
+            *ele = i++;
+        });
+    }
+    for (auto & t : threads) {
+        t.join();
+    }
+    for (auto & i : int_array) {
+        std::cout << *i << ", ";
+    }
     return 0;
 }
 

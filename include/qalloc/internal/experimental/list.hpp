@@ -44,7 +44,7 @@ public:
         node_type* next;
         explicit node_type(T&& lv) : T(std::forward<T>(lv)),
                                               next(nullptr) {}
-        static node_type* set(void_pointer p_this, T&& lv) {
+        static node_type* set(void_ptr_t p_this, T&& lv) {
             return new (p_this) node_type(std::forward<T>(lv));
         }
     };
@@ -73,7 +73,7 @@ public:
     list& operator=(const list&) = delete;
     list& operator=(list&&) = delete;
     inline list(size_type, value_type&& first) : m_size(1) {
-        void_pointer ptr  = q_malloc(sizeof(node_type));
+        void_ptr_t ptr  = q_malloc(sizeof(node_type));
         node_pointer node = node_type::set(ptr, std::forward<value_type>(first));
         m_head = node;
         m_tail = node;
@@ -92,7 +92,7 @@ public:
     }
     template <typename ...Args>
     void emplace_back(Args&& ...args) {
-        void_pointer ptr  = q_malloc(sizeof(node_type));
+        void_ptr_t ptr  = q_malloc(sizeof(node_type));
         node_pointer node = node_type::set(ptr, std::forward<Args>(args)...);
         m_tail->next = node;
         m_tail = node;

@@ -32,14 +32,14 @@ QALLOC_BEGIN
 /// @brief get type info of pointer.
 /// @param p pointer allocated from qalloc pool.
 /// @return type info of pointer.
-constexpr const std::type_info& type_of(void_pointer p) {
+constexpr const std::type_info& type_of(void_ptr_t p) {
     return *block_info_t::of(p)->type_info;
 }
 
 /// @brief get raw type name of object in pointer.
 /// @param p pointer allocated from qalloc pool.
 /// @return @b c-string of raw type name of object in pointer.
-inline const char* type_name_of(void_pointer p) {
+inline const char* type_name_of(void_ptr_t p) {
     return type_of(p).name();
 }
 
@@ -64,7 +64,7 @@ std::string demangled_type_name_of(const char* mangled_name) {
 /// @brief get demangled type name of object in pointer.
 /// @param p pointer allocated from qalloc pool.
 /// @return @b std::string of demangled type name of object in pointer.
-std::string demangled_type_name_of(void_pointer p) {
+std::string demangled_type_name_of(void_ptr_t p) {
     return demangled_type_name_of(type_name_of(p));
 }
 
@@ -73,7 +73,7 @@ std::string demangled_type_name_of(void_pointer p) {
 /// @param p pointer allocated from qalloc pool.
 /// @return a reference to pointer of type @b T.
 template <typename T> QALLOC_MAYBE_UNUSED
-T& safe_cast(void_pointer p) {
+T& safe_cast(void_ptr_t p) {
     if(type_of(p) != typeid(T)) {
         throw std::bad_cast();
     }

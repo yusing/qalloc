@@ -15,14 +15,14 @@
 /// @file qalloc/qalloc.hpp
 /// @brief qalloc library header file.
 /// @author yusing
-/// @date 2020-07-02
+/// @date 2022-07-02
 
 #ifndef QALLOC_QALLOC_HPP
 #define QALLOC_QALLOC_HPP
 
 #include <qalloc/internal/pool.hpp>
 #include <qalloc/internal/pool_impl.hpp>
-#include <qalloc/internal/pool_base_impl.hpp>
+#include <qalloc/internal/pool_detail_impl.hpp>
 #include <qalloc/internal/allocator.hpp>
 #include <qalloc/internal/allocator_impl.hpp>
 #include <qalloc/internal/type_info.hpp>

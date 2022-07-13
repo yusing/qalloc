@@ -23,16 +23,13 @@
 #include <utility>
 #include <cstring>
 #include <qalloc/qalloc.h>
-#include <qalloc/internal/pool.hpp>
-#include <qalloc/internal/pool_impl.hpp>
-#include <qalloc/internal/pool_base_impl.hpp>
-#include <qalloc/internal/pointer.hpp>
+#include <qalloc/qalloc.hpp>
 
 extern "C" {
 using std::size_t;
 using std::uintptr_t;
 using std::uint8_t;
-using qalloc::byte;
+using byte_t = qalloc::byte;
 using qalloc::pointer::sub;
 using qalloc::operator ""_z;
 
@@ -44,25 +41,23 @@ using qalloc::operator ""_z;
 /// @param size the size of the memory to allocate.
 /// @return pointer to the @b data.
 QALLOC_EXPORT void* q_allocate(size_t size) {
-    constexpr size_t SIZE_LONG = sizeof(long);
-    size_t allocated_size = size + sizeof(size_t) + SIZE_LONG + sizeof(uint8_t);
-    byte* p = QALLOC_POOL_INSTANCE.detailed_allocate<void>(allocated_size );
-    byte* origin = p;
+    constexpr size_t MAX_PADDING = 8;
+    size_t  allocated_size = size + sizeof(size_t) + MAX_PADDING + sizeof(uint8_t);
+    byte_t* p = QALLOC_POOL_INSTANCE.detailed_allocate<void>(allocated_size);
+    QALLOC_DEBUG_STATEMENT(byte_t* origin = p;)
     if (p == nullptr) {
         return nullptr;
     }
+    size_t magic = reinterpret_cast<uintptr_t>(p) + sizeof(size_t) + sizeof(uint8_t);
     // size start
     new (p) size_t(size);
     p += sizeof(size_t);
     // padding start
-    uint8_t padding = 0;
-    while((uintptr_t)(p + padding + sizeof(uint8_t)) % SIZE_LONG != 0) {
-        padding++;
-    }
+    uint8_t padding = magic % 4 - (magic % 2) * 2 + 4;
     p += padding;
     new (p) uint8_t(padding);
     p += sizeof(uint8_t);
-    QALLOC_ASSERT(_Py_IS_ALIGNED(p, SIZE_LONG));
+    QALLOC_ASSERT(_Py_IS_ALIGNED(p, sizeof(long)));
     QALLOC_ASSERT(p + size < origin + allocated_size);
     return p;
 }
@@ -85,10 +80,10 @@ QALLOC_EXPORT void q_deallocate(void* ptr) {
     }
     uint8_t& padding_len = *sub<uint8_t*>(ptr, sizeof(uint8_t));
     size_t&  data_size   = *sub<size_t*>(&padding_len, padding_len + sizeof(size_t));
-    size_t   before_data = sizeof(size_t) + padding_len + sizeof(uint8_t);
+    size_t   header_size = sizeof(size_t) + padding_len + sizeof(uint8_t);
     QALLOC_POOL_INSTANCE.detailed_deallocate<void>(
-            reinterpret_cast<byte *>(&data_size),
-        before_data + data_size
+            reinterpret_cast<byte_t *>(&data_size),
+        header_size + data_size
     );
 }
 
@@ -98,11 +93,11 @@ QALLOC_EXPORT void* q_reallocate(void* ptr, size_t new_size) {
     }
     uint8_t& padding_len = *sub<uint8_t*>(ptr, sizeof(uint8_t));
     size_t&  old_size    = *sub<size_t*>(&padding_len, padding_len + sizeof(size_t));
-    size_t   before_data = sizeof(size_t) + padding_len + sizeof(uint8_t);
+    size_t   header_size = sizeof(size_t) + padding_len + sizeof(uint8_t);
     void*    new_data    = std::memcpy(q_allocate(new_size), ptr, std::min(old_size, new_size));
     QALLOC_POOL_INSTANCE.detailed_deallocate<void>(
-            reinterpret_cast<byte *>(&old_size),
-            before_data + old_size
+            reinterpret_cast<byte_t *>(&old_size),
+            header_size + old_size
     );
     return new_data;
 }

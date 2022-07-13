@@ -28,26 +28,34 @@
 
 QALLOC_BEGIN
 #ifdef QALLOC_WINDOWS
-    void_pointer q_malloc(size_type n_bytes) {
-        return VirtualAlloc(nullptr, n_bytes, MEM_COMMIT, PAGE_READWRITE);
-    }
-    void_pointer q_realloc(void_pointer p, size_type n_bytes) {
-        return VirtualAlloc(p, n_bytes, MEM_COMMIT, PAGE_READWRITE);
-    }
-    void q_free(void_pointer p) {
-        VirtualFree(p, 0, MEM_RELEASE);
-    }
-#else // QALLOC_WINDOWS
-    #define q_free std::free
-    void_pointer q_malloc(size_type n_bytes) {
-        QALLOC_RESTRICT void_pointer p = std::malloc(n_bytes);
+    void_ptr_t q_malloc(size_t n_bytes) {
+        void_ptr_t p =VirtualAlloc(nullptr, n_bytes, MEM_COMMIT, PAGE_READWRITE);
         if (p == nullptr) {
             throw std::bad_alloc();
         }
         return p;
     }
-    void_pointer q_realloc(void_pointer p, size_type n_bytes) {
-        QALLOC_RESTRICT void_pointer q = std::realloc(p, n_bytes);
+    void_ptr_t q_realloc(void_ptr_t p, size_t n_bytes) {
+        p = VirtualAlloc(p, n_bytes, MEM_COMMIT, PAGE_READWRITE);
+        if (p == nullptr) {
+            throw std::bad_alloc();
+        }
+        return p;
+    }
+    void q_free(void_ptr_t p) {
+        VirtualFree(p, 0, MEM_RELEASE);
+    }
+#else // QALLOC_WINDOWS
+    #define q_free std::free
+    void_ptr_t q_malloc(size_t n_bytes) {
+        QALLOC_RESTRICT void_ptr_t p = std::malloc(n_bytes);
+        if (p == nullptr) {
+            throw std::bad_alloc();
+        }
+        return p;
+    }
+    void_ptr_t q_realloc(void_ptr_t p, size_t n_bytes) {
+        QALLOC_RESTRICT void_ptr_t q = std::realloc(p, n_bytes);
         if (q == nullptr) {
             throw std::bad_alloc();
         }

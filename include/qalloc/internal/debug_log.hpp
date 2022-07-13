@@ -41,12 +41,6 @@ inline void debug_log(const char* format, Args&&... args) {
     QALLOC_FPRINTF(log_file, format, std::forward<Args>(args)...);
 }
 
-static std::atomic<std::size_t> thread_counter = 0;
-
-inline std::size_t thread_id() {
-    thread_local std::size_t tid = thread_counter++;
-    return tid;
-}
 QALLOC_END
 #else
     #define debug_log(...) (void)0

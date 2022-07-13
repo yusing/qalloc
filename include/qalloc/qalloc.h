@@ -31,12 +31,12 @@
 extern "C" {
 #endif // __cplusplus
 
-/// @brief allocates memory from the global pool.
+/// @brief allocates a 4-byte aligned memory from the global pool.
 /// @param size the size of the memory to allocate.
 /// @return a pointer to the allocated memory.
 QALLOC_EXPORT void* q_allocate(size_t size);
 
-/// @brief allocates memory from the global pool.
+/// @brief allocates a 4-byte aligned memory from the global pool and initialize all bytes to zero.
 /// @param size the size of the memory to allocate.
 /// @return a pointer to the allocated memory.
 QALLOC_EXPORT void* q_callocate(size_t n, size_t size);

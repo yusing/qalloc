@@ -28,76 +28,65 @@ QALLOC_BEGIN
 /// @brief single byte enum type
 enum class byte : unsigned char{};
 
-using byte_pointer        = byte*;
-using const_byte_pointer  = const byte*;
-using void_pointer        = void*;
-using const_void_pointer  = const void*;
-using size_type           = std::size_t;
-using difference_type     = std::ptrdiff_t;
+using byte_ptr_t        = byte*;
+using const_byte_ptr_t  = const byte*;
+using void_ptr_t        = void*;
+using const_void_ptr_t  = const void*;
+using std::size_t;
+using std::ptrdiff_t;
 
 /// @brief size_type enum type for index
-enum class index_type : size_type {
-    Zero = 0
-};
+enum class index_t : size_t {};
 
 /// @brief std::ostream input operator for constant byte pointer
 /// @param os std::ostream object
 /// @param p constant byte pointer
 /// @return @b os
-std::ostream& operator<<(std::ostream& os, qalloc::const_byte_pointer p) {
-    os << static_cast<qalloc::const_void_pointer>(p);
+std::ostream& operator<<(std::ostream& os, qalloc::const_byte_ptr_t p) {
+    os << static_cast<qalloc::const_void_ptr_t>(p);
     return os;
 }
 
 /// @brief index_type decrement operator
 /// @param i index_type
 /// @return decremented index reference
-constexpr index_type& operator--(index_type& i) {
-    return i = static_cast<index_type>(static_cast<size_type>(i) - 1);
+constexpr index_t& operator--(index_t& i) {
+    return i = static_cast<index_t>(static_cast<size_t>(i) - 1);
 }
 
 /// @brief size_type literal suffix operator
 /// @return size_type representation of the literal
-constexpr size_type operator "" _z (unsigned long long n) {
-    return static_cast<size_type>(n);
+constexpr size_t operator "" _z (unsigned long long n) {
+    return static_cast<size_t>(n);
 }
 static_assert(sizeof(byte) == 1_z, "byte is not 1 byte");
-static_assert(sizeof(index_type) == sizeof(size_type), "size of index_type != size of size_type!");
+static_assert(sizeof(index_t) == sizeof(size_t), "size of index_type != size of size_type!");
 
 /// @brief cast from index_type to size_type
 /// @return size_type representation of the index_type
-constexpr size_type size_cast(index_type i) {
-    return static_cast<size_type>(i);
+constexpr size_t size_cast(index_t i) {
+    return static_cast<size_t>(i);
 }
 
 /// @brief cast from difference_type to size_type
 /// @return size_type representation of the difference_type
-constexpr size_type size_cast(difference_type diff) {
-    return static_cast<size_type>(diff);
+constexpr size_t size_cast(ptrdiff_t diff) {
+    return static_cast<size_t>(diff);
 }
 
 /// @brief pointer utilities namespace
 namespace pointer {
 
-template <typename T>
-/// @brief std::launder wrapper
-/// @tparam T type of the pointer
-/// @param p pointer to be laundered
-/// @return laundered pointer
-constexpr T* launder(T* p) {
 #if QALLOC_CXX_17
-    if constexpr(!std::is_void_v<T>) {
-        return std::launder(p);
-    }
-    else {
+    using std::launder;
+#else  // QALLOC_CXX_17
+    template <typename T>
+    constexpr T* launder(T* p) {
         return p;
     }
-#else
-    return p;
-#endif
-}
+#endif // QALLOC_CXX_17
 
-template <typename OutType = byte_pointer, typename OffsetType, typename InType>
+template <typename OutType = byte_ptr_t, typename OffsetType, typename InType>
 constexpr OutType add(InType ptr, OffsetType offset) {
     static_assert(
         (std::is_const<InType>::value && std::is_const<OutType>::value)
@@ -105,15 +94,15 @@ constexpr OutType add(InType ptr, OffsetType offset) {
         , "constness of InType and OutType must be the same"
     );
     return static_cast<OutType>(
-        static_cast<void_pointer>(
-            static_cast<byte_pointer>(
-                static_cast<void_pointer>(ptr)
+        static_cast<void_ptr_t>(
+            static_cast<byte_ptr_t>(
+                static_cast<void_ptr_t>(ptr)
             ) + offset
         )
     );
 }
 
-template <typename OutType = byte_pointer, typename OffsetType, typename InType>
+template <typename OutType = byte_ptr_t, typename OffsetType, typename InType>
 constexpr OutType sub(InType ptr, OffsetType offset) {
     static_assert(
         (std::is_const<InType>::value && std::is_const<OutType>::value)
@@ -121,20 +110,20 @@ constexpr OutType sub(InType ptr, OffsetType offset) {
         , "constness of InType and OutType must be the same"
     );
     return static_cast<OutType>(
-        static_cast<void_pointer>(
-            static_cast<byte_pointer>(
-                static_cast<void_pointer>(ptr)
+        static_cast<void_ptr_t>(
+            static_cast<byte_ptr_t>(
+                static_cast<void_ptr_t>(ptr)
             ) - offset
         )
     );
 }
 
-constexpr bool in_range(const_void_pointer pos, const_void_pointer lb, const_void_pointer ub) {
+constexpr bool in_range(const_void_ptr_t pos, const_void_ptr_t lb, const_void_ptr_t ub) {
     return pos >= lb && pos < ub;
 }
 
-constexpr byte_pointer remove_const(const_byte_pointer p) {
-    return const_cast<byte_pointer>(p);
+constexpr byte_ptr_t remove_const(const_byte_ptr_t p) {
+    return const_cast<byte_ptr_t>(p);
 }
 
 } // namespace pointer

@@ -131,7 +131,7 @@ $(document).ready(function(){initNavTree('d5/d61/allocator_8hpp_source.html','..
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    };</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <a class="code hl_class" href="../../d2/d56/classqalloc_1_1allocator__base.html">allocator_base</a>() noexcept;</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    explicit <a class="code hl_class" href="../../d2/d56/classqalloc_1_1allocator__base.html">allocator_base</a>(<a class="code hl_class" href="../../df/d71/classqalloc_1_1pool__t.html">pool_pointer</a>) noexcept;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    explicit <a class="code hl_class" href="../../d2/d56/classqalloc_1_1allocator__base.html">allocator_base</a>(<a class="code hl_class" href="../../df/d71/classqalloc_1_1pool__t.html">pool_ptr_t</a>) noexcept;</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <a class="code hl_class" href="../../d2/d56/classqalloc_1_1allocator__base.html">allocator_base</a>(const <a class="code hl_class" href="../../d2/d56/classqalloc_1_1allocator__base.html">allocator_base</a>&amp;) noexcept;</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    template &lt;typename U, <span class="keywordtype">bool</span> U_detailed&gt;</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    explicit <a class="code hl_class" href="../../d2/d56/classqalloc_1_1allocator__base.html">allocator_base</a>(const <a class="code hl_class" href="../../d2/d56/classqalloc_1_1allocator__base.html">allocator_base</a>&lt;U, U_detailed&gt;&amp;) noexcept;</div>
@@ -141,10 +141,10 @@ $(document).ready(function(){initNavTree('d5/d61/allocator_8hpp_source.html','..
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    virtual <span class="keywordtype">void</span> deallocate(<a class="code hl_typedef" href="../../d2/d56/classqalloc_1_1allocator__base.html#a74091dbe456ca7121a0ea50c0f023acf">pointer</a> p, <a class="code hl_typedef" href="../../d2/d56/classqalloc_1_1allocator__base.html#a5eb663eb75ce6259cc68c75c1839076e">size_type</a> n_elements);</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <a class="code hl_define" href="../../da/d63/defs_8hpp.html#ade58da4f1b86dde2aa39f11a2578a19e">QALLOC_NODISCARD</a></div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    constexpr <a class="code hl_class" href="../../df/d71/classqalloc_1_1pool__t.html">pool_pointer</a> pool() const noexcept;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    constexpr <a class="code hl_class" href="../../df/d71/classqalloc_1_1pool__t.html">pool_ptr_t</a> pool() const noexcept;</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>private:</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <a class="code hl_class" href="../../df/d71/classqalloc_1_1pool__t.html">pool_pointer</a> m_pool_ptr;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <a class="code hl_class" href="../../df/d71/classqalloc_1_1pool__t.html">pool_ptr_t</a> m_pool_ptr;</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>}; <span class="comment">// class allocator</span></div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>template &lt;typename T&gt;</div>
