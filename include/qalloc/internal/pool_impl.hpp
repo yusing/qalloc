@@ -131,7 +131,7 @@ inline byte_ptr_t pool_t::allocate(size_t n_bytes) const {
     else {
         // memory exhausted in pool
         // add new subpool with 2 * (n_bytes || m_cur_subpool->size) (larger one)
-        add_subpool(std::min(n_bytes * 2, size_cast(cur_subpool->size() * 2)));
+        add_subpool(std::min(n_bytes * 4, size_cast(cur_subpool->size() * 2)));
         cur_subpool = m_cur_subpool.load(std::memory_order_relaxed);
     }
 
